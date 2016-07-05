@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/main_background"
+    tools:context="com.mindtwister.mindtwister.MainActivity">
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settings"
+        android:id="@+id/settingsButton"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        style="@style/ButtonTheme" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/about"
+        android:id="@+id/aboutButton"
+        android:layout_below="@+id/settingsButton"
+        android:layout_centerHorizontal="true"
+        style="@style/ButtonTheme" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/play"
+        android:id="@+id/playButton"
+        android:layout_above="@+id/settingsButton"
+        android:layout_centerHorizontal="true"
+        style="@style/ButtonTheme" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/quit"
+        android:id="@+id/quitButton"
+        android:layout_below="@+id/aboutButton"
+        android:layout_centerHorizontal="true"
+        android:onClick="quitOnClick"
+        style="@style/ButtonTheme" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@mipmap/mind_twister"
+        android:contentDescription="@string/game_name"
+        android:layout_marginBottom="63dp"
+        android:layout_above="@+id/playButton"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
