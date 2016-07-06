@@ -8,51 +8,63 @@
 
 
     <Button
+        android:id="@+id/settingsButton"
+        style="@style/ButtonTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/settings"
-        android:id="@+id/settingsButton"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        style="@style/ButtonTheme" />
+        android:layout_centerVertical="true"
+        android:onClick="settingsOnClick"
+        android:text="@string/settings" />
 
     <Button
+        android:id="@+id/aboutButton"
+        style="@style/ButtonTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/about"
-        android:id="@+id/aboutButton"
         android:layout_below="@+id/settingsButton"
         android:layout_centerHorizontal="true"
-        style="@style/ButtonTheme"
-        android:onClick="aboutOnClick" />
+        android:onClick="aboutOnClick"
+        android:text="@string/about" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/play"
         android:id="@+id/playButton"
-        android:layout_above="@+id/settingsButton"
-        android:layout_centerHorizontal="true"
-        style="@style/ButtonTheme" />
-
-    <Button
+        style="@style/ButtonTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/quit"
+        android:layout_above="@+id/instructionsButton"
+        android:layout_centerHorizontal="true"
+        android:onClick="playOnClick"
+        android:text="@string/play" />
+
+    <Button
         android:id="@+id/quitButton"
+        style="@style/ButtonTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/aboutButton"
         android:layout_centerHorizontal="true"
         android:onClick="quitOnClick"
-        style="@style/ButtonTheme" />
+        android:text="@string/quit" />
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:src="@mipmap/mind_twister"
-        android:contentDescription="@string/game_name"
-        android:layout_marginBottom="63dp"
         android:layout_above="@+id/playButton"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="63dp"
+        android:contentDescription="@string/game_name"
+        android:src="@mipmap/mind_twister" />
+
+    <Button
+        android:id="@+id/instructionsButton"
+        style="@style/ButtonTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/settingsButton"
+        android:layout_centerHorizontal="true"
+        android:onClick="instructionsOnClick"
+        android:text="@string/instructions" />
 
 </RelativeLayout>
