@@ -6,14 +6,43 @@
     android:background="@mipmap/main_background"
     tools:context="com.mindtwister.mindtwister.MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/playButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:contentDescription="@string/game_name"
+        android:src="@mipmap/mind_twister" />
+
+    <Button
+        android:id="@+id/playButton"
+        style="@style/ButtonTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/instructionsButton"
+        android:layout_centerHorizontal="true"
+        android:onClick="playOnClick"
+        android:text="@string/play" />
+
+    <Button
+        android:id="@+id/instructionsButton"
+        style="@style/ButtonTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:onClick="instructionsOnClick"
+        android:text="@string/instructions" />
 
     <Button
         android:id="@+id/settingsButton"
         style="@style/ButtonTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/instructionsButton"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:onClick="settingsOnClick"
         android:text="@string/settings" />
 
@@ -27,15 +56,6 @@
         android:onClick="aboutOnClick"
         android:text="@string/about" />
 
-    <Button
-        android:id="@+id/playButton"
-        style="@style/ButtonTheme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/instructionsButton"
-        android:layout_centerHorizontal="true"
-        android:onClick="playOnClick"
-        android:text="@string/play" />
 
     <Button
         android:id="@+id/quitButton"
@@ -47,24 +67,5 @@
         android:onClick="quitOnClick"
         android:text="@string/quit" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/playButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="63dp"
-        android:contentDescription="@string/game_name"
-        android:src="@mipmap/mind_twister" />
-
-    <Button
-        android:id="@+id/instructionsButton"
-        style="@style/ButtonTheme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/settingsButton"
-        android:layout_centerHorizontal="true"
-        android:onClick="instructionsOnClick"
-        android:text="@string/instructions" />
 
 </RelativeLayout>
