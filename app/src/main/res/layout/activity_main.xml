@@ -13,7 +13,7 @@
         android:layout_above="@+id/playButton"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp"
-        android:contentDescription="@string/game_name"
+        android:contentDescription="@string/app_name"
         android:src="@mipmap/mind_twister" />
 
     <Button
@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/instructionsButton"
         android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
         android:onClick="playOnClick"
         android:text="@string/play" />
 
@@ -33,6 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_margin="5dp"
         android:onClick="instructionsOnClick"
         android:text="@string/instructions" />
 
@@ -43,6 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/instructionsButton"
         android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
         android:onClick="settingsOnClick"
         android:text="@string/settings" />
 
@@ -53,6 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/settingsButton"
         android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
         android:onClick="aboutOnClick"
         android:text="@string/about" />
 
@@ -64,6 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/aboutButton"
         android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
         android:onClick="quitOnClick"
         android:text="@string/quit" />
 

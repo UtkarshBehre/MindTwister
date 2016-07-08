@@ -23,6 +23,7 @@
         <activity android:name=".SettingsActivity" />
         <activity android:name=".InstructionsActivity" />
         <activity android:name=".PlayMenuActivity" />
+        <activity android:name=".Game1MemoryMatrixActivity" />
         <!-- default code -->
         <!--android:allowBackup="true"-->
         <!--android:icon="@mipmap/ic_launcher"-->
