@@ -15,8 +15,4 @@
     <string name="app_version_text">App Version : </string>
     <string name="release_date_text">Release Date : </string>
     <string name="release_date">28 July 2016</string>
-
-    <string name="title_activity_game1_memory_matrix">Game1MemoryMatrix</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
