@@ -15,4 +15,5 @@
     <string name="app_version_text">App Version : </string>
     <string name="release_date_text">Release Date : </string>
     <string name="release_date">28 July 2016</string>
+    <string name="credits_text">Credits</string>
 </resources>

@@ -14,4 +14,14 @@
         android:layout_marginTop="141dp"
         android:text="@string/profile" />
 
+    <Button
+        android:id="@+id/creditsButton"
+        style="@style/ButtonTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profileButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="@string/credits_text" />
+
 </RelativeLayout>
