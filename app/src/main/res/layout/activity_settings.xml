@@ -24,4 +24,14 @@
         android:layout_marginTop="5dp"
         android:text="@string/credits_text" />
 
+    <Button
+        android:id="@+id/privacyPolicyButton"
+        style="@style/ButtonTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/creditsButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="@string/privacy_policy" />
+
 </RelativeLayout>
