@@ -23,6 +23,9 @@
         <activity android:name=".SettingsActivity" />
         <activity android:name=".InstructionsActivity" />
         <activity android:name=".PlayMenuActivity" />
+        <activity
+            android:name=".RainbowMatrixActivity"
+            android:label="Rainbow Matrix" />
         <!-- default code -->
         <!-- android:allowBackup="true" -->
         <!-- android:icon="@mipmap/ic_launcher" -->

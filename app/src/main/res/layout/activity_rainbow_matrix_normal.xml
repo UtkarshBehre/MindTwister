@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/rainbow_background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/defaultBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="60dp"
+            android:layout_marginTop="42dp"
+            android:background="@color/appColor500"
+            android:columnCount="3"
+            android:rowCount="3">
+
+            <Button
+                android:id="@+id/tiles_11_btn"
+                style="@style/buttonsize.buttonsize1"
+                android:layout_margin="7dp"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/tiles_12_btn"
+                style="@style/buttonsize"
+                android:layout_margin="7dp"
+                android:background="@color/rainbow_yellow" />
+
+            <Button
+                android:id="@+id/tile_13_btn"
+                style="@style/buttonsize.buttonsize1"
+                android:layout_margin="7dp"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/tiles_21_btn"
+                style="@style/buttonsize"
+                android:layout_margin="7dp"
+                android:background="@color/rainbow_green" />
+
+            <Button
+                android:id="@+id/tiles22_btn"
+                style="@style/buttonsize.buttonsize1"
+                android:layout_margin="7dp"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/tiles_23_btn"
+                style="@style/buttonsize"
+                android:layout_margin="7dp"
+                android:background="@color/rainbow_red" />
+
+            <Button
+                android:id="@+id/tiles_31_btn"
+                style="@style/buttonsize.buttonsize1"
+                android:layout_margin="7dp"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/tiles_32_btn"
+                style="@style/buttonsize"
+                android:layout_margin="7dp"
+                android:background="@color/rainbow_blue" />
+
+            <Button
+                android:id="@+id/tiles_33_btn"
+                style="@style/buttonsize.buttonsize1"
+                android:layout_margin="7dp"
+                android:visibility="visible" />
+        </GridLayout>
+
+        <Button
+            android:id="@+id/defaultBtn"
+            style="@style/buttonsize.buttonsize1"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="42dp" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+
