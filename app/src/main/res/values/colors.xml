@@ -17,4 +17,6 @@
     <color name="appAccent400">#00e676</color>
     <color name="appAccent700">#00c853</color>
     <color name="black_overlay">#66000000</color>
+    <color name="whiteColor">#FFFFFF</color>
+    <color name="memory_matrixs_tile_default_color">#ff6e40</color>
 </resources>

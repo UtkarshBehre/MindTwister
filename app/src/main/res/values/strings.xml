@@ -27,4 +27,9 @@
     <string name="register">register</string>
     <string name="welcome">WELCOME</string>
     <string name="start">START</string>
+    <string name="tiles">Tiles :  </string>
+    <string name="level">Level :  </string>
+    <string name="level1">Level1</string>
+    <string name="Level">Level</string>
+    <string name="_3x3">3X3</string>
 </resources>
