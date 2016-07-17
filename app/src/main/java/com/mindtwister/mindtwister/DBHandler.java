@@ -6,6 +6,7 @@ package com.mindtwister.mindtwister;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.Cursor;
@@ -53,21 +54,47 @@ public class DBHandler extends SQLiteOpenHelper {
     public boolean addRegisterClass(RegisterClass rc) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(KEY_NAME, rc.getUser_name()); // Register Name
-        values.put(KEY_USERNAME, rc.getUser_nickname());
-        values.put(KEY_PASSWORD, rc.getUser_password());
-        values.put(KEY_EMAIL, rc.getUser_email());
-        values.put(KEY_AGE, rc.getUser_age());
+        values.put("user_name", rc.getUser_name()); // Register Name
+        values.put("user_nickname", rc.getUser_nickname());
+        values.put("user_password", rc.getUser_password());
+        values.put("user_email", rc.getUser_email());
+        values.put("user_age", rc.getUser_age());
 // Inserting Row
 
-        long i = db.insert(TABLE_REGISTER, null, values);
-        if (i > 0) {
-            return true;
+        db.insert("UserInfo", null, values);
+        return true;
             // db.close(); // Closing database connection
-        } else {
-            return false;
-        }
+//        } else {
+//            return false;
+//        }
     }
+
+    public RegisterClass selectuser(String username, String password) {
+        String selectQuery = "SELECT * FROM UserInfo where user_nickname='" + username + "' and user_password='" + password + "'";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+//// looping through all rows and adding to list
+        RegisterClass rc = new RegisterClass();
+        if (cursor.moveToNext()) {
+            rc.setUser_name(cursor.getString(1));
+            rc.setUser_nickname(cursor.getString(2));
+            rc.setUser_password(cursor.getString(3));
+            rc.setUser_email(cursor.getString(4));
+            rc.setUser_age(cursor.getInt(5));
+        }
+        return rc;
+    }
+//
+//
+//// Adding contact to list
+//                RegisterClassList.add(RegisterClass);
+//            } while (cursor.moveToNext());
+//        }
+//// return contact list
+//        return RegisterClassList;
+//    }
+
+
 //    public List<RegisterClass> getAllRegisterClasss() {
 //        List<RegisterClass> RegisterClassList = new ArrayList<RegisterClass>();
 //// Select All Query

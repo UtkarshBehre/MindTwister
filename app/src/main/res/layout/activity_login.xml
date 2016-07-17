@@ -35,6 +35,7 @@
         android:layout_centerHorizontal="true"
         android:width="320dp"
         android:background="@color/appColor300"
+        android:onClick="login"
         android:text="@string/login" />
 
     <TextView
@@ -43,6 +44,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/bLogin"
         android:layout_centerHorizontal="true"
+        android:linksClickable="true"
+        android:onClick="register"
         android:text="@string/new_user"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 </RelativeLayout>
