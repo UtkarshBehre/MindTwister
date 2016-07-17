@@ -67,5 +67,6 @@
         android:layout_centerHorizontal="true"
         android:width="320dp"
         android:background="@color/appColor300"
+        android:onClick="insert"
         android:text="@string/register" />
 </RelativeLayout>
