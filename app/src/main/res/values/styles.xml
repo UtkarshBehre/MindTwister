@@ -23,7 +23,6 @@
     <style name="buttonsize">
         <item name="android:layout_width">55dp</item>
         <item name="android:layout_height">55dp</item>
-        <item name="android:background"></item>
     </style>
 
     <style name="buttonsize.buttonsize1">
