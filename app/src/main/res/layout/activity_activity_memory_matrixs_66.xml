@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/memory_matrix_background"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.mindtwister.mindtwister.activity_memory_matrixs_66">
+
+    <TextView
+        android:id="@+id/tiles_View"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/tiles"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/appAccent400" />
+
+    <TextView
+        android:id="@+id/tiles_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tiles_View"
+        android:layout_toEndOf="@+id/tiles_View"
+        android:text="@string/_3x3"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/whiteColor" />
+
+    <TextView
+        android:id="@+id/level_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tiles_text"
+        android:layout_alignParentEnd="true"
+        android:text="@string/level1"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/whiteColor" />
+
+    <TextView
+        android:id="@+id/level_View"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/level_text"
+        android:layout_toStartOf="@+id/level_text"
+        android:text="@string/level"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/appAccent400" />
+
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@color/appColor800"
+        android:columnCount="6"
+        android:paddingBottom="15dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="15dp"
+        android:rowCount="6">
+
+        <Button
+            android:id="@+id/tiles_11_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_12_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_13_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_14_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_15_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_16_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_21_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_22_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_23_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_24_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_25_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_26_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_31_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_32_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_33_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_34_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_35_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_36_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_41_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_42_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_43_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_44_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+
+        <Button
+            android:id="@+id/tiles_45_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_46_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+
+        <Button
+            android:id="@+id/tiles_51_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_52_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_53_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_54_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_55_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_56_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_61_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_62_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_63_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_64_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_65_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+        <Button
+            android:id="@+id/tiles_66_btn"
+            style="@style/TileTheme66"
+            android:layout_margin="7dp" />
+
+
+    </GridLayout>
+
+</RelativeLayout>
