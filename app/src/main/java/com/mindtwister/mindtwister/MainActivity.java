@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 import java.util.HashMap;
@@ -66,5 +67,9 @@ public class MainActivity extends AppCompatActivity {
     public void instructionsOnClick(View view) {
         Intent intent = new Intent(this, InstructionsActivity.class);
         startActivity(intent);
+    }
+
+    public void signout(MenuItem item) {
+        session.logoutUser();
     }
 }

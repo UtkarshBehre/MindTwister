@@ -8,5 +8,6 @@
         android:title="@string/music" />
     <item
         android:id="@+id/sinoutMenu"
+        android:onClick="signout"
         android:title="@string/signout" />
 </menu>
