@@ -3,12 +3,19 @@ package com.mindtwister.mindtwister;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity {
+    //for debugging
+    private final String TAG = "in MainActivity.java";
     //public MediaPlayer mediaPlayer;
+    SessionManager session;
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -20,6 +27,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        session = new SessionManager(this);
+        session.checkLogin();
+
+        // get user data from session
+        HashMap<String, String> user = session.getUserDetails();
+
+        // name
+        String name = user.get(SessionManager.KEY_NAME);
+
+        //nickname
+        String nickname = user.get(SessionManager.KEY_NICKNAME);
+
+        // email
+        String email = user.get(SessionManager.KEY_EMAIL);
+        Log.i(TAG, "name: " + name + "nickname = " + nickname + "email = " + email);
     }
 
     public void quitOnClick(View view) {

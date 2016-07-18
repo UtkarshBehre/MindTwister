@@ -14,6 +14,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         db = new DBHandler(this);
+
         session = new SessionManager(this);
     }
 

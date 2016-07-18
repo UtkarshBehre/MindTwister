@@ -1,16 +1,15 @@
 package com.mindtwister.mindtwister;
 
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.*;
-import android.content.*;
+import android.widget.EditText;
 
 
 public class RegistrationActivity extends AppCompatActivity {
     DBHandler db;
-
+    SessionManager session;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -22,6 +21,7 @@ public class RegistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
         db = new DBHandler(this);
+        session = new SessionManager(this);
     }
 
 
@@ -52,9 +52,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
 
         db.addRegisterClass(rc);
-        //Toast.makeText(getApplicationContext(), "Updated", Toast.LENGTH_SHORT).show();
-            //   Intent intent = new Intent(getApplicationContext(),.class);
-        //  startActivity(intent
+        session.createLoginSession(rc.getUser_name(), rc.getUser_nickname(), rc.getUser_email());
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
