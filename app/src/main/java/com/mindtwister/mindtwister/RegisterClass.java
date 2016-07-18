@@ -61,5 +61,4 @@ public class RegisterClass {
         this.user_age = user_age;
     }
 
-
 }
