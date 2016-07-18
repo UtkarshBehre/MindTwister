@@ -18,13 +18,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegistrationActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".AboutActivity" />
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".InstructionsActivity" />
-        <activity android:name=".PlayMenuActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/login_activity" />
+        <activity
+            android:name=".RegistrationActivity"
+            android:label="@string/registration_activity" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/about_activity" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/settings_activity" />
+        <activity
+            android:name=".InstructionsActivity"
+            android:label="@string/instructions_activity" />
+        <activity
+            android:name=".PlayMenuActivity"
+            android:label="@string/app_name" />
         <activity
             android:name=".RainbowMatrixActivity"
             android:label="Rainbow Matrix" />
@@ -42,13 +56,27 @@
         <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
         <!-- </intent-filter> -->
         <!-- </activity> -->
-        <activity android:name=".activity_memory_matrixs_33" />
-        <activity android:name=".activity_memory_matrixs_34" />
-        <activity android:name=".activity_memory_matrixs_44" />
-        <activity android:name=".activity_memory_matrixs_45" />
-        <activity android:name=".activity_memory_matrixs_55" />
-        <activity android:name=".activity_memory_matrixs_56" />
-        <activity android:name=".activity_memory_matrixs_66" />
+        <activity
+            android:name=".activity_memory_matrixs_33"
+            android:label="@string/memory_matrix" />
+        <activity
+            android:name=".activity_memory_matrixs_34"
+            android:label="@string/memory_matrix" />
+        <activity
+            android:name=".activity_memory_matrixs_44"
+            android:label="@string/memory_matrix" />
+        <activity
+            android:name=".activity_memory_matrixs_45"
+            android:label="@string/memory_matrix" />
+        <activity
+            android:name=".activity_memory_matrixs_55"
+            android:label="@string/memory_matrix" />
+        <activity
+            android:name=".activity_memory_matrixs_56"
+            android:label="@string/memory_matrix" />
+        <activity
+            android:name=".activity_memory_matrixs_66"
+            android:label="@string/memory_matrix" />
     </application>
 
 </manifest>

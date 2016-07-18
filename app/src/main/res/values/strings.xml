@@ -37,4 +37,9 @@
     <string name="difficulty">Difficulty: </string>
     <string name="trials">Trials: </string>
     <string name="easy">Easy</string>
+    <string name="login_activity">Login</string>
+    <string name="registration_activity">Registration</string>
+    <string name="about_activity">About</string>
+    <string name="settings_activity">Settings</string>
+    <string name="instructions_activity">Instructions</string>
 </resources>
