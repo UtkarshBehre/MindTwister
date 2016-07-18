@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:width="320dp"
-        android:hint="@string/username" />
+        android:hint="@string/nickname" />
 
     <EditText
         android:id="@+id/etPassword"

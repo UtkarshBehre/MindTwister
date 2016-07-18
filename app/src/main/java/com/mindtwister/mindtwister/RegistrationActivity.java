@@ -30,8 +30,8 @@ public class RegistrationActivity extends AppCompatActivity {
         EditText editText1 = (EditText) findViewById(R.id.etName);
         String name = editText1.getText().toString();
 
-        EditText editText2 = (EditText) findViewById(R.id.etUsername);
-        String username = editText2.getText().toString();
+        EditText editText2 = (EditText) findViewById(R.id.etNickname);
+        String nickname = editText2.getText().toString();
 
         EditText editText3 = (EditText) findViewById(R.id.etPassword);
         String password = editText3.getText().toString();
@@ -45,7 +45,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         RegisterClass rc = new RegisterClass();
         rc.setUser_name(name);
-        rc.setUser_nickname(username);
+        rc.setUser_nickname(nickname);
         rc.setUser_password(password);
         rc.setUser_email(email);
         rc.setUser_age(ages);
