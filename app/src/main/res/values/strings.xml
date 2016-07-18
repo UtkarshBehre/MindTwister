@@ -27,10 +27,14 @@
     <string name="register">register</string>
     <string name="welcome">WELCOME</string>
     <string name="start">START</string>
-    <string name="tiles">Tiles :  </string>
-    <string name="level">Level :  </string>
+    <string name="tiles">Tiles: </string>
+    <string name="level">Level: </string>
     <string name="level1">Level1</string>
     <string name="Level">Level</string>
     <string name="_3x3">3X3</string>
     <string name="memory_matrix">Memory Matrix</string>
+    <string name="no_of_colors">Colors: </string>
+    <string name="difficulty">Difficulty: </string>
+    <string name="trials">Trials: </string>
+    <string name="easy">Easy</string>
 </resources>
