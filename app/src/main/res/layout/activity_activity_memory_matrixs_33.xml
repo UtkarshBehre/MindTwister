@@ -112,6 +112,4 @@
             style="@style/TileTheme33"
             android:layout_margin="8dp" />
     </GridLayout>
-
-
 </RelativeLayout>
