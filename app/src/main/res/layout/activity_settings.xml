@@ -7,31 +7,47 @@
     <Button
         android:id="@+id/profileButton"
         style="@style/ButtonTheme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="141dp"
         android:text="@string/profile" />
 
+
+    <Switch
+
+        android:id="@+id/musicSwitch"
+        style="@style/ButtonTheme"
+        android:layout_below="@id/profileButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="119dp"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="40dp"
+        android:text="@string/music_switch" />
+
+
     <Button
         android:id="@+id/creditsButton"
         style="@style/ButtonTheme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/profileButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="60dp"
         android:text="@string/credits_text" />
 
     <Button
         android:id="@+id/privacyPolicyButton"
         style="@style/ButtonTheme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/creditsButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:text="@string/privacy_policy" />
+
+    <Button
+        android:id="@+id/feedbackButton"
+        style="@style/ButtonTheme"
+        android:layout_below="@+id/privacyPolicyButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="@string/feedback" />
+
 
 </RelativeLayout>

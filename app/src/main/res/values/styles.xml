@@ -23,8 +23,11 @@
     <!--button theme for main menu -->
     <style name="ButtonTheme">
         <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textColor">@android:color/black</item>
-        <item name="android:background">@color/appColor300</item>
+        <item name="android:layout_width">150dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@mipmap/button_img</item>
     </style>
 
     <!--button theme for rainbow matrix game-->

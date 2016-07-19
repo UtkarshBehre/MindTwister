@@ -42,6 +42,15 @@
         <activity
             android:name=".RainbowMatrixActivity"
             android:label="Rainbow Matrix" />
+        <activity
+            android:name=".PrivacyPolicyActivity"
+            android:label="@string/privacy_policy" />
+        <activity
+            android:name=".Feedback"
+            android:label="@string/feedback" />
+        <activity
+            android:name=".CreditsActivity"
+            android:label="@string/credits_text" />
         <!-- default code -->
         <!-- android:allowBackup="true" -->
         <!-- android:icon="@mipmap/ic_launcher" -->

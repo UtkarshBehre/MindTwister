@@ -85,11 +85,11 @@ public class DBHandler extends SQLiteOpenHelper {
         // retrieving all column details to our pojo class
         RegisterClass rc = new RegisterClass();
         if (cursor.moveToNext()) {
-            rc.setUser_name(cursor.getString(1));
-            rc.setUser_nickname(cursor.getString(2));
-            rc.setUser_password(cursor.getString(3));
-            rc.setUser_email(cursor.getString(4));
-            rc.setUser_age(cursor.getInt(5));
+            rc.setUser_name(cursor.getString(0));
+            rc.setUser_nickname(cursor.getString(1));
+            rc.setUser_password(cursor.getString(2));
+            rc.setUser_email(cursor.getString(3));
+            rc.setUser_age(cursor.getInt(4));
             cursor.close();
             return rc;
         } else

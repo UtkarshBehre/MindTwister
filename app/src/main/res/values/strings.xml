@@ -11,7 +11,6 @@
     <string name="profile">Profile</string>
     <string name="signout">Signout</string>
     <string name="instructions">Instructions</string>
-    <string name="app_version_number">1.0.0</string>
     <string name="app_version_text">App Version : </string>
     <string name="release_date_text">Release Date : </string>
     <string name="release_date">28 July 2016</string>
@@ -43,4 +42,45 @@
     <string name="settings_activity">Settings</string>
     <string name="instructions_activity">Instructions</string>
     <string name="main_menu">Main Menu</string>
+    <string name="feedback">Feedback</string>
+
+    <!--feedback -->
+    <string name="feedback_label">Feedback</string>
+    <string name="submit_label">Submit</string>
+    <string name="suggession">Your Valuable Suggestions </string>
+    <string name="privacy_policy_info">Mind Twister does not collect or share  personal information.
+        We do not track or profile you.\n\nMind Twister is free to play. You can contact us
+    at MindTwister@gmail.com about your privacy concern.</string>
+
+    <string name="how_to_play_memory_matrix_game">How To Play Memory Matrix Game</string>
+    <string name="how_to_play_rainbow_matrix_game">How To Play Rainbow Matrix Game</string>
+    <string name="how_to_play_sudoku_game">How To Play Sudoku Game</string>
+
+    <!--about -->
+    <string name="app_version_number">Version 1.0.0</string>
+    <string name="copyright">2016 Mind Twister Inc.</string>
+    <string name="app_text">All rights reserved.</string>
+
+    <!-- settings -->
+    <string name="profile_name">Name :</string>
+    <string name="profile_username">Username :</string>
+    <string name="profile_email">Email :</string>
+    <string name="profile_age">Age :</string>
+    <string name="music_switch">MUSIC</string>
+
+    <!-- Credits -->
+    <string name="instruction_label">Select a game for Instructions</string>
+    <string name="business_logic">Business Logic      :</string>
+    <string name="database_designer"> Database Design :</string>
+    <string name="ui_memory_matrix">UI memory matrix : </string>
+    <string name="ui_rainbow_matrix">UI Rainbow matrix : </string>
+    <string name="ui_designer">UI Designer  :</string>
+    <string name="sound_effects">Sound Effects :</string>
+    <string name="somya">  Somya</string>
+    <string name="utkarsh">Utkarsh</string>
+    <string name="kanchan">Kanchan</string>
+    <string name="jyoti">Jyoti</string>
+    <string name="gunjan">Gunjan</string>
+    <string name="anupriya">AnuPriya</string>
+    <string name="himanshu">Himanshu</string>
 </resources>
