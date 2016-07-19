@@ -54,6 +54,15 @@
         <activity
             android:name=".ProfileActivity"
             android:label="@string/profile" />
+        <activity
+            android:name=".Memorymatrix_instructionActivity"
+            android:label="@string/memory_matrix" />
+        <activity
+            android:name=".Rainbowmatrix_instruction_Activity"
+            android:label="@string/rainbow_matrix" />
+        <activity
+            android:name=".Sudoku_instructionActivity"
+            android:label="@string/sudoku" />
         <!-- default code -->
         <!-- android:allowBackup="true" -->
         <!-- android:icon="@mipmap/ic_launcher" -->

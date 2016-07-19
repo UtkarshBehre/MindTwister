@@ -40,7 +40,8 @@
             <RelativeLayout
                 android:layout_width="250dp"
                 android:layout_height="200dp"
-                android:layout_marginLeft="15dp">
+                android:layout_marginLeft="15dp"
+                android:onClick="mmInstructionsOnClick">
 
                 <ImageView
                     android:id="@+id/imageView4"
@@ -67,7 +68,8 @@
             <RelativeLayout
                 android:layout_width="250dp"
                 android:layout_height="200dp"
-                android:layout_marginLeft="15dp">
+                android:layout_marginLeft="15dp"
+                android:onClick="rmInstructionsOnClick">
 
                 <ImageView
 
@@ -93,7 +95,8 @@
             <RelativeLayout
                 android:layout_width="250dp"
                 android:layout_height="200dp"
-                android:layout_marginLeft="15dp">
+                android:layout_marginLeft="15dp"
+                android:onClick="sudokuInstructionsOnClick">
 
                 <ImageView
                     android:id="@+id/imageView6"

@@ -84,4 +84,6 @@
     <string name="anupriya">AnuPriya</string>
     <string name="himanshu">Himanshu</string>
     <string name="write_here">Write here</string>
+    <string name="sudoku">Sudoku</string>
+    <string name="rainbow_matrix">Rainbow Matrix</string>
 </resources>
