@@ -4,37 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/credits_backgrounds"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".CreditsActivity">
 
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_centerHorizontal="true">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
-            <RelativeLayout
-
-                android:layout_width="350dp"
-                android:layout_height="120dp">
-
                 <TextView
                     android:id="@+id/textView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:layout_margin="20dp"
+                    android:layout_marginBottom="40dp"
+                    android:layout_marginTop="40dp"
                     android:gravity="center_horizontal"
                     android:text="@string/credits_text"
                     android:textAppearance="?android:attr/textAppearanceLarge"
@@ -42,21 +29,16 @@
                     android:textSize="50sp"
                     android:textStyle="bold" />
 
-
-            </RelativeLayout>
-
             <RelativeLayout
 
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="70dp">
 
                 <TextView
                     android:id="@+id/textView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:gravity="center_horizontal"
-                    android:text="@string/business_logic"
+                    android:text="Project Lead"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@color/whiteColor"
                     android:textSize="25sp"
@@ -82,7 +64,7 @@
 
             <RelativeLayout
 
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_gravity="left">
 
@@ -117,7 +99,7 @@
 
             <RelativeLayout
 
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="70dp">
 
                 <TextView
@@ -152,7 +134,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="70dp">
 
                 <TextView
@@ -184,7 +166,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="70dp">
 
                 <TextView
@@ -216,7 +198,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="70dp">
 
                 <TextView
@@ -248,7 +230,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="70dp">
 
                 <TextView
@@ -280,7 +262,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="70dp">
 
                 <TextView
