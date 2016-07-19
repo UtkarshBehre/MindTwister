@@ -19,8 +19,6 @@
     <Button
         android:id="@+id/playButton"
         style="@style/ButtonTheme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_above="@+id/instructionsButton"
         android:layout_centerHorizontal="true"
         android:layout_margin="5dp"
@@ -30,8 +28,6 @@
     <Button
         android:id="@+id/instructionsButton"
         style="@style/ButtonTheme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_margin="5dp"
@@ -41,8 +37,6 @@
     <Button
         android:id="@+id/settingsButton"
         style="@style/ButtonTheme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/instructionsButton"
         android:layout_centerHorizontal="true"
         android:layout_margin="5dp"
@@ -52,8 +46,6 @@
     <Button
         android:id="@+id/aboutButton"
         style="@style/ButtonTheme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/settingsButton"
         android:layout_centerHorizontal="true"
         android:layout_margin="5dp"
@@ -64,8 +56,6 @@
     <Button
         android:id="@+id/quitButton"
         style="@style/ButtonTheme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/aboutButton"
         android:layout_centerHorizontal="true"
         android:layout_margin="5dp"
