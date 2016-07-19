@@ -7,8 +7,10 @@ package com.mindtwister.mindtwister;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class DBHandler extends SQLiteOpenHelper {
 
@@ -37,7 +39,7 @@ public class DBHandler extends SQLiteOpenHelper {
         //Creating UserInfo table in the database
         db.execSQL(
                 "create table UserInfo " +
-                        "(user_id integer primary key autoincrement, user_name text,user_nickname text,user_password text,user_email text,user_age integer)"
+                        "(user_name text,user_nickname text,user_password text,user_email text primary key,user_age integer)"
         );
     }
 
@@ -58,9 +60,19 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put("user_email", rc.getUser_email());
         values.put("user_age", rc.getUser_age());
 
-        // Inserting Row
-        db.insert("UserInfo", null, values);
-        return true;
+        long returnedValue = 0;
+        try {
+            returnedValue = db.insertOrThrow("userinfo", null, values);
+
+        } catch (SQLException e) {
+            Log.e(DATABASE_NAME, e.toString());
+        }
+        String v = String.valueOf(returnedValue);
+        Log.i(DATABASE_NAME, v);
+        if (v.equals("0"))
+            return true;
+        else
+            return false;
     }
 
     public RegisterClass selectuser(String username, String password) {

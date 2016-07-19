@@ -77,11 +77,15 @@ public class RegistrationActivity extends AppCompatActivity {
             rc.setUser_email(email);
             rc.setUser_age(age);
 
-            db.addRegisterClass(rc);
-            session.createLoginSession(rc.getUser_name(), rc.getUser_nickname(), rc.getUser_email());
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-            finish();
+            if (db.addRegisterClass(rc)) {
+                Toast.makeText(getApplicationContext(), "user already exists", Toast.LENGTH_LONG).show();
+            } else {
+                session.createLoginSession(rc.getUser_name(), rc.getUser_nickname(), rc.getUser_email());
+                //REDIRECTING TO OTHER ACTIVITY HERE=============================
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
         }
     }
 
