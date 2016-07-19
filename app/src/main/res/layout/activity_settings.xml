@@ -10,6 +10,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="141dp"
+        android:onClick="profileOnClick"
         android:text="@string/profile" />
 
 
@@ -31,6 +32,7 @@
         android:layout_below="@+id/profileButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
+        android:onClick="creditsOnClick"
         android:text="@string/credits_text" />
 
     <Button
@@ -39,6 +41,7 @@
         android:layout_below="@+id/creditsButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
+        android:onClick="privacyPolicyOnClick"
         android:text="@string/privacy_policy" />
 
     <Button
@@ -47,6 +50,7 @@
         android:layout_below="@+id/privacyPolicyButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
+        android:onClick="feedbackOnClick"
         android:text="@string/feedback" />
 
 

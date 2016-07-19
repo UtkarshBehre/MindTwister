@@ -46,11 +46,14 @@
             android:name=".PrivacyPolicyActivity"
             android:label="@string/privacy_policy" />
         <activity
-            android:name=".Feedback"
+            android:name=".FeedbackActivity"
             android:label="@string/feedback" />
         <activity
             android:name=".CreditsActivity"
             android:label="@string/credits_text" />
+        <activity
+            android:name=".ProfileActivity"
+            android:label="@string/profile" />
         <!-- default code -->
         <!-- android:allowBackup="true" -->
         <!-- android:icon="@mipmap/ic_launcher" -->
@@ -66,25 +69,25 @@
         <!-- </intent-filter> -->
         <!-- </activity> -->
         <activity
-            android:name=".activity_memory_matrixs_33"
+            android:name=".MemoryMatrix33Activity"
             android:label="@string/memory_matrix" />
         <activity
-            android:name=".activity_memory_matrixs_34"
+            android:name=".MemoryMatrix34Activity"
             android:label="@string/memory_matrix" />
         <activity
-            android:name=".activity_memory_matrixs_44"
+            android:name=".MemoryMatrix44Activity"
             android:label="@string/memory_matrix" />
         <activity
-            android:name=".activity_memory_matrixs_45"
+            android:name=".MemoryMatrix45Activity"
             android:label="@string/memory_matrix" />
         <activity
-            android:name=".activity_memory_matrixs_55"
+            android:name=".MemoryMatrix55Activity"
             android:label="@string/memory_matrix" />
         <activity
-            android:name=".activity_memory_matrixs_56"
+            android:name=".MemoryMatrix56Activity"
             android:label="@string/memory_matrix" />
         <activity
-            android:name=".activity_memory_matrixs_66"
+            android:name=".MemoryMatrix66Activity"
             android:label="@string/memory_matrix" />
     </application>
 

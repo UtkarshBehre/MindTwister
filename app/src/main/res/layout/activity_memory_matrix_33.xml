@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/memory_matrix_background"
-    tools:context="com.mindtwister.mindtwister.activity_memory_matrixs_34">
+    tools:context=".MemoryMatrix33Activity">
 
     <FrameLayout
         android:id="@+id/header"
@@ -68,80 +68,62 @@
     </FrameLayout>
 
     <GridLayout
-        android:id="@+id/gridLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp"
         android:background="@color/appColor800"
-        android:columnCount="4"
-        android:paddingBottom="15dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingTop="15dp"
+        android:columnCount="3"
+        android:paddingBottom="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="20dp"
         android:rowCount="3">
 
         <Button
-
             android:id="@+id/tiles_11_btn"
-            style="@style/TileTheme34"
+            style="@style/TileTheme33"
             android:layout_margin="8dp" />
 
         <Button
             android:id="@+id/tiles_12_btn"
-            style="@style/TileTheme34"
+            style="@style/TileTheme33"
             android:layout_margin="8dp" />
 
         <Button
             android:id="@+id/tiles_13_btn"
-            style="@style/TileTheme34"
-            android:layout_margin="8dp" />
-
-        <Button
-            android:id="@+id/tiles_14_btn"
-            style="@style/TileTheme34"
+            style="@style/TileTheme33"
             android:layout_margin="8dp" />
 
         <Button
             android:id="@+id/tiles_21_btn"
-            style="@style/TileTheme34"
+            style="@style/TileTheme33"
             android:layout_margin="8dp" />
 
         <Button
             android:id="@+id/tiles_22_btn"
-            style="@style/TileTheme34"
+            style="@style/TileTheme33"
             android:layout_margin="8dp" />
 
         <Button
             android:id="@+id/tiles_23_btn"
-            style="@style/TileTheme34"
-            android:layout_margin="8dp" />
-
-        <Button
-            android:id="@+id/tiles_24_btn"
-            style="@style/TileTheme34"
+            style="@style/TileTheme33"
             android:layout_margin="8dp" />
 
         <Button
             android:id="@+id/tiles_31_btn"
-            style="@style/TileTheme34"
+            style="@style/TileTheme33"
             android:layout_margin="8dp" />
 
         <Button
             android:id="@+id/tiles_32_btn"
-            style="@style/TileTheme34"
+            style="@style/TileTheme33"
             android:layout_margin="8dp" />
 
         <Button
             android:id="@+id/tiles_33_btn"
-            style="@style/TileTheme34"
-            android:layout_margin="8dp" />
-
-        <Button
-            android:id="@+id/tiles_34_btn"
-            style="@style/TileTheme34"
+            style="@style/TileTheme33"
             android:layout_margin="8dp" />
     </GridLayout>
-
 </RelativeLayout>
