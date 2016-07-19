@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/appColor500</item>
         <item name="colorPrimaryDark">@color/appColor700</item>
         <item name="colorAccent">@color/appAccent400</item>
+        <item name="android:fontFamily">sans-serif</item>
     </style>
 
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">

@@ -42,4 +42,5 @@
     <string name="about_activity">About</string>
     <string name="settings_activity">Settings</string>
     <string name="instructions_activity">Instructions</string>
+    <string name="main_menu">Main Menu</string>
 </resources>
