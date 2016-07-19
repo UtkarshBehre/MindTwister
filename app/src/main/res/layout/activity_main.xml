@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/main_background"
+    android:background="@mipmap/credits_backgrounds"
     tools:context="com.mindtwister.mindtwister.MainActivity">
 
     <ImageView
