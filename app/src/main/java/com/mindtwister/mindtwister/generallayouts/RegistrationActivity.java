@@ -1,4 +1,4 @@
-package com.mindtwister.mindtwister;
+package com.mindtwister.mindtwister.generallayouts;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.mindtwister.mindtwister.MainActivity;
+import com.mindtwister.mindtwister.R;
+import com.mindtwister.mindtwister.loginregister.RegisterClass;
+import com.mindtwister.mindtwister.managers.DBHandler;
+import com.mindtwister.mindtwister.managers.SessionManager;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

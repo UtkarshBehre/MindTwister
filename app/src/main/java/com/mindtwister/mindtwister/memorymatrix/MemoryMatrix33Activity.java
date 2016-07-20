@@ -1,7 +1,9 @@
-package com.mindtwister.mindtwister;
+package com.mindtwister.mindtwister.memorymatrix;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.mindtwister.mindtwister.R;
 
 public class MemoryMatrix33Activity extends AppCompatActivity {
 

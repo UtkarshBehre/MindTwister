@@ -1,8 +1,11 @@
-package com.mindtwister.mindtwister;
+package com.mindtwister.mindtwister.generallayouts;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
+
+import com.mindtwister.mindtwister.R;
+import com.mindtwister.mindtwister.managers.SessionManager;
 
 import java.util.HashMap;
 

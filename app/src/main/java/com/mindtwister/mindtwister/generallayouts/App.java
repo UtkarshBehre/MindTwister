@@ -1,4 +1,4 @@
-package com.mindtwister.mindtwister;
+package com.mindtwister.mindtwister.generallayouts;
 
 import android.app.Application;
 import android.os.SystemClock;

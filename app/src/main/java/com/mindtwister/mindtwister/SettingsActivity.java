@@ -7,6 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Switch;
 
+import com.mindtwister.mindtwister.generallayouts.CreditsActivity;
+import com.mindtwister.mindtwister.generallayouts.FeedbackActivity;
+import com.mindtwister.mindtwister.generallayouts.PrivacyPolicyActivity;
+import com.mindtwister.mindtwister.generallayouts.ProfileActivity;
+import com.mindtwister.mindtwister.managers.SessionManager;
+
 /**
  * Created by Utkarsh on 07-07-2016.
  */

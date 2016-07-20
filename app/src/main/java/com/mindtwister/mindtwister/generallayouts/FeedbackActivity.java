@@ -1,8 +1,10 @@
-package com.mindtwister.mindtwister;
+package com.mindtwister.mindtwister.generallayouts;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+
+import com.mindtwister.mindtwister.R;
 
 /**
  * Created by kanchan on 7/18/2016.

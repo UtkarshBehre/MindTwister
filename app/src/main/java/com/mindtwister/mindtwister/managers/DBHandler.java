@@ -1,4 +1,4 @@
-package com.mindtwister.mindtwister;
+package com.mindtwister.mindtwister.managers;
 
 /**
  * Created by jyothi on 7/16/2016.
@@ -11,6 +11,8 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
+import com.mindtwister.mindtwister.loginregister.RegisterClass;
 
 public class DBHandler extends SQLiteOpenHelper {
 

@@ -1,4 +1,4 @@
-package com.mindtwister.mindtwister;
+package com.mindtwister.mindtwister.loginregister;
 
 /**
  * Created by jyothi on 7/16/2016.
