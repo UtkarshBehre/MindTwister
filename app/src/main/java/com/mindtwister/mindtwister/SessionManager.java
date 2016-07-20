@@ -22,6 +22,11 @@ public class SessionManager {
     private static final String PREF_NAME = "AndroidHivePref";
     // All Shared Preferences Keys
     private static final String IS_LOGIN = "IsLoggedIn";
+    // Music on or off setting
+    private static final String KEY_MUSIC = "music";
+    // Sound fx on or off settings
+    private static final String KEY_SOUNDFX = "soundFx";
+
     //shared preferences
     SharedPreferences pref;
     //editor for shared preferences
@@ -53,8 +58,34 @@ public class SessionManager {
         // Storing email in pref
         editor.putString(KEY_EMAIL, email);
 
+        // setting music on
+        editor.putBoolean(KEY_MUSIC, true);
+
+        // setting sound fx on
+        editor.putBoolean(KEY_SOUNDFX, true);
+
         // commit changes
         editor.commit();
+    }
+
+    //method to set sound fx
+    public void setSoundStatus(boolean b) {
+        editor.putBoolean(KEY_SOUNDFX, b);
+        editor.commit();
+    }
+
+    public boolean getMusicStatus() {
+        return pref.getBoolean(KEY_MUSIC, true);
+    }
+
+    //method to set music status
+    public void setMusicStatus(boolean b) {
+        editor.putBoolean(KEY_MUSIC, b);
+        editor.commit();
+    }
+
+    public boolean getSoundFxStatus() {
+        return pref.getBoolean(KEY_SOUNDFX, true);
     }
 
     /**

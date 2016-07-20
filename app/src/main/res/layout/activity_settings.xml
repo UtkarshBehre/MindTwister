@@ -22,16 +22,27 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="119dp"
         android:layout_marginTop="5dp"
+        android:onClick="musicSwitchButton"
         android:paddingLeft="40dp"
         android:text="@string/music_switch" />
 
+    <Switch
+
+        android:id="@+id/soundSwitch"
+        style="@style/ButtonTheme"
+        android:layout_below="@id/musicSwitch"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="119dp"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="10dp"
+        android:text="@string/sound_fx" />
 
     <Button
         android:id="@+id/creditsButton"
         style="@style/ButtonTheme"
-        android:layout_below="@+id/profileButton"
+        android:layout_below="@+id/soundSwitch"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="5dp"
         android:onClick="creditsOnClick"
         android:text="@string/credits_text" />
 

@@ -1,6 +1,8 @@
 package com.mindtwister.mindtwister;
 
+import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -12,10 +14,29 @@ import android.view.View;
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
+    static MediaPlayer mp;
     //for debugging
     private final String TAG = "in MainActivity.java";
     //public MediaPlayer mediaPlayer;
     SessionManager session;
+
+    //Start Music method
+    public static void startMusic(Context context, boolean musicStatus) {
+        if (musicStatus) {
+            mp = MediaPlayer.create(context, R.raw.play_background_music);
+            mp.setLooping(true);
+            mp.start();
+        }
+    }
+
+    //Stop Music method
+    public static void stopMusic(Context context) {
+        if (mp != null) {
+            if (mp.isPlaying()) {
+                mp.stop();
+            }
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -30,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         session = new SessionManager(this);
         session.checkLogin();
+
+        //play music unless its off in settings
+        MainActivity.startMusic(this, session.getMusicStatus());
 
         // get user data from session
         HashMap<String, String> user = session.getUserDetails();
@@ -67,6 +91,18 @@ public class MainActivity extends AppCompatActivity {
     public void instructionsOnClick(View view) {
         Intent intent = new Intent(this, InstructionsActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mp != null) {
+            if (mp.isPlaying()) {
+                mp.stop();
+            }
+        }
+        finish();
+
     }
 
     public void signout(MenuItem item) {
