@@ -81,7 +81,7 @@ public class RegistrationActivity extends AppCompatActivity {
             if (db.addRegisterClass(rc)) {
                 Toast.makeText(getApplicationContext(), "user already exists", Toast.LENGTH_LONG).show();
             } else {
-                session.createLoginSession(rc.getUser_name(), rc.getUser_nickname(), rc.getUser_email());
+                session.createLoginSession(rc.getUser_name(), rc.getUser_nickname(), rc.getUser_email(), rc.getUser_age());
                 //REDIRECTING TO OTHER ACTIVITY HERE=============================
                 Intent i = new Intent(this, MainActivity.class);
 
@@ -112,14 +112,14 @@ public class RegistrationActivity extends AppCompatActivity {
 
     //validate name
     private boolean isValidName(String name) {
-        String namepattern = "[A-Za-z]+";
+        String namepattern = "[A-Za-z_ ]+";
         Pattern pattern = Pattern.compile(namepattern);
         Matcher matcher = pattern.matcher(name);
         return matcher.matches();
     }
 
     private boolean isValidNickname(String name) {
-        String namepattern = "[A-Za-z0-9]+";
+        String namepattern = "[A-Za-z0-9_]+";
         Pattern pattern = Pattern.compile(namepattern);
         Matcher matcher = pattern.matcher(name);
         return matcher.matches();
