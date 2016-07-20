@@ -17,8 +17,10 @@ public class ProfileActivity extends AppCompatActivity {
         TextView name = (TextView) findViewById(R.id.nameText);
         TextView nickname = (TextView) findViewById(R.id.usernameText);
         TextView email = (TextView) findViewById(R.id.emailText);
+        TextView age = (TextView) findViewById(R.id.ageText);
         name.setText(userInfo.get(SessionManager.KEY_NAME));
         nickname.setText(userInfo.get(SessionManager.KEY_NICKNAME));
         email.setText(userInfo.get(SessionManager.KEY_EMAIL));
+        age.setText(userInfo.get(SessionManager.KEY_AGE));
     }
 }

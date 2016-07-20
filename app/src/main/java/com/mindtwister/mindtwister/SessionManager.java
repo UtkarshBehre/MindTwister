@@ -18,6 +18,8 @@ public class SessionManager {
     public static final String KEY_NICKNAME = "nickname";
     // Email address (make variable public to access from outside)
     public static final String KEY_EMAIL = "email";
+    // User age
+    public static final String KEY_AGE = "age";
     // Shared preference file name
     private static final String PREF_NAME = "AndroidHivePref";
     // All Shared Preferences Keys
@@ -45,7 +47,7 @@ public class SessionManager {
     /**
      * Create login session
      */
-    public void createLoginSession(String name, String nickname, String email) {
+    public void createLoginSession(String name, String nickname, String email, int age) {
         // Storing login value as TRUE
         editor.putBoolean(IS_LOGIN, true);
 
@@ -58,6 +60,9 @@ public class SessionManager {
         // Storing email in pref
         editor.putString(KEY_EMAIL, email);
 
+        // storing age in pref
+        String ageString = String.valueOf(age);
+        editor.putString(KEY_AGE, ageString);
         // setting music on
         editor.putBoolean(KEY_MUSIC, true);
 
@@ -124,6 +129,8 @@ public class SessionManager {
 
         // user email id
         user.put(KEY_EMAIL, pref.getString(KEY_EMAIL, null));
+
+        user.put(KEY_AGE, pref.getString(KEY_AGE, null));
         // return user
         return user;
     }

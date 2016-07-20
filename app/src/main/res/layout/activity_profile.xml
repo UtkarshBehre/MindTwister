@@ -8,19 +8,20 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp">
 
         <TextView
             android:id="@+id/nameProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="67dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="89dp"
             android:text="@string/profile_name"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#3e2723"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:textStyle="normal|bold" />
 
         <TextView
@@ -34,7 +35,7 @@
             android:text=""
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#3e2723"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:textStyle="normal|bold" />
 
         <TextView
@@ -43,10 +44,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/nameProfile"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
             android:text="@string/profile_username"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#3e2723"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:textStyle="normal|bold" />
 
         <TextView
@@ -55,11 +57,12 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/nameText"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
             android:layout_toEndOf="@id/usernameProfile"
             android:text=""
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#3e2723"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:textStyle="normal|bold" />
 
         <TextView
@@ -68,11 +71,12 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/usernameProfile"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
             android:layout_toStartOf="@id/usernameText"
             android:text="@string/profile_email"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#3e2723"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:textStyle="normal|bold" />
 
         <TextView
@@ -81,11 +85,41 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/usernameText"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
             android:layout_toEndOf="@id/emailProfile"
             android:text=""
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#3e2723"
-            android:textSize="30sp"
+            android:textSize="20sp"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/ageProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/emailProfile"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_toStartOf="@id/emailText"
+            android:text="@string/profile_age"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#3e2723"
+            android:textSize="20sp"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/ageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/ageProfile"
+            android:layout_below="@+id/emailText"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@id/emailProfile"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#3e2723"
+            android:textSize="20sp"
             android:textStyle="normal|bold" />
     </RelativeLayout>
 

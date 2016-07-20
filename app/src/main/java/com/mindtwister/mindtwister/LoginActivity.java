@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                 String pass = rc.getUser_password();
                 if ((name != null) || (pass != null)) {
                     if (rc.getUser_email() != null)
-                        session.createLoginSession(rc.getUser_name(), rc.getUser_nickname(), rc.getUser_email());
+                        session.createLoginSession(rc.getUser_name(), rc.getUser_nickname(), rc.getUser_email(), rc.getUser_age());
                     Intent intent = new Intent(this, MainActivity.class);
                     startActivity(intent);
                     finish();
@@ -72,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private boolean isValidNickname(String name) {
-        String namepattern = "[A-Za-z0-9]+";
+        String namepattern = "[A-Za-z0-9_]+";
         Pattern pattern = Pattern.compile(namepattern);
         Matcher matcher = pattern.matcher(name);
         return matcher.matches();
