@@ -69,7 +69,7 @@ public class DBHandler extends SQLiteOpenHelper {
         }
         String v = String.valueOf(returnedValue);
         Log.i(DATABASE_NAME, v);
-        if (v.equals("0"))
+        if (returnedValue > 0)
             return true;
         else
             return false;

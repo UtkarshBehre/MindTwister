@@ -124,7 +124,6 @@ public class SessionManager {
 
         // user email id
         user.put(KEY_EMAIL, pref.getString(KEY_EMAIL, null));
-
         // return user
         return user;
     }
