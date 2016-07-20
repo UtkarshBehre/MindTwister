@@ -58,7 +58,8 @@
         android:width="320dp"
         android:ems="10"
         android:hint="@string/age"
-        android:inputType="number" />
+        android:inputType="number"
+        android:maxLength="3" />
 
     <Button
         android:id="@+id/bRegister"

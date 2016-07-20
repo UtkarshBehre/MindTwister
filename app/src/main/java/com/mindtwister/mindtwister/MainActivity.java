@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         session = new SessionManager(this);
-        session.checkLogin();
+        session.checkLogin(this);
 
         //play music unless its off in settings
         MainActivity.startMusic(this, session.getMusicStatus());
@@ -101,11 +101,10 @@ public class MainActivity extends AppCompatActivity {
                 mp.stop();
             }
         }
-        finish();
-
     }
 
     public void signout(MenuItem item) {
+        finish();
         session.logoutUser();
     }
 }

@@ -18,7 +18,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         db = new DBHandler(this);
-
+        MainActivity.stopMusic(this);
         session = new SessionManager(this);
     }
 
@@ -40,14 +40,14 @@ public class LoginActivity extends AppCompatActivity {
 
         if (username.length() == 0 || password.length() == 0) {
 
-            Toast.makeText(getApplicationContext(), "Pease enter all fields", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Please enter all fields!", Toast.LENGTH_LONG).show();
 
 
-        } else if (!isValidname(username)) {
+        } else if (!isValidNickname(username)) {
 
-            etUsername.setError("Please enter only letters ");
+            etUsername.setError("no special characters are allowed!");
         } else if (!isValidPassword(password)) {
-            etPassword.setError("Password must be greater than 6");
+            etPassword.setError("Password must be greater than 6!");
         } else {
 
             //retrieve userinfo object from database
@@ -55,24 +55,24 @@ public class LoginActivity extends AppCompatActivity {
             if (rc == null) {
 
                 //invalid user toast
-                Toast.makeText(getApplicationContext(), "invalid user", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "invalid user!", Toast.LENGTH_LONG).show();
             } else {
 
                 String name = rc.getUser_nickname();
                 String pass = rc.getUser_password();
-                if ((name == null) || (pass == null)) {
-                } else {
+                if ((name != null) || (pass != null)) {
                     if (rc.getUser_email() != null)
                         session.createLoginSession(rc.getUser_name(), rc.getUser_nickname(), rc.getUser_email());
                     Intent intent = new Intent(this, MainActivity.class);
                     startActivity(intent);
+                    finish();
                 }
             }
         }
     }
 
-    private boolean isValidname(String name) {
-        String namepattern = "[A-Za-z]+";
+    private boolean isValidNickname(String name) {
+        String namepattern = "[A-Za-z0-9]+";
         Pattern pattern = Pattern.compile(namepattern);
         Matcher matcher = pattern.matcher(name);
         return matcher.matches();
@@ -83,5 +83,4 @@ public class LoginActivity extends AppCompatActivity {
             return true;
         return false;
     }
-
 }

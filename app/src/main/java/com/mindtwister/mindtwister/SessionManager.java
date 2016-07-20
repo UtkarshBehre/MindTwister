@@ -93,9 +93,10 @@ public class SessionManager {
      * If false it will redirect user to login page
      * Else won't do anything
      */
-    public void checkLogin() {
+    public void checkLogin(MainActivity mainActivity) {
         // Check login status
         if (!this.isLoggedIn()) {
+            mainActivity.finish();
             // user is not logged in redirect him to Login Activity
             Intent i = new Intent(_context, LoginActivity.class);
             // Closing all the Activities

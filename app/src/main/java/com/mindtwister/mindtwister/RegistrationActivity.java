@@ -45,29 +45,30 @@ public class RegistrationActivity extends AppCompatActivity {
         if (editText5.getText().toString().length() == 0) {
             age = 0;
         } else {
-
             age = Integer.parseInt(editText5.getText().toString());
         }
 
         if (name.length() == 0 || nickname.length() == 0 || password.length() == 0 || email.length() == 0 || age == 0) {
 
-            Toast.makeText(getApplicationContext(), "Pease enter all fields", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Please enter all fields!", Toast.LENGTH_LONG).show();
 
         } else if (!isValidName(name)) {
 
-            editText1.setError("Please enter only letters ");
-        } else if (!isValidName(nickname)) {
+            editText1.setError("Please enter only letters!");
+        } else if (!isValidNickname(nickname)) {
 
-            editText2.setError("Please enter only letters ");
+            editText2.setError("no special characters are allowed!");
         } else if (!isValidPassword(password)) {
 
-            editText3.setError("Password must be greater than 6");
+            editText3.setError("Password must be greater than 6!");
         } else if (!isValidEmail(email)) {
 
-            editText4.setError("enter in format(abc@gmail.com)");
+            editText4.setError("enter in format(abc@gmail.com)!");
         } else if (!isValidAge(age)) {
-
-            editText5.setError("Children below 5 years are not allowed to play games!");
+            if (age > 110)
+                editText5.setError("Age must be below 110");
+            else
+                editText5.setError("Children below 5 years are not allowed to play");
         } else {
 
             RegisterClass rc = new RegisterClass();
@@ -82,8 +83,16 @@ public class RegistrationActivity extends AppCompatActivity {
             } else {
                 session.createLoginSession(rc.getUser_name(), rc.getUser_nickname(), rc.getUser_email());
                 //REDIRECTING TO OTHER ACTIVITY HERE=============================
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
+                Intent i = new Intent(this, MainActivity.class);
+
+                // Closing all the Activities
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                // Add new Flag to start new Activity
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                this.startActivity(i);
+
                 finish();
             }
         }
@@ -104,6 +113,13 @@ public class RegistrationActivity extends AppCompatActivity {
     //validate name
     private boolean isValidName(String name) {
         String namepattern = "[A-Za-z]+";
+        Pattern pattern = Pattern.compile(namepattern);
+        Matcher matcher = pattern.matcher(name);
+        return matcher.matches();
+    }
+
+    private boolean isValidNickname(String name) {
+        String namepattern = "[A-Za-z0-9]+";
         Pattern pattern = Pattern.compile(namepattern);
         Matcher matcher = pattern.matcher(name);
         return matcher.matches();
