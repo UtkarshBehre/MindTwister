@@ -19,14 +19,19 @@ import com.mindtwister.mindtwister.managers.SessionManager;
 public class SettingsActivity extends AppCompatActivity {
     SessionManager session;
     Switch musicSwitch;
+    Switch soundFxSwitch;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         session = new SessionManager(this);
         musicSwitch = (Switch) findViewById(R.id.musicSwitch);
+        soundFxSwitch = (Switch) findViewById(R.id.soundSwitch);
         if (session.getMusicStatus())
             musicSwitch.setChecked(true);
+        if (session.getSoundFxStatus())
+            soundFxSwitch.setChecked(true);
     }
 
     public void profileOnClick(View view) {
@@ -58,5 +63,12 @@ public class SettingsActivity extends AppCompatActivity {
             session.setMusicStatus(false);
             MainActivity.stopMusic(this);
         }
+    }
+
+    public void soundFxSwitchButton(View view) {
+        if (soundFxSwitch.isChecked())
+            session.setSoundStatus(true);
+        else
+            session.setSoundStatus(false);
     }
 }

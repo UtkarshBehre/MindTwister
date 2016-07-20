@@ -17,25 +17,34 @@ public class SessionManager {
 
     // User name (make variable public to access from outside)
     public static final String KEY_NAME = "name";
+
     //User nickname
     public static final String KEY_NICKNAME = "nickname";
+
     // Email address (make variable public to access from outside)
     public static final String KEY_EMAIL = "email";
+
     // User age
     public static final String KEY_AGE = "age";
+
     // Shared preference file name
     private static final String PREF_NAME = "AndroidHivePref";
+
     // All Shared Preferences Keys
     private static final String IS_LOGIN = "IsLoggedIn";
+
     // Music on or off setting
     private static final String KEY_MUSIC = "music";
+
     // Sound fx on or off settings
     private static final String KEY_SOUNDFX = "soundFx";
 
-    //shared preferences
+    //shared preferences declare
     SharedPreferences pref;
+
     //editor for shared preferences
     Editor editor;
+
     //oontext
     Context _context;
     int PRIVATE_MODE = 0;
