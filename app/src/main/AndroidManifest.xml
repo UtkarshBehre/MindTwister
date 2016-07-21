@@ -98,6 +98,7 @@
         <activity
             android:name=".memorymatrix.MemoryMatrix66Activity"
             android:label="@string/memory_matrix" />
+        <activity android:name=".Memorymatrix_DIfficultylevelActivity"></activity>
     </application>
 
 </manifest>
