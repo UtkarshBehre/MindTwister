@@ -39,6 +39,12 @@ public class SessionManager {
     // Sound fx on or off settings
     private static final String KEY_SOUNDFX = "soundFx";
 
+    // difficulty level
+    private static final String DIFFICULTY_LEVEL = "difficultyLevel";
+
+    // score to store
+    private static final String SCORE = "score";
+
     //shared preferences declare
     SharedPreferences pref;
 
@@ -85,6 +91,7 @@ public class SessionManager {
         editor.commit();
     }
 
+
     //method to set sound fx
     public void setSoundStatus(boolean b) {
         editor.putBoolean(KEY_SOUNDFX, b);
@@ -98,6 +105,23 @@ public class SessionManager {
     //method to set music status
     public void setMusicStatus(boolean b) {
         editor.putBoolean(KEY_MUSIC, b);
+        editor.commit();
+    }
+
+    public int getScore() {
+        return pref.getInt(SCORE, 0);
+    }
+
+    public void setScore(int userCurrentScore) {
+        editor.putInt(SCORE, userCurrentScore);
+    }
+
+    public String getDifficultyLevel() {
+        return pref.getString(DIFFICULTY_LEVEL, "easy");
+    }
+
+    public void setDifficultyLevel(String s) {
+        editor.putString(DIFFICULTY_LEVEL, s);
         editor.commit();
     }
 
