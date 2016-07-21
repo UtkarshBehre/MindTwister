@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/credits_backgrounds"
-    tools:context="com.mindtwister.mindtwister.Memorymatrix_DIfficultylevelActivity">
+    tools:context=".memorymatrix.Memorymatrix_DIfficultylevelActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,6 +14,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="mmEasyOnClick"
             android:orientation="vertical"
             android:paddingBottom="42dp"
             android:paddingTop="42dp">
