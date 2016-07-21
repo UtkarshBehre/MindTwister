@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
 
     android:background="@mipmap/memory_matrix_background320x320"
-    tools:context="com.mindtwister.mindtwister.Memorymatrix_instructionActivity">
+    tools:context=".memorymatrix.Memorymatrix_instructionActivity">
 
 
     <LinearLayout

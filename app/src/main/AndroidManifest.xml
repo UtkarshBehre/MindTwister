@@ -3,13 +3,13 @@
     package="com.mindtwister.mindtwister">
 
     <application
-        android:name=".App"
+        android:name=".generallayouts.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SplashActivity"
+            android:name=".loginregister.SplashActivity"
             android:label="@string/app_name"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -19,16 +19,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".loginregister.LoginActivity"
             android:label="@string/login_activity" />
         <activity
-            android:name=".RegistrationActivity"
+            android:name=".generallayouts.RegistrationActivity"
             android:label="@string/registration_activity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" />
         <activity
-            android:name=".AboutActivity"
+            android:name=".generallayouts.AboutActivity"
             android:label="@string/about_activity" />
         <activity
             android:name=".SettingsActivity"
@@ -40,28 +40,28 @@
             android:name=".PlayMenuActivity"
             android:label="@string/main_menu" />
         <activity
-            android:name=".RainbowMatrixActivity"
+            android:name=".rainbowmatrix.RainbowMatrixActivity"
             android:label="Rainbow Matrix" />
         <activity
-            android:name=".PrivacyPolicyActivity"
+            android:name=".generallayouts.PrivacyPolicyActivity"
             android:label="@string/privacy_policy" />
         <activity
-            android:name=".FeedbackActivity"
+            android:name=".generallayouts.FeedbackActivity"
             android:label="@string/feedback" />
         <activity
-            android:name=".CreditsActivity"
+            android:name=".generallayouts.CreditsActivity"
             android:label="@string/credits_text" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".generallayouts.ProfileActivity"
             android:label="@string/profile" />
         <activity
-            android:name=".Memorymatrix_instructionActivity"
+            android:name=".memorymatrix.Memorymatrix_instructionActivity"
             android:label="@string/memory_matrix" />
         <activity
-            android:name=".Rainbowmatrix_instruction_Activity"
+            android:name=".rainbowmatrix.Rainbowmatrix_instruction_Activity"
             android:label="@string/rainbow_matrix" />
         <activity
-            android:name=".Sudoku_instructionActivity"
+            android:name=".sudoku.Sudoku_instructionActivity"
             android:label="@string/sudoku" />
         <!-- default code -->
         <!-- android:allowBackup="true" -->
@@ -78,25 +78,25 @@
         <!-- </intent-filter> -->
         <!-- </activity> -->
         <activity
-            android:name=".MemoryMatrix33Activity"
+            android:name=".memorymatrix.MemoryMatrix33Activity"
             android:label="@string/memory_matrix" />
         <activity
-            android:name=".MemoryMatrix34Activity"
+            android:name=".memorymatrix.MemoryMatrix34Activity"
             android:label="@string/memory_matrix" />
         <activity
-            android:name=".MemoryMatrix44Activity"
+            android:name=".memorymatrix.MemoryMatrix44Activity"
             android:label="@string/memory_matrix" />
         <activity
-            android:name=".MemoryMatrix45Activity"
+            android:name=".memorymatrix.MemoryMatrix45Activity"
             android:label="@string/memory_matrix" />
         <activity
-            android:name=".MemoryMatrix55Activity"
+            android:name=".memorymatrix.MemoryMatrix55Activity"
             android:label="@string/memory_matrix" />
         <activity
-            android:name=".MemoryMatrix56Activity"
+            android:name=".memorymatrix.MemoryMatrix56Activity"
             android:label="@string/memory_matrix" />
         <activity
-            android:name=".MemoryMatrix66Activity"
+            android:name=".memorymatrix.MemoryMatrix66Activity"
             android:label="@string/memory_matrix" />
     </application>
 
