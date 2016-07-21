@@ -95,184 +95,219 @@
         <Button
             android:id="@+id/tiles_11_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b1OnClick" />
 
         <Button
             android:id="@+id/tiles_12_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b2OnClick" />
 
         <Button
             android:id="@+id/tiles_13_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b3OnClick" />
 
         <Button
             android:id="@+id/tiles_14_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b4OnClick" />
 
         <Button
             android:id="@+id/tiles_15_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b5OnClick" />
 
         <Button
             android:id="@+id/tiles_16_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b6OnClick" />
 
         <Button
             android:id="@+id/tiles_21_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b7OnClick" />
 
         <Button
             android:id="@+id/tiles_22_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b8OnClick" />
 
         <Button
             android:id="@+id/tiles_23_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b9OnClick" />
 
         <Button
             android:id="@+id/tiles_24_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b10OnClick" />
 
         <Button
             android:id="@+id/tiles_25_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b11OnClick" />
 
         <Button
             android:id="@+id/tiles_26_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b12OnClick" />
 
         <Button
             android:id="@+id/tiles_31_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b13OnClick" />
 
         <Button
             android:id="@+id/tiles_32_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b14OnClick" />
 
         <Button
             android:id="@+id/tiles_33_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b15OnClick" />
 
         <Button
             android:id="@+id/tiles_34_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b16OnClick" />
 
         <Button
             android:id="@+id/tiles_35_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b17OnClick" />
 
         <Button
             android:id="@+id/tiles_36_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b18OnClick" />
 
         <Button
             android:id="@+id/tiles_41_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b19OnClick" />
 
         <Button
             android:id="@+id/tiles_42_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b20OnClick" />
 
         <Button
             android:id="@+id/tiles_43_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b21OnClick" />
 
         <Button
             android:id="@+id/tiles_44_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
-
+            android:layout_margin="7dp"
+            android:onClick="b22OnClick" />
 
         <Button
             android:id="@+id/tiles_45_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b23OnClick" />
 
         <Button
             android:id="@+id/tiles_46_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b24nClick" />
 
 
         <Button
             android:id="@+id/tiles_51_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b25OnClick" />
 
         <Button
             android:id="@+id/tiles_52_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b26OnClick" />
 
         <Button
             android:id="@+id/tiles_53_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b27OnClick" />
 
         <Button
             android:id="@+id/tiles_54_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b28OnClick" />
 
         <Button
             android:id="@+id/tiles_55_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b29OnClick" />
 
         <Button
             android:id="@+id/tiles_56_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b30OnClick" />
 
         <Button
             android:id="@+id/tiles_61_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b31OnClick" />
 
         <Button
             android:id="@+id/tiles_62_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b32OnClick" />
 
         <Button
             android:id="@+id/tiles_63_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b33OnClick" />
 
         <Button
             android:id="@+id/tiles_64_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b34OnClick" />
 
         <Button
             android:id="@+id/tiles_65_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b35OnClick" />
 
         <Button
             android:id="@+id/tiles_66_btn"
             style="@style/TileTheme66"
-            android:layout_margin="7dp" />
+            android:layout_margin="7dp"
+            android:onClick="b36OnClick" />
 
 
     </GridLayout>

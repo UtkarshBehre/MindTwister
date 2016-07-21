@@ -95,15 +95,14 @@ public class MemoryMatrix34Activity extends AppCompatActivity {
     //call this method on a button click to check if tile is correct or not
     public void checkTileCorrect(int TileNumberClicked, Button tile) {
 
-        Log.i("Current button " + (TileNumberClicked - 1), String.valueOf(gridSet.get(TileNumberClicked - 1)));
+        Log.i("Current button " + (TileNumberClicked), String.valueOf(gridSet.get(TileNumberClicked)));
 
         //if tile selected is correct
-        // TileNumberClicked - 1 is there because gridSet index starts from 0 so ends at 8 for 9 tiles
-        if (gridSet.get(TileNumberClicked - 1)) {
+        if (gridSet.get(TileNumberClicked)) {
             //CHANGE correct color tile click background here ========================
             //CHANGE COLOR OF TILE WHEN CLICKED
             tile.setBackgroundResource(R.color.appAccent400);
-            checkerGridSet.put(TileNumberClicked - 1, true);
+            checkerGridSet.put(TileNumberClicked, true);
 
             //this method compares the current state of tiles with the initial flashed state
             checkAllTilesCorrectOrNot();

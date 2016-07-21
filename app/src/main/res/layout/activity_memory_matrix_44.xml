@@ -97,7 +97,8 @@
             style="@style/TileTheme44"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b1OnClick" />
 
 
         <Button
@@ -105,7 +106,8 @@
             style="@style/TileTheme44"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b2OnClick" />
 
 
         <Button
@@ -113,14 +115,16 @@
             style="@style/TileTheme44"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b3OnClick" />
 
         <Button
             android:id="@+id/tiles_14_btn"
             style="@style/TileTheme44"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b4OnClick" />
 
 
         <Button
@@ -128,7 +132,8 @@
             style="@style/TileTheme44"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b5OnClick" />
 
 
         <Button
@@ -136,7 +141,8 @@
             style="@style/TileTheme44"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b6OnClick" />
 
 
         <Button
@@ -144,7 +150,8 @@
             style="@style/TileTheme44"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b7OnClick" />
 
 
         <Button
@@ -152,7 +159,8 @@
             style="@style/TileTheme44"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b8OnClick" />
 
 
         <Button
@@ -160,7 +168,8 @@
             style="@style/TileTheme44"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b9OnClick" />
 
 
         <Button
@@ -168,7 +177,8 @@
             style="@style/TileTheme44"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b10OnClick" />
 
 
         <Button
@@ -176,7 +186,8 @@
             style="@style/TileTheme44"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b11OnClick" />
 
 
         <Button
@@ -184,7 +195,8 @@
             style="@style/TileTheme44"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b12OnClick" />
 
 
         <Button
@@ -192,7 +204,8 @@
             style="@style/TileTheme44"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b13OnClick" />
 
 
         <Button
@@ -200,7 +213,8 @@
             style="@style/TileTheme44"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b14OnClick" />
 
 
         <Button
@@ -208,7 +222,8 @@
             style="@style/TileTheme44"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b15OnClick" />
 
 
         <Button
@@ -216,7 +231,8 @@
             style="@style/TileTheme44"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b16OnClick" />
 
     </GridLayout>
 </RelativeLayout>
