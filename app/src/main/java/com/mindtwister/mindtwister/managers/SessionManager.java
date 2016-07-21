@@ -29,6 +29,10 @@ public class SessionManager {
     public static final String EASY = "easy";
     public static final String MEDIUM = "medium";
     public static final String HARD = "hard";
+
+    // trials left
+    public static final String TRIALSLEFT = "trialsLeft";
+
     // Shared preference file name
     private static final String PREF_NAME = "AndroidHivePref";
     // All Shared Preferences Keys
@@ -84,6 +88,9 @@ public class SessionManager {
         // setting sound fx on
         editor.putBoolean(KEY_SOUNDFX, true);
 
+        //setting default value -1 to use for checking status
+        editor.putInt(TRIALSLEFT, -1);
+
         // commit changes
         editor.commit();
     }
@@ -111,6 +118,15 @@ public class SessionManager {
 
     public void setScore(int userCurrentScore) {
         editor.putInt(SCORE, userCurrentScore);
+    }
+
+    public int getTrialsLeft() {
+        return pref.getInt(TRIALSLEFT, 15);
+    }
+
+    public void setTrialsLeft(int noOfTrials) {
+        editor.putInt(TRIALSLEFT, noOfTrials);
+        editor.commit();
     }
 
     public String getDifficultyLevel() {

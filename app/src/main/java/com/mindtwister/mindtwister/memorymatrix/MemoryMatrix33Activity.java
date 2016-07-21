@@ -7,8 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.mindtwister.mindtwister.R;
+import com.mindtwister.mindtwister.managers.SessionManager;
 import com.mindtwister.mindtwister.memorymatrix.utility.UtilityMethodsForMemoryMatrix;
 
 import java.util.ArrayList;
@@ -21,13 +23,25 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
     public HashMap<Integer, Boolean> gridSet;
     public HashMap<Integer, Boolean> checkerGridSet;
     public ArrayList<Button> buttonsList;
+    SessionManager session;
     private long startTime;
     private long finishTime;
+    private int trialsLeft;
+    private int score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory_matrix_33);
+        session = new SessionManager(this);
+
+        //set trials left 15 and score 0 if its a new game i.e. trials = -1 which is value when no game is going on
+        if (session.getTrialsLeft() == -1) {
+            trialsLeft = 15;
+            session.setTrialsLeft(trialsLeft);
+            session.setScore(0);
+        }
+
 
         //making object of our utility class to use its methods
         UtilityMethodsForMemoryMatrix utilityMethodsForMemoryMatrix = new UtilityMethodsForMemoryMatrix();
@@ -71,8 +85,11 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
 
     //call this method on a button click to check if tile is correct or not
     public void checkTileCorrect(int TileNumberClicked, Button tile) {
+
         Log.i("Current button " + (TileNumberClicked - 1), String.valueOf(gridSet.get(TileNumberClicked - 1)));
+
         //if tile selected is correct
+        // TileNumberClicked - 1 is there because gridSet index starts from 0 so ends at 8 for 9 tiles
         if (gridSet.get(TileNumberClicked - 1)) {
             //CHANGE correct color tile click background here ========================
             //CHANGE COLOR OF TILE WHEN CLICKED
@@ -90,6 +107,22 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
             to do
             IMPLEMENT POPUP WINDOW TO TELL USER WRONG TILE SELECTED
              */
+
+            //reducing trials left by 1
+            trialsLeft--;
+
+            if (trialsLeft == 0) {
+
+                /*
+                to do
+                store score in database
+                SEND USER TO GAMEOVER SCREEN HERE
+
+                 */
+
+            }
+
+            //sending user to previous level since this is first activity so we re-instantiate itself
             Intent previousLevel = new Intent(this, MemoryMatrix33Activity.class);
             startActivity(previousLevel);
             finish();
@@ -107,6 +140,11 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
             Log.i(USERTIME, "Finish time: " + finishTime);
             long timeTaken = finishTime - startTime;
             Log.i(USERTIME, "Total time taken: " + timeTaken);
+
+            //adding up user's score
+            score += 1000000 / timeTaken;
+            Log.i(USERTIME, "Score at 3x3: " + score);
+
             //sending user to next level
             Intent nextLevel = new Intent(this, MemoryMatrix34Activity.class);
             startActivity(nextLevel);
@@ -174,6 +212,7 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
     public class Counter extends CountDownTimer {
         HashMap<Integer, Boolean> gridSet;
         ArrayList<Button> buttonsList;
+        TextView helperText;
 
         /**
          * @param millisInFuture    The number of millis in the future from the call
@@ -188,7 +227,17 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
             this.gridSet = gs;
             this.buttonsList = new ArrayList<>();
             this.buttonsList = bl;
+            helperText = (TextView) findViewById(R.id.helperText);
+            helperText.setText("Remember the tiles positions with the color green!");
             //this loop loops for all the buttons in the grid
+            /*
+
+                USE A TEXT VIEW to say
+                Please remember the pattern and repeat and it goes away
+
+
+             */
+
             for (int i = 0; i < buttonsList.size(); i++) {
                 Button tile = buttonsList.get(i);
                 tile.setEnabled(false);
@@ -209,6 +258,16 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
         @Override
         public void onFinish() {
             //this loop loops for all the buttons in the grid
+
+
+            helperText.setText("Now please repeat the pattern you just saw!");
+            /*
+
+                use the same text view to say Now repeat the pattern you just saw
+
+
+             */
+
             for (int i = 0; i < buttonsList.size(); i++) {
                 Button tile = buttonsList.get(i);
                 tile.setEnabled(true);
