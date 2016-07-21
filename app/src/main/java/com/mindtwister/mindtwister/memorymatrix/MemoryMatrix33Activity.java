@@ -20,11 +20,13 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
 
     private final String USERTIME = "User Input Time";
     private final int TOTALTILES = 9;
+    private final int TILESTOFLASH = 3;
+    private final int CURRENTLEVEL = 1;
     public HashMap<Integer, Boolean> gridSet;
     public HashMap<Integer, Boolean> checkerGridSet;
-
     public ArrayList<Button> buttonsList;
     SessionManager session;
+    private long TIMETOFLASH;
     private long startTime;
     private long finishTime;
     private int trialsLeft;
@@ -34,6 +36,7 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory_matrix_33);
+
         session = new SessionManager(this);
 
         //set trials left 15 and score 0 if its a new game i.e. trials = -1 which is value when no game is going on
@@ -43,12 +46,13 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
             session.setScore(0);
         }
 
+        setTIMETOFLASH();
 
         //making object of our utility class to use its methods
         UtilityMethodsForMemoryMatrix utilityMethodsForMemoryMatrix = new UtilityMethodsForMemoryMatrix();
 
         //using RandomTilesSelector method in utility to get a random gridSet
-        gridSet = utilityMethodsForMemoryMatrix.RandomTilesSelector(TOTALTILES, 3);
+        gridSet = utilityMethodsForMemoryMatrix.RandomTilesSelector(TOTALTILES, TILESTOFLASH);
 
         //instantiate checkerGridSet to use it later for compare with the previously generated grid set
         checkerGridSet = utilityMethodsForMemoryMatrix.getGridSet(TOTALTILES);
@@ -77,7 +81,7 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
         buttonsList.add(8, b9);
 
         //flashing the tiles for time depending on difficulty
-        flashTheTiles(gridSet, buttonsList, 6000);
+        flashTheTiles(gridSet, buttonsList, TIMETOFLASH);
     }
 
     //this method is used to flash the tiles and is called in onCreate
@@ -89,15 +93,14 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
     //call this method on a button click to check if tile is correct or not
     public void checkTileCorrect(int TileNumberClicked, Button tile) {
 
-        Log.i("Current button " + (TileNumberClicked - 1), String.valueOf(gridSet.get(TileNumberClicked - 1)));
+        Log.i("Current button " + (TileNumberClicked), String.valueOf(gridSet.get(TileNumberClicked)));
 
         //if tile selected is correct
-        // TileNumberClicked - 1 is there because gridSet index starts from 0 so ends at 8 for 9 tiles
-        if (gridSet.get(TileNumberClicked - 1)) {
+        if (gridSet.get(TileNumberClicked)) {
             //CHANGE correct color tile click background here ========================
             //CHANGE COLOR OF TILE WHEN CLICKED
             tile.setBackgroundResource(R.color.appAccent400);
-            checkerGridSet.put(TileNumberClicked - 1, true);
+            checkerGridSet.put(TileNumberClicked, true);
 
             //this method compares the current state of tiles with the initial flashed state
             checkAllTilesCorrectOrNot();
@@ -113,7 +116,7 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
 
             //reducing trials left by 1
             trialsLeft--;
-
+            session.setTrialsLeft(trialsLeft);
             if (trialsLeft == 0) {
 
                 /*
@@ -124,6 +127,10 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
                  */
 
             }
+                /*
+                                CHANGEME
+                !!!!!!!!!!!!!!!!INTENT changes for every new activity!!!!!!!!!!!!!!
+                */
 
             //sending user to previous level since this is first activity so we re-instantiate itself
             Intent previousLevel = new Intent(this, MemoryMatrix33Activity.class);
@@ -145,13 +152,37 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
             Log.i(USERTIME, "Total time taken: " + timeTaken);
 
             //adding up user's score
-            score += 1000000 / timeTaken;
+            score += 1000000 * CURRENTLEVEL / timeTaken;
             Log.i(USERTIME, "Score at 3x3: " + score);
+
+            /*
+                                CHANGEME
+             !!!!!!!!!!!!!!!!INTENT changes for every new activity!!!!!!!!!!!!!!
+           */
 
             //sending user to next level
             Intent nextLevel = new Intent(this, MemoryMatrix34Activity.class);
             startActivity(nextLevel);
             finish();
+        }
+    }
+
+    //call this function to set time flash acc. to difficulty
+    private void setTIMETOFLASH() {
+        switch (session.getDifficultyLevel()) {
+            case SessionManager.EASY: {
+                TIMETOFLASH = 6000;
+                break;
+            }
+            case SessionManager.MEDIUM: {
+                TIMETOFLASH = 4000;
+                break;
+            }
+            case SessionManager.HARD:
+                TIMETOFLASH = 2000;
+                break;
+            default:
+                TIMETOFLASH = 4000;
         }
     }
 
@@ -167,48 +198,39 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
     }
 
     public void b1OnClick(View view) {
-        Button b = (Button) findViewById(R.id.tiles_11_btn);
-        checkTileCorrect(1, b);
+        checkTileCorrect(0, buttonsList.get(0));
     }
 
     public void b2OnClick(View view) {
-        Button b = (Button) findViewById(R.id.tiles_12_btn);
-        checkTileCorrect(2, b);
+        checkTileCorrect(1, buttonsList.get(1));
     }
 
     public void b3OnClick(View view) {
-        Button b = (Button) findViewById(R.id.tiles_13_btn);
-        checkTileCorrect(3, b);
+        checkTileCorrect(2, buttonsList.get(2));
     }
 
     public void b4OnClick(View view) {
-        Button b = (Button) findViewById(R.id.tiles_21_btn);
-        checkTileCorrect(4, b);
+        checkTileCorrect(3, buttonsList.get(3));
     }
 
     public void b5OnClick(View view) {
-        Button b = (Button) findViewById(R.id.tiles_22_btn);
-        checkTileCorrect(5, b);
+        checkTileCorrect(4, buttonsList.get(4));
     }
 
     public void b6OnClick(View view) {
-        Button b = (Button) findViewById(R.id.tiles_23_btn);
-        checkTileCorrect(6, b);
+        checkTileCorrect(5, buttonsList.get(5));
     }
 
     public void b7OnClick(View view) {
-        Button b = (Button) findViewById(R.id.tiles_31_btn);
-        checkTileCorrect(7, b);
+        checkTileCorrect(6, buttonsList.get(6));
     }
 
     public void b8OnClick(View view) {
-        Button b = (Button) findViewById(R.id.tiles_32_btn);
-        checkTileCorrect(8, b);
+        checkTileCorrect(7, buttonsList.get(7));
     }
 
     public void b9OnClick(View view) {
-        Button b = (Button) findViewById(R.id.tiles_33_btn);
-        checkTileCorrect(9, b);
+        checkTileCorrect(8, buttonsList.get(8));
     }
 
     //CounterDownTimer class to flash tiles

@@ -31,7 +31,7 @@ public class SessionManager {
     public static final String HARD = "hard";
 
     // trials left
-    public static final String TRIALSLEFT = "trialsLeft";
+    public static final String KEY_TRIALSLEFT = "trialsLeft";
 
     // Shared preference file name
     private static final String PREF_NAME = "AndroidHivePref";
@@ -42,7 +42,7 @@ public class SessionManager {
     // Sound fx on or off settings
     private static final String KEY_SOUNDFX = "soundFx";
     // difficulty level
-    private static final String DIFFICULTY_LEVEL = "difficultyLevel";
+    private static final String KEY_DIFFICULTY_LEVEL = "difficultyLevel";
     // score to store
     private static final String SCORE = "score";
 
@@ -89,7 +89,7 @@ public class SessionManager {
         editor.putBoolean(KEY_SOUNDFX, true);
 
         //setting default value -1 to use for checking status
-        editor.putInt(TRIALSLEFT, -1);
+        editor.putInt(KEY_TRIALSLEFT, -1);
 
         // commit changes
         editor.commit();
@@ -121,20 +121,20 @@ public class SessionManager {
     }
 
     public int getTrialsLeft() {
-        return pref.getInt(TRIALSLEFT, 15);
+        return pref.getInt(KEY_TRIALSLEFT, 15);
     }
 
     public void setTrialsLeft(int noOfTrials) {
-        editor.putInt(TRIALSLEFT, noOfTrials);
+        editor.putInt(KEY_TRIALSLEFT, noOfTrials);
         editor.commit();
     }
 
     public String getDifficultyLevel() {
-        return pref.getString(DIFFICULTY_LEVEL, "easy");
+        return pref.getString(KEY_DIFFICULTY_LEVEL, "");
     }
 
     public void setDifficultyLevel(String s) {
-        editor.putString(DIFFICULTY_LEVEL, s);
+        editor.putString(KEY_DIFFICULTY_LEVEL, s);
         editor.commit();
     }
 
