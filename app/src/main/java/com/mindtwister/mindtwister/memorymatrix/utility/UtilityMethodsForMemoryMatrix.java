@@ -16,7 +16,7 @@ public class UtilityMethodsForMemoryMatrix {
     ArrayList<Button> buttonsList;
 
     //this method gives a gridset with all integer numbers as key and value boolean initiation with false
-    private HashMap<Integer, Boolean> getGridSet(int numberOfTiles) {
+    public HashMap<Integer, Boolean> getGridSet(int numberOfTiles) {
         HashMap<Integer, Boolean> gridSet = new HashMap<Integer, Boolean>();
         for (int i = 0; i < numberOfTiles; i++) {
             gridSet.put(i, false);
