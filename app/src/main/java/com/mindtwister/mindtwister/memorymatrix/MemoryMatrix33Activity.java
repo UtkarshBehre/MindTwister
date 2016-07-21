@@ -22,6 +22,7 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
     private final int TOTALTILES = 9;
     public HashMap<Integer, Boolean> gridSet;
     public HashMap<Integer, Boolean> checkerGridSet;
+
     public ArrayList<Button> buttonsList;
     SessionManager session;
     private long startTime;
@@ -60,12 +61,14 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
         buttonsList.add(1, b2);
         Button b3 = (Button) findViewById(R.id.tiles_13_btn);
         buttonsList.add(2, b3);
+
         Button b4 = (Button) findViewById(R.id.tiles_21_btn);
         buttonsList.add(3, b4);
         Button b5 = (Button) findViewById(R.id.tiles_22_btn);
         buttonsList.add(4, b5);
         Button b6 = (Button) findViewById(R.id.tiles_23_btn);
         buttonsList.add(5, b6);
+
         Button b7 = (Button) findViewById(R.id.tiles_31_btn);
         buttonsList.add(6, b7);
         Button b8 = (Button) findViewById(R.id.tiles_32_btn);
