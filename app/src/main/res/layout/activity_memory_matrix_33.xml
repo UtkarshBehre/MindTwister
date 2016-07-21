@@ -84,46 +84,55 @@
         <Button
             android:id="@+id/tiles_11_btn"
             style="@style/TileTheme33"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b1OnClick" />
 
         <Button
             android:id="@+id/tiles_12_btn"
             style="@style/TileTheme33"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b2OnClick" />
 
         <Button
             android:id="@+id/tiles_13_btn"
             style="@style/TileTheme33"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b3OnClick" />
 
         <Button
             android:id="@+id/tiles_21_btn"
             style="@style/TileTheme33"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b4OnClick" />
 
         <Button
             android:id="@+id/tiles_22_btn"
             style="@style/TileTheme33"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b5OnClick" />
 
         <Button
             android:id="@+id/tiles_23_btn"
             style="@style/TileTheme33"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b6OnClick" />
 
         <Button
             android:id="@+id/tiles_31_btn"
             style="@style/TileTheme33"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b7OnClick" />
 
         <Button
             android:id="@+id/tiles_32_btn"
             style="@style/TileTheme33"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b8OnClick" />
 
         <Button
             android:id="@+id/tiles_33_btn"
             style="@style/TileTheme33"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:onClick="b9OnClick" />
     </GridLayout>
 </RelativeLayout>
