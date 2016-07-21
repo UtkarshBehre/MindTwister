@@ -26,22 +26,19 @@ public class SessionManager {
 
     // User age
     public static final String KEY_AGE = "age";
-
+    public static final String EASY = "easy";
+    public static final String MEDIUM = "medium";
+    public static final String HARD = "hard";
     // Shared preference file name
     private static final String PREF_NAME = "AndroidHivePref";
-
     // All Shared Preferences Keys
     private static final String IS_LOGIN = "IsLoggedIn";
-
     // Music on or off setting
     private static final String KEY_MUSIC = "music";
-
     // Sound fx on or off settings
     private static final String KEY_SOUNDFX = "soundFx";
-
     // difficulty level
     private static final String DIFFICULTY_LEVEL = "difficultyLevel";
-
     // score to store
     private static final String SCORE = "score";
 

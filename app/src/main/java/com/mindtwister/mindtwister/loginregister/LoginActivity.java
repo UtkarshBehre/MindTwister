@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import com.mindtwister.mindtwister.MainActivity;
 import com.mindtwister.mindtwister.R;
-import com.mindtwister.mindtwister.generallayouts.RegistrationActivity;
 import com.mindtwister.mindtwister.managers.DBHandler;
 import com.mindtwister.mindtwister.managers.SessionManager;
 

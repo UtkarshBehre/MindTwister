@@ -22,7 +22,7 @@
             android:name=".loginregister.LoginActivity"
             android:label="@string/login_activity" />
         <activity
-            android:name=".generallayouts.RegistrationActivity"
+            android:name=".loginregister.RegistrationActivity"
             android:label="@string/registration_activity" />
         <activity
             android:name=".MainActivity"

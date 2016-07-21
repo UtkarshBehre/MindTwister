@@ -1,4 +1,4 @@
-package com.mindtwister.mindtwister.generallayouts;
+package com.mindtwister.mindtwister.loginregister;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import com.mindtwister.mindtwister.MainActivity;
 import com.mindtwister.mindtwister.R;
-import com.mindtwister.mindtwister.loginregister.RegisterClass;
 import com.mindtwister.mindtwister.managers.DBHandler;
 import com.mindtwister.mindtwister.managers.SessionManager;
 
@@ -84,8 +83,11 @@ public class RegistrationActivity extends AppCompatActivity {
             rc.setUser_email(email);
             rc.setUser_age(age);
 
-            if (db.addRegisterClass(rc)) {
-                Toast.makeText(getApplicationContext(), "user already exists", Toast.LENGTH_LONG).show();
+            String status = db.addRegisterClass(rc);
+            if (status.equals("0")) {
+                Toast.makeText(getApplicationContext(), "email already exists", Toast.LENGTH_LONG).show();
+            } else if (status.equals("notunique")) {
+                Toast.makeText(getApplicationContext(), "nickname already exists", Toast.LENGTH_LONG).show();
             } else {
                 session.createLoginSession(rc.getUser_name(), rc.getUser_nickname(), rc.getUser_email(), rc.getUser_age());
                 //REDIRECTING TO OTHER ACTIVITY HERE=============================
