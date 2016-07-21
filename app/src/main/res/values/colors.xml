@@ -25,4 +25,5 @@
     <color name="rainbow_blue">#03a9f4</color>
     <color name="rainbow_default">#212121</color>
     <color name="feebackButton">#FF40E9FF</color>
+    <color name="wrong_tile_selection_color">#ff3d00</color>
 </resources>
