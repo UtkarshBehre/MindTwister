@@ -12,25 +12,22 @@ import java.util.List;
  */
 public class UtilityMethodsForMemoryMatrix {
 
-    //call this method from game activity to flash the required number of tiles for the time given
-    public static void flashRandomTiles(int totalNumberOfTiles, int noOfTilesToFlash, ArrayList<Button> buttonsList, long TilesflashingTime) {
-        HashMap<Integer, Boolean> gridSet = RandomTilesSelector(totalNumberOfTiles, noOfTilesToFlash);
-        flashTheTiles(gridSet, buttonsList, TilesflashingTime);
-    }
+    HashMap<Integer, Boolean> gridSet;
+    ArrayList<Button> buttonsList;
 
     //this method gives a gridset with all integer numbers as key and value boolean initiation with false
-    public static HashMap<Integer, Boolean> getGridSet(int numberOfTiles) {
+    private HashMap<Integer, Boolean> getGridSet(int numberOfTiles) {
         HashMap<Integer, Boolean> gridSet = new HashMap<Integer, Boolean>();
-        for (int i = 1; i <= numberOfTiles; i++) {
+        for (int i = 0; i < numberOfTiles; i++) {
             gridSet.put(i, false);
         }
         return gridSet;
     }
 
     // this will return gridset with random values in key,value pairs of gridset as true
-    public static HashMap<Integer, Boolean> RandomTilesSelector(int totalNumberOfTiles, int noOfTilesToFlash) {
+    public HashMap<Integer, Boolean> RandomTilesSelector(int totalNumberOfTiles, int noOfTilesToFlash) {
         List<Integer> list = new ArrayList<>();
-        for (int i = 1; i <= totalNumberOfTiles; i++) {
+        for (int i = 0; i < totalNumberOfTiles; i++) {
             list.add(i);
         }
 
@@ -51,8 +48,5 @@ public class UtilityMethodsForMemoryMatrix {
         return gridSet;
     }
 
-    public static void flashTheTiles(HashMap<Integer, Boolean> gridSet, ArrayList<Button> buttonsList, long TilesFlashingTime) {
-
-    }
-
 }
+
