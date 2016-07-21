@@ -11,6 +11,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.mindtwister.mindtwister.generallayouts.AboutActivity;
+import com.mindtwister.mindtwister.managers.SessionManager;
+
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,16 +37,6 @@ public class MainActivity extends AppCompatActivity {
         if (mp != null) {
             if (mp.isPlaying()) {
                 mp.stop();
-            }
-        }
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if (mp != null) {
-            if (!mp.isPlaying()) {
-                mp.start();
             }
         }
     }

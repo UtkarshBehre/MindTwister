@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/memory_matrix_background"
-    tools:context=".MemoryMatrix56Activity">
+    tools:context=".memorymatrix.MemoryMatrix56Activity">
 
     <FrameLayout
         android:id="@+id/header"

@@ -6,6 +6,10 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.mindtwister.mindtwister.memorymatrix.Memorymatrix_instructionActivity;
+import com.mindtwister.mindtwister.rainbowmatrix.Rainbowmatrix_instruction_Activity;
+import com.mindtwister.mindtwister.sudoku.Sudoku_instructionActivity;
+
 /**
  * Created by Utkarsh on 07-07-2016.
  */
