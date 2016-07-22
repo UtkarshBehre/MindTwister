@@ -22,6 +22,7 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
     private final int TOTALTILES = 9;
     private final int TILESTOFLASH = 3;
     private final int CURRENTLEVEL = 1;
+
     public HashMap<Integer, Boolean> gridSet;
     public HashMap<Integer, Boolean> checkerGridSet;
     public ArrayList<Button> buttonsList;
@@ -31,6 +32,9 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
     private long finishTime;
     private int trialsLeft;
     private int score;
+
+//    TextView difficultyText;
+//    TextView trialsText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +51,10 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
         }
 
         setTIMETOFLASH();
+//        difficultyText = (TextView)findViewById(R.id.difficultyText);
+//        trialsText = (TextView)findViewById(R.id.trialsText);
+//        difficultyText.setText(session.getDifficultyLevel());
+//        trialsText.setText(session.getTrialsLeft());
 
         //making object of our utility class to use its methods
         UtilityMethodsForMemoryMatrix utilityMethodsForMemoryMatrix = new UtilityMethodsForMemoryMatrix();
@@ -121,9 +129,10 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
 
                 /*
                 to do
+                score multiplier based on difficulty 1, 1.5, 2
+                score multiplier based on trials left X trials left / total trials
                 store score in database
                 SEND USER TO GAMEOVER SCREEN HERE
-
                  */
 
             }

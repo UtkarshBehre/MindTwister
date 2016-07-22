@@ -100,15 +100,15 @@ public class MemoryMatrix55Activity extends AppCompatActivity {
         buttonsList.add(19, b20);
 
         Button b21 = (Button) findViewById(R.id.tiles_51_btn);
-        buttonsList.add(15, b21);
+        buttonsList.add(20, b21);
         Button b22 = (Button) findViewById(R.id.tiles_52_btn);
-        buttonsList.add(16, b22);
+        buttonsList.add(21, b22);
         Button b23 = (Button) findViewById(R.id.tiles_53_btn);
-        buttonsList.add(17, b23);
+        buttonsList.add(22, b23);
         Button b24 = (Button) findViewById(R.id.tiles_54_btn);
-        buttonsList.add(18, b24);
+        buttonsList.add(23, b24);
         Button b25 = (Button) findViewById(R.id.tiles_55_btn);
-        buttonsList.add(19, b25);
+        buttonsList.add(24, b25);
 
         //flashing the tiles for time depending on difficulty
         flashTheTiles(gridSet, buttonsList, TIMETOFLASH);

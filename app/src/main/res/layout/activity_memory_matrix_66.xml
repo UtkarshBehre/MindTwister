@@ -234,7 +234,7 @@
             android:id="@+id/tiles_46_btn"
             style="@style/TileTheme66"
             android:layout_margin="7dp"
-            android:onClick="b24nClick" />
+            android:onClick="b24OnClick" />
 
 
         <Button

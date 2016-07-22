@@ -245,7 +245,6 @@
             android:layout_margin="8dp"
             android:onClick="b25OnClick" />
 
-
     </GridLayout>
 
 </RelativeLayout>
