@@ -8,8 +8,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.mindtwister.mindtwister.loginregister.RegisterClass;
-
 /**
  * Created by jyothi on 7/18/2016.
  */
@@ -50,7 +48,7 @@ public class DBHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public String addRegisterClass(RegisterClass rc) {
+    public String addRegisterClass(UserInfo rc) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("user_name", rc.getUser_name()); // Register Name
@@ -86,12 +84,12 @@ public class DBHandler extends SQLiteOpenHelper {
 
     }
 
-    public RegisterClass selectuser(String username, String password) {
+    public UserInfo selectuser(String username, String password) {
         String selectQuery = "SELECT * FROM userinfo where user_nickname='" + username + "' and user_password='" + password + "'";
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 ////// looping through all rows and adding to list
-        RegisterClass rc = new RegisterClass();
+        UserInfo rc = new UserInfo();
         if (cursor.moveToFirst()) {
             rc.setUser_name(cursor.getString(0));
             rc.setUser_nickname(cursor.getString(1));

@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.mindtwister.mindtwister.MainActivity;
 import com.mindtwister.mindtwister.R;
 import com.mindtwister.mindtwister.managers.DBHandler;
+import com.mindtwister.mindtwister.managers.UserInfo;
 import com.mindtwister.mindtwister.managers.SessionManager;
 
 import java.util.regex.Matcher;
@@ -76,7 +77,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 editText5.setError("Children below 5 years are not allowed to play");
         } else {
 
-            RegisterClass rc = new RegisterClass();
+            UserInfo rc = new UserInfo();
             rc.setUser_name(name);
             rc.setUser_nickname(nickname);
             rc.setUser_password(password);

@@ -1,19 +1,19 @@
-package com.mindtwister.mindtwister.loginregister;
+package com.mindtwister.mindtwister.managers;
 
 /**
  * Created by jyothi on 7/16/2016.
  */
-public class RegisterClass {
+public class UserInfo {
     private String user_name;
     private String user_nickname;
     private String user_password;
     private String user_email;
     private int user_age;
 
-    public RegisterClass() {
+    public UserInfo() {
     }
 
-    public RegisterClass(String user_name, String user_nickname, String user_password, String user_email, int user_age) {
+    public UserInfo(String user_name, String user_nickname, String user_password, String user_email, int user_age) {
         this.user_name = user_name;
         this.user_nickname = user_nickname;
         this.user_password = user_password;

@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.mindtwister.mindtwister.MainActivity;
 import com.mindtwister.mindtwister.R;
 import com.mindtwister.mindtwister.managers.DBHandler;
+import com.mindtwister.mindtwister.managers.UserInfo;
 import com.mindtwister.mindtwister.managers.SessionManager;
 
 import java.util.regex.Matcher;
@@ -56,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
         } else {
 
             //retrieve userinfo object from database
-            RegisterClass rc = db.selectuser(username, password);
+            UserInfo rc = db.selectuser(username, password);
             if (rc == null) {
 
                 //invalid user toast
