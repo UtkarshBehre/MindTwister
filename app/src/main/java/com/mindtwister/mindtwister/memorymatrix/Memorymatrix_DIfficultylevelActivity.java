@@ -18,6 +18,7 @@ public class Memorymatrix_DIfficultylevelActivity extends AppCompatActivity {
     }
 
     public void mmEasyOnClick(View view) {
+
         session.setDifficultyLevel(SessionManager.EASY);
         Intent intent = new Intent(this, MemoryMatrix33Activity.class);
         startActivity(intent);
