@@ -22,15 +22,16 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
     private final int TOTALTILES = 9;
     private final int TILESTOFLASH = 3;
     private final int CURRENTLEVEL = 1;
-
     public HashMap<Integer, Boolean> gridSet;
     public HashMap<Integer, Boolean> checkerGridSet;
     public ArrayList<Button> buttonsList;
     SessionManager session;
+    private int TOTALTRIALS;
     private long TIMETOFLASH;
     private long startTime;
     private long finishTime;
     private int trialsLeft;
+    private int difficultyMultiplier;
     private int score;
 
 //    TextView difficultyText;
@@ -132,9 +133,12 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
             session.setTrialsLeft(trialsLeft);
             if (trialsLeft == 0) {
 
+                score *= difficultyMultiplier;
+                score = score * trialsLeft / TOTALTRIALS;
+                //DBHandler.addUserScore();
                 /*
                 to do
-                score multiplier based on difficulty 1, 1.5, 2
+                score multiplier based on difficulty 1, 2, 3
                 score multiplier based on trials left X trials left / total trials
                 store score in database
                 SEND USER TO GAMEOVER SCREEN HERE
@@ -205,18 +209,25 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
     private void setDifficultyParametersTrials() {
         switch (session.getDifficultyLevel()) {
             case SessionManager.EASY: {
+                TOTALTRIALS = 15;
                 trialsLeft=15;
+                difficultyMultiplier = 1;
                 break;
             }
             case SessionManager.MEDIUM: {
+                TOTALTRIALS = 13;
                 trialsLeft=13;
+                difficultyMultiplier = 2;
                 break;
             }
             case SessionManager.HARD:
+                TOTALTRIALS = 10;
                 trialsLeft=10;
+                difficultyMultiplier = 3;
                 break;
             default:
                 trialsLeft=13;
+                difficultyMultiplier = 2;
         }
     }
 

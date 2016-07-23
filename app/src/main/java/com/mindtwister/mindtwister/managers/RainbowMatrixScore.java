@@ -3,6 +3,14 @@ package com.mindtwister.mindtwister.managers;
 /**
  * Created by Utkarsh on 23-07-2016.
  */
+
+/*
+    Conditions to store user score in the database repective table
+    1. rows entry must not exceed 10
+    2. score must be entered according to greater value
+ */
+
+
 public class RainbowMatrixScore {
     private int score;
     private String user_nickname;
