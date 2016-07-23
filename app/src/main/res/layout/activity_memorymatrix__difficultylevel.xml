@@ -67,8 +67,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="mmHardOnClick"
             android:orientation="vertical"
-
             android:paddingBottom="42dp"
             android:paddingTop="42dp">
 
