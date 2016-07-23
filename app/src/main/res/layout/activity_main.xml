@@ -6,15 +6,23 @@
     android:background="@mipmap/credits_backgrounds"
     tools:context="com.mindtwister.mindtwister.MainActivity">
 
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/playButton"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="50dp"
         android:contentDescription="@string/app_name"
         android:src="@mipmap/mind_twister" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true">
 
     <Button
         android:id="@+id/playButton"
@@ -44,9 +52,18 @@
         android:text="@string/settings" />
 
     <Button
-        android:id="@+id/aboutButton"
+        android:id="@+id/scoreButton"
         style="@style/ButtonTheme"
         android:layout_below="@+id/settingsButton"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:onClick="settingsOnClick"
+        android:text="@string/high_score" />
+
+    <Button
+        android:id="@+id/aboutButton"
+        style="@style/ButtonTheme"
+        android:layout_below="@+id/scoreButton"
         android:layout_centerHorizontal="true"
         android:layout_margin="5dp"
         android:onClick="aboutOnClick"
@@ -62,5 +79,5 @@
         android:onClick="quitOnClick"
         android:text="@string/quit" />
 
-
+    </LinearLayout>
 </RelativeLayout>
