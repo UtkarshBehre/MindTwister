@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.mindtwister.mindtwister.GameOverActivity;
 import com.mindtwister.mindtwister.R;
 import com.mindtwister.mindtwister.managers.SessionManager;
 import com.mindtwister.mindtwister.memorymatrix.utility.UtilityMethodsForMemoryMatrix;
@@ -155,10 +156,15 @@ public class MemoryMatrix55Activity extends AppCompatActivity {
                 /*
                 to do
                 store score in database
-                SEND USER TO GAMEOVER SCREEN HERE
+                */
 
-                 */
-
+                //============GAMEOVER HERE============================
+                //sending score via intent to the gamevoer screen to be displayed
+                Intent gameOver = new Intent(this, GameOverActivity.class);
+                Log.i("USERINPUT", "final score: " + score);
+                gameOver.putExtra("score", score);
+                startActivity(gameOver);
+                finish();
             }
 
             /*

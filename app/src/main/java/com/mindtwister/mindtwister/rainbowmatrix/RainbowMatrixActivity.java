@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.mindtwister.mindtwister.GameOverActivity;
 import com.mindtwister.mindtwister.R;
@@ -23,9 +24,9 @@ import java.util.List;
  * Created by Utkarsh on 17-07-2016.
  */
 public class RainbowMatrixActivity extends AppCompatActivity {
-
     public Button displayTile;
     public Button b1, b2, b3, b4;
+    TextView trialsText;
     /*
         COLOR CODES USED
 
@@ -43,6 +44,7 @@ public class RainbowMatrixActivity extends AppCompatActivity {
     private int userListCounter;
     private int trials;
     private int noOfColorsUsed;
+    private int difficultyMultiplier;
     private long totalTime;
     private long startTime;
     private long finishTime;
@@ -56,9 +58,9 @@ public class RainbowMatrixActivity extends AppCompatActivity {
         setContentView(R.layout.activity_rainbow_matrix_normal);
         session = new SessionManager(this);
         userListCounter = 0;
-
         displayTile = (Button) findViewById(R.id.displayTile);
         displayTile.setEnabled(false);
+
 
         b1 = (Button) findViewById(R.id.tiles_12_btn);
         b2 = (Button) findViewById(R.id.tiles_21_btn);
@@ -67,8 +69,8 @@ public class RainbowMatrixActivity extends AppCompatActivity {
 
         setDifficultyParameters();
 
-        colorSequence = new ArrayList<Integer>();
-
+        trialsText = (TextView) findViewById(R.id.trials_text);
+        trialsText.setText(String.valueOf(trials));
         totalTime = 0;//initiating both to zero when the application is started
         score = 0;
 
@@ -86,24 +88,33 @@ public class RainbowMatrixActivity extends AppCompatActivity {
 
         if (colorSequence.get(userListCounter) == i) {
 
+            Log.i("INSIDE IF", "Trials value " + trials);
             //consider userListCounter as a global looper for listAdapter
             userListCounter++;
+            trialsText.setText(String.valueOf(trials));
         } else {
-
+            Log.i("INSIDE ELSE", "SHOULDNT BE HERE AT ALL : Trials value " + trials);
             //total trials left must be reduced if user does it wrong and patter should repeat itself when he does
             trials--;
-            String trial = String.valueOf(trials);
+
             //tv.setText(trial);
+            trialsText.setText(String.valueOf(trials));
 
             if (trials > 0) {
                 flashListColors();
             } else {
+                trials = 0;
+                trialsText = (TextView) findViewById(R.id.trials_text);
                 //calculating final score
                 finishTime = System.currentTimeMillis();
                 timeTaken = finishTime - startTime;
                 totalTime += timeTaken;
                 Log.i("USERINPUTTIME", "time taken per sequence" + timeTaken);
-                score += (colorSequence.size() * 100000) / timeTaken;
+
+                Log.i("SCORECHECK", "Score before game over before final calculation : " + score);
+
+                score *= difficultyMultiplier;
+                Log.i("SCORECHECK", "Score before game over : " + score);
 
                 //saving user data in the pojo class to save his/her score in database
 
@@ -146,7 +157,7 @@ public class RainbowMatrixActivity extends AppCompatActivity {
             totalTime += timeTaken;
             Log.i("USERINPUTTIME", "time taken per sequence" + timeTaken);
             score += (colorSequence.size() * 100000) / timeTaken;
-
+            Log.i("SCORECHECK", "Score after completion of one round : " + score);
             //adding to the new color to the list of colors in the current sequence list
             colorSequence.add(getRandomColor(noOfColorsUsed));
             flashListColors();
@@ -179,18 +190,26 @@ public class RainbowMatrixActivity extends AppCompatActivity {
             case SessionManager.EASY:
                 noOfColorsUsed = 4;
                 colorFlashTime = 2000;
+                trials = 5;
+                difficultyMultiplier = 1;
                 break;
             case SessionManager.MEDIUM:
                 noOfColorsUsed = 4;
+                trials = 3;
                 colorFlashTime = 1500;
+                difficultyMultiplier = 2;
                 break;
             case SessionManager.HARD:
                 noOfColorsUsed = 4;
+                trials = 1;
                 colorFlashTime = 1000;
+                difficultyMultiplier = 3;
                 break;
             default:
+                //this should never run
                 noOfColorsUsed = 4;
                 colorFlashTime = 1500;
+                difficultyMultiplier = 2;
                 break;
         }
     }
@@ -289,15 +308,15 @@ public class RainbowMatrixActivity extends AppCompatActivity {
                     displayTile.setBackgroundResource(R.color.rainbow_blue);
                     k++;
                     break;
+
                 //4 stands for yellow
                 case 4:
 
+                    Log.i("USERINPUT", "inside yellow color  " + k);
                     displayTile.setBackgroundResource(R.color.rainbow_yellow);
                     k++;
                     break;
 
-                default:
-                    break;
             }
             Log.i("USERINPUT", "per display k value AFTER:  " + k);
 
