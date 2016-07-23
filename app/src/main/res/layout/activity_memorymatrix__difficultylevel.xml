@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@mipmap/credits_backgrounds"
     android:orientation="vertical"
-    tools:context=".memorymatrix.Memorymatrix_DIfficultylevelActivity">
+    tools:context=".DIfficultyLevelActivity">
 
         <LinearLayout
             android:layout_width="match_parent"

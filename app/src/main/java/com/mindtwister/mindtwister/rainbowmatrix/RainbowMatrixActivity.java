@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.mindtwister.mindtwister.GameOverActivity;
 import com.mindtwister.mindtwister.R;
@@ -37,6 +38,11 @@ public class RainbowMatrixActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rainbow_matrix_normal);
         session = new SessionManager(this);
+
+        //check intent work
+        int i = getIntent().getIntExtra("check", 0);
+        Log.i("RAINBOW MATRIX", "onCreate: check value is 123?" + i);
+
         setDifficultyParameters();
 
         colorSequence = new ArrayList<Integer>();

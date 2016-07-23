@@ -6,9 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.mindtwister.mindtwister.memorymatrix.Memorymatrix_DIfficultylevelActivity;
-import com.mindtwister.mindtwister.rainbowmatrix.RainbowMatrixActivity;
-
 /**
  * Created by Utkarsh on 07-07-2016.
  */
@@ -20,12 +17,14 @@ public class PlayMenuActivity extends AppCompatActivity {
     }
 
     public void mmPlayOnClick(View view) {
-        Intent i = new Intent(this, Memorymatrix_DIfficultylevelActivity.class);
+        Intent i = new Intent(this, DIfficultyLevelActivity.class);
+        i.putExtra("gameSelector", 1);
         startActivity(i);
     }
 
     public void rmPlayOnClick(View view) {
-        Intent i = new Intent(this, RainbowMatrixActivity.class);
+        Intent i = new Intent(this, DIfficultyLevelActivity.class);
+        i.putExtra("gameSelector", 2);
         startActivity(i);
     }
 }
