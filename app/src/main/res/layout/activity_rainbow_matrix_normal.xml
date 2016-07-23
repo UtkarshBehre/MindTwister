@@ -9,8 +9,8 @@
 
     <FrameLayout
         android:id="@+id/header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -32,7 +32,7 @@
                 android:id="@+id/level_text1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="15dp"
                 android:text="@string/easy"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/whiteColor"
@@ -42,7 +42,6 @@
                 android:id="@+id/text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="@string/no_of_colors"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/whiteColor"
@@ -52,8 +51,7 @@
                 android:id="@+id/view_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="30dp"
-                android:layout_weight="1"
+                android:layout_marginRight="15dp"
                 android:text="4"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/whiteColor"
@@ -99,7 +97,7 @@
         <GridLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/defaultBtn"
+            android:layout_below="@+id/displayTile"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="60dp"
             android:layout_marginTop="42dp"
@@ -117,7 +115,8 @@
                 android:id="@+id/tiles_12_btn"
                 style="@style/buttonsize.buttonsizenormal"
                 android:layout_margin="7dp"
-                android:background="@color/rainbow_yellow" />
+                android:background="@color/rainbow_yellow"
+                android:onClick="tileYellowOnClick" />
 
             <Button
                 android:id="@+id/tile_13_btn"
@@ -129,7 +128,8 @@
                 android:id="@+id/tiles_21_btn"
                 style="@style/buttonsize.buttonsizenormal"
                 android:layout_margin="7dp"
-                android:background="@color/rainbow_green" />
+                android:background="@color/rainbow_green"
+                android:onClick="tileGreenOnClick" />
 
             <Button
                 android:id="@+id/tiles22_btn"
@@ -141,7 +141,8 @@
                 android:id="@+id/tiles_23_btn"
                 style="@style/buttonsize.buttonsizenormal"
                 android:layout_margin="7dp"
-                android:background="@color/rainbow_red" />
+                android:background="@color/rainbow_red"
+                android:onClick="tileRedOnClick" />
 
             <Button
                 android:id="@+id/tiles_31_btn"
@@ -153,7 +154,8 @@
                 android:id="@+id/tiles_32_btn"
                 style="@style/buttonsize.buttonsizenormal"
                 android:layout_margin="7dp"
-                android:background="@color/rainbow_blue" />
+                android:background="@color/rainbow_blue"
+                android:onClick="tileBlueOnClick" />
 
             <Button
                 android:id="@+id/tiles_33_btn"
@@ -163,7 +165,7 @@
         </GridLayout>
 
         <Button
-            android:id="@+id/defaultBtn"
+            android:id="@+id/displayTile"
             style="@style/buttonsize.buttonsizebig"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"

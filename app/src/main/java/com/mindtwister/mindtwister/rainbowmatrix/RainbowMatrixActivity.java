@@ -6,6 +6,8 @@ import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.mindtwister.mindtwister.GameOverActivity;
 import com.mindtwister.mindtwister.R;
@@ -21,6 +23,19 @@ import java.util.List;
  * Created by Utkarsh on 17-07-2016.
  */
 public class RainbowMatrixActivity extends AppCompatActivity {
+
+    public Button displayTile;
+    /*
+        COLOR CODES USED
+
+        1    -      RED
+        2    -      GREEN
+        3    -      BLUE
+        4    -      YELLOW
+
+
+
+     */
     SessionManager session;
     private List<Integer> colorSequence;
     private int score;
@@ -38,10 +53,10 @@ public class RainbowMatrixActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rainbow_matrix_normal);
         session = new SessionManager(this);
+        userListCounter = 0;
 
-        //check intent work
-        int i = getIntent().getIntExtra("check", 0);
-        Log.i("RAINBOW MATRIX", "onCreate: check value is 123?" + i);
+        displayTile = (Button) findViewById(R.id.displayTile);
+        displayTile.setEnabled(false);
 
         setDifficultyParameters();
 
@@ -49,11 +64,15 @@ public class RainbowMatrixActivity extends AppCompatActivity {
 
         totalTime = 0;//initiating both to zero when the application is started
         score = 0;
+
+        colorSequence = new ArrayList<>();
+        colorSequence.add(0, getRandomColor(noOfColorsUsed));
+        flashListColors();
     }
 
 
     //method to be called on a button click passing the color reference number i.e. 1,2,3,4/1,2,3,4,5/1,2,3,4,5,6
-    public void colorClickedChecked(int i) {
+    public void colorClickedCheck(int i) {
 
         if (colorSequence.get(userListCounter) == i) {
 
@@ -69,31 +88,26 @@ public class RainbowMatrixActivity extends AppCompatActivity {
             if (trials > 0) {
                 flashListColors();
             } else {
-                /*
+                //calculating final score
+                finishTime = System.currentTimeMillis();
+                timeTaken = finishTime - startTime;
+                totalTime += timeTaken;
+                Log.i("USERINPUTTIME", "time taken per sequence" + timeTaken);
+                score += (colorSequence.size() * 100000) / timeTaken;
 
-                    send to game over here!!!!
+                //saving user data in the pojo class to save his/her score in database
 
-                 */
-            }
+                //beans class to store data
+                RainbowMatrixScore rms = new RainbowMatrixScore();
 
-            //calculating final score
-            finishTime = System.currentTimeMillis();
-            timeTaken = finishTime - startTime;
-            score += (colorSequence.size() * 1000000) / timeTaken;
+                //retrieving general user info from session
+                HashMap<String, String> userInfo = session.getUserDetails();
 
-            //saving user data in the pojo class to save his/her score in database
-
-            //beans class to store data
-            RainbowMatrixScore rms = new RainbowMatrixScore();
-
-            //retrieving general user info from session
-            HashMap<String, String> userInfo = session.getUserDetails();
-
-            //setting up the beans class
-            rms.setUser_nickname(userInfo.get(SessionManager.KEY_NICKNAME));
-            rms.setUser_email(SessionManager.KEY_EMAIL);
-            rms.setScore(session.getScore());
-            rms.setDifficultylevel(session.getDifficultyLevel());
+                //setting up the beans class
+                rms.setUser_nickname(userInfo.get(SessionManager.KEY_NICKNAME));
+                rms.setUser_email(SessionManager.KEY_EMAIL);
+                rms.setScore(session.getScore());
+                rms.setDifficultylevel(session.getDifficultyLevel());
 
             /*
 
@@ -102,19 +116,25 @@ public class RainbowMatrixActivity extends AppCompatActivity {
 
              */
 
-            //============GAMEOVER HERE============================
-            //sending score via intent to the gamevoer screen to be displayed
-            Intent gameOver = new Intent(this, GameOverActivity.class);
-            gameOver.putExtra("score", score);
-            startActivity(gameOver);
+                //============GAMEOVER HERE============================
+                //sending score via intent to the gamevoer screen to be displayed
+                Intent gameOver = new Intent(this, GameOverActivity.class);
+                gameOver.putExtra("score", score);
+                startActivity(gameOver);
+                finish();
+            }
+
+
         }
 
         if (userListCounter == colorSequence.size()) {
 
             //adding to score if user is success full in identifying a pattern
             finishTime = System.currentTimeMillis();
-            totalTime += finishTime - startTime;
-            score += (colorSequence.size() * 1000000) / timeTaken;
+            timeTaken += finishTime - startTime;
+            totalTime += timeTaken;
+            Log.i("USERINPUTTIME", "time taken per sequence" + timeTaken);
+            score += (colorSequence.size() * 100000) / timeTaken;
 
             //adding to the new color to the list of colors in the current sequence list
             colorSequence.add(getRandomColor(noOfColorsUsed));
@@ -126,7 +146,7 @@ public class RainbowMatrixActivity extends AppCompatActivity {
 
     //this method is called when we want to flash the initial color sequence or sequences later on.
     public void flashListColors() {
-        Counter counter = new Counter(colorSequence.size() * colorFlashTime, colorFlashTime);
+        Counter counter = new Counter((colorSequence.size() * colorFlashTime + colorFlashTime), colorFlashTime);
         counter.start();
 
     }
@@ -160,14 +180,56 @@ public class RainbowMatrixActivity extends AppCompatActivity {
             default:
                 noOfColorsUsed = 4;
                 colorFlashTime = 1500;
+                break;
         }
+    }
+
+    public void tileRedOnClick(View view) {
+        /*
+
+        flash as long as user taps
+
+
+         */
+        colorClickedCheck(1);
+    }
+
+    public void tileGreenOnClick(View view) {
+        /*
+
+        flash as long as user taps
+
+
+         */
+        colorClickedCheck(2);
+    }
+
+    public void tileBlueOnClick(View view) {
+        /*
+
+        flash as long as user taps
+
+
+         */
+        colorClickedCheck(3);
+    }
+
+    public void tileYellowOnClick(View view) {
+        /*
+
+        flash as long as user taps
+
+
+         */
+        colorClickedCheck(4);
     }
 
     //this counter class is used to flash the color sequence on our main tile
     class Counter extends CountDownTimer {
 
         //this variable is created to loop through list colorSequence
-        public int i = 0;
+        public int i;
+
 
         /**
          * @param millisInFuture    The number of millis in the future from the call
@@ -176,8 +238,11 @@ public class RainbowMatrixActivity extends AppCompatActivity {
          * @param countDownInterval The interval along the way to receive
          *                          {@link #onTick(long)} callbacks.
          */
+
         public Counter(long millisInFuture, long countDownInterval) {
             super(millisInFuture, countDownInterval);
+            i = 0;
+            Log.i("USERINPUT", "int i value:  " + i);
             /*
 
 
@@ -189,61 +254,43 @@ public class RainbowMatrixActivity extends AppCompatActivity {
 
         @Override
         public void onTick(long millisUntilFinished) {
-
+            Log.i("USERINPUT", "PER display i vallue BEFORE:  " + i);
             switch (colorSequence.get(i)) {
                 //1 stands for color red
                 case 1:
-                    /*
 
-                        Remove me
-                        //main display tile color changed
-                        b1.setBAckground(Red);
-
-                     */
+                    displayTile.setBackgroundResource(R.color.rainbow_red);
+                    i++;
                     break;
                 //2 stands for green
                 case 2:
-                    /*
 
-                        Remove me
-                        b1.setBAckground(green);
-
-                     */
+                    displayTile.setBackgroundResource(R.color.rainbow_green);
+                    i++;
                     break;
                 //3 stands for blue
                 case 3:
-                    /*
-
-                        Remove me
-                        b1.setBAckground(blue);
-
-                     */
+                    displayTile.setBackgroundResource(R.color.rainbow_blue);
+                    i++;
                     break;
                 //4 stands for yellow
                 case 4:
-                    /*
 
-                        Remove me
-                        b1.setBAckground(yellow);
-
-                     */
-                    break;
-                default:
+                    displayTile.setBackgroundResource(R.color.rainbow_yellow);
                     i++;
-            }
+                    break;
 
+                default:
+                    break;
+            }
+            Log.i("USERINPUT", "per display i value AFTER:  " + i);
 
         }
 
         @Override
         public void onFinish() {
 
-            /*
-                     Remove me
-                     //reset the color of display tile
-                     b1.setBAckground(default);
-
-             */
+            displayTile.setBackgroundResource(R.color.rainbow_default);
 
             //this counter is used to check the current number where user is selecting color
             userListCounter = 0;
