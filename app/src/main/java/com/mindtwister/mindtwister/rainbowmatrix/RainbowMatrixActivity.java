@@ -5,10 +5,14 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.mindtwister.mindtwister.GameOverActivity;
 import com.mindtwister.mindtwister.R;
-import com.mindtwister.mindtwister.managers.RainbowMatrixScore;
+import com.mindtwister.mindtwister.managers.RainbowMatrixScores;
 import com.mindtwister.mindtwister.managers.SessionManager;
 
 import java.util.ArrayList;
@@ -20,74 +24,111 @@ import java.util.List;
  * Created by Utkarsh on 17-07-2016.
  */
 public class RainbowMatrixActivity extends AppCompatActivity {
+    public Button displayTile;
+    public Button b1, b2, b3, b4;
+    TextView trialsText;
+    /*
+        COLOR CODES USED
+
+        1    -      RED
+        2    -      GREEN
+        3    -      BLUE
+        4    -      YELLOW
+
+
+
+     */
     SessionManager session;
     private List<Integer> colorSequence;
     private int score;
     private int userListCounter;
     private int trials;
     private int noOfColorsUsed;
+    private int difficultyMultiplier;
     private long totalTime;
     private long startTime;
     private long finishTime;
     private long timeTaken;
     private long colorFlashTime;
+    private List<Button> buttonsList;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rainbow_matrix_normal);
         session = new SessionManager(this);
+        userListCounter = 0;
+        displayTile = (Button) findViewById(R.id.displayTile);
+        displayTile.setEnabled(false);
+
+
+        b1 = (Button) findViewById(R.id.tiles_12_btn);
+        b2 = (Button) findViewById(R.id.tiles_21_btn);
+        b3 = (Button) findViewById(R.id.tiles_23_btn);
+        b4 = (Button) findViewById(R.id.tiles_32_btn);
+
         setDifficultyParameters();
 
-        colorSequence = new ArrayList<Integer>();
-
+        trialsText = (TextView) findViewById(R.id.trials_text);
+        trialsText.setText(String.valueOf(trials));
         totalTime = 0;//initiating both to zero when the application is started
         score = 0;
+
+        colorSequence = new ArrayList<>();
+        colorSequence.add(0, getRandomColor(noOfColorsUsed));
+        flashListColors();
     }
 
 
     //method to be called on a button click passing the color reference number i.e. 1,2,3,4/1,2,3,4,5/1,2,3,4,5,6
-    public void colorClickedChecked(int i) {
+    public void colorClickedCheck(int i) {
+        Log.i("USERINFO", "colorClickedCheck: value of userListCounter: " + userListCounter);
+        Log.i("USERINFO", "colorClickedCheck: value of i passed by button: " + i);
+
 
         if (colorSequence.get(userListCounter) == i) {
 
+            Log.i("INSIDE IF", "Trials value " + trials);
             //consider userListCounter as a global looper for listAdapter
             userListCounter++;
+            trialsText.setText(String.valueOf(trials));
         } else {
-
+            Log.i("INSIDE ELSE", "SHOULDNT BE HERE AT ALL : Trials value " + trials);
             //total trials left must be reduced if user does it wrong and patter should repeat itself when he does
             trials--;
-            String trial = String.valueOf(trials);
+
             //tv.setText(trial);
+            trialsText.setText(String.valueOf(trials));
 
             if (trials > 0) {
                 flashListColors();
             } else {
-                /*
+                trials = 0;
+                trialsText = (TextView) findViewById(R.id.trials_text);
+                //calculating final score
+                finishTime = System.currentTimeMillis();
+                timeTaken = finishTime - startTime;
+                totalTime += timeTaken;
+                Log.i("USERINPUTTIME", "time taken per sequence" + timeTaken);
 
-                    send to game over here!!!!
+                Log.i("SCORECHECK", "Score before game over before final calculation : " + score);
 
-                 */
-            }
+                score *= difficultyMultiplier;
+                Log.i("SCORECHECK", "Score before game over : " + score);
 
-            //calculating final score
-            finishTime = System.currentTimeMillis();
-            timeTaken = finishTime - startTime;
-            score += (colorSequence.size() * 1000000) / timeTaken;
+                //saving user data in the pojo class to save his/her score in database
 
-            //saving user data in the pojo class to save his/her score in database
+                //beans class to store data
+                RainbowMatrixScores rms = new RainbowMatrixScores();
 
-            //beans class to store data
-            RainbowMatrixScore rms = new RainbowMatrixScore();
+                //retrieving general user info from session
+                HashMap<String, String> userInfo = session.getUserDetails();
 
-            //retrieving general user info from session
-            HashMap<String, String> userInfo = session.getUserDetails();
-
-            //setting up the beans class
-            rms.setUser_nickname(userInfo.get(SessionManager.KEY_NICKNAME));
-            rms.setUser_email(SessionManager.KEY_EMAIL);
-            rms.setScore(session.getScore());
-            rms.setDifficultylevel(session.getDifficultyLevel());
+                //setting up the beans class
+                rms.setUser_nickname(userInfo.get(SessionManager.KEY_NICKNAME));
+                rms.setUser_email(SessionManager.KEY_EMAIL);
+                rms.setScore(session.getScore());
+                rms.setDifficultylevel(session.getDifficultyLevel());
 
             /*
 
@@ -96,20 +137,27 @@ public class RainbowMatrixActivity extends AppCompatActivity {
 
              */
 
-            //============GAMEOVER HERE============================
-            //sending score via intent to the gamevoer screen to be displayed
-            Intent gameOver = new Intent(this, GameOverActivity.class);
-            gameOver.putExtra("score", score);
-            startActivity(gameOver);
+                //============GAMEOVER HERE============================
+                //sending score via intent to the gamevoer screen to be displayed
+                Intent gameOver = new Intent(this, GameOverActivity.class);
+                Log.i("USERINPUT", "final score: " + score);
+                gameOver.putExtra("score", score);
+                startActivity(gameOver);
+                finish();
+            }
+
+
         }
 
         if (userListCounter == colorSequence.size()) {
 
             //adding to score if user is success full in identifying a pattern
             finishTime = System.currentTimeMillis();
-            totalTime += finishTime - startTime;
-            score += (colorSequence.size() * 1000000) / timeTaken;
-
+            timeTaken += finishTime - startTime;
+            totalTime += timeTaken;
+            Log.i("USERINPUTTIME", "time taken per sequence" + timeTaken);
+            score += (colorSequence.size() * 100000) / timeTaken;
+            Log.i("SCORECHECK", "Score after completion of one round : " + score);
             //adding to the new color to the list of colors in the current sequence list
             colorSequence.add(getRandomColor(noOfColorsUsed));
             flashListColors();
@@ -120,14 +168,14 @@ public class RainbowMatrixActivity extends AppCompatActivity {
 
     //this method is called when we want to flash the initial color sequence or sequences later on.
     public void flashListColors() {
-        Counter counter = new Counter(colorSequence.size() * colorFlashTime, colorFlashTime);
+        Counter counter = new Counter((colorSequence.size() * colorFlashTime + colorFlashTime), colorFlashTime);
         counter.start();
 
     }
 
     //gives random color out of given list of color codes
     public int getRandomColor(int noOfColors) {
-        List<Integer> list = new ArrayList<Integer>();
+        List<Integer> list = new ArrayList<>();
         for (int i = 0; i <= noOfColors; i++) {
             list.add(i);
         }
@@ -142,26 +190,76 @@ public class RainbowMatrixActivity extends AppCompatActivity {
             case SessionManager.EASY:
                 noOfColorsUsed = 4;
                 colorFlashTime = 2000;
+                trials = 5;
+                difficultyMultiplier = 1;
                 break;
             case SessionManager.MEDIUM:
                 noOfColorsUsed = 4;
+                trials = 3;
                 colorFlashTime = 1500;
+                difficultyMultiplier = 2;
                 break;
             case SessionManager.HARD:
                 noOfColorsUsed = 4;
+                trials = 1;
                 colorFlashTime = 1000;
+                difficultyMultiplier = 3;
                 break;
             default:
+                //this should never run
                 noOfColorsUsed = 4;
                 colorFlashTime = 1500;
+                difficultyMultiplier = 2;
+                break;
         }
+    }
+
+    public void tileRedOnClick(View view) {
+        /*
+
+        flash as long as user taps
+
+
+         */
+        colorClickedCheck(1);
+    }
+
+    public void tileGreenOnClick(View view) {
+        /*
+
+        flash as long as user taps
+
+
+         */
+        colorClickedCheck(2);
+    }
+
+    public void tileBlueOnClick(View view) {
+        /*
+
+        flash as long as user taps
+
+
+         */
+        colorClickedCheck(3);
+    }
+
+    public void tileYellowOnClick(View view) {
+        /*
+
+        flash as long as user taps
+
+
+         */
+        colorClickedCheck(4);
     }
 
     //this counter class is used to flash the color sequence on our main tile
     class Counter extends CountDownTimer {
 
         //this variable is created to loop through list colorSequence
-        public int i = 0;
+        public int k;
+
 
         /**
          * @param millisInFuture    The number of millis in the future from the call
@@ -170,8 +268,16 @@ public class RainbowMatrixActivity extends AppCompatActivity {
          * @param countDownInterval The interval along the way to receive
          *                          {@link #onTick(long)} callbacks.
          */
+
         public Counter(long millisInFuture, long countDownInterval) {
             super(millisInFuture, countDownInterval);
+            k = 0;
+            b1.setEnabled(false);
+            b2.setEnabled(false);
+            b3.setEnabled(false);
+            b4.setEnabled(false);
+
+            Log.i("USERINPUT", "int k value:  " + k);
             /*
 
 
@@ -183,67 +289,54 @@ public class RainbowMatrixActivity extends AppCompatActivity {
 
         @Override
         public void onTick(long millisUntilFinished) {
-
-            switch (colorSequence.get(i)) {
+            Log.i("USERINPUT", "PER display k value BEFORE:  " + k);
+            switch (colorSequence.get(k)) {
                 //1 stands for color red
                 case 1:
-                    /*
 
-                        Remove me
-                        //main display tile color changed
-                        b1.setBAckground(Red);
-
-                     */
+                    displayTile.setBackgroundResource(R.color.rainbow_red);
+                    k++;
                     break;
                 //2 stands for green
                 case 2:
-                    /*
 
-                        Remove me
-                        b1.setBAckground(green);
-
-                     */
+                    displayTile.setBackgroundResource(R.color.rainbow_green);
+                    k++;
                     break;
                 //3 stands for blue
                 case 3:
-                    /*
-
-                        Remove me
-                        b1.setBAckground(blue);
-
-                     */
+                    displayTile.setBackgroundResource(R.color.rainbow_blue);
+                    k++;
                     break;
+
                 //4 stands for yellow
                 case 4:
-                    /*
 
-                        Remove me
-                        b1.setBAckground(yellow);
-
-                     */
+                    Log.i("USERINPUT", "inside yellow color  " + k);
+                    displayTile.setBackgroundResource(R.color.rainbow_yellow);
+                    k++;
                     break;
-                default:
-                    i++;
-            }
 
+            }
+            Log.i("USERINPUT", "per display k value AFTER:  " + k);
 
         }
 
         @Override
         public void onFinish() {
 
-            /*
-                     Remove me
-                     //reset the color of display tile
-                     b1.setBAckground(default);
-
-             */
+            displayTile.setBackgroundResource(R.color.rainbow_default);
 
             //this counter is used to check the current number where user is selecting color
             userListCounter = 0;
 
             //note the current time of the system and set the startTime used later to add up in time left after removing this from finish time
             startTime = System.currentTimeMillis();
+            b1.setEnabled(true);
+            b2.setEnabled(true);
+            b3.setEnabled(true);
+            b4.setEnabled(true);
+
         }
     }
 }
