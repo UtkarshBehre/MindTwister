@@ -25,6 +25,7 @@ import java.util.List;
 public class RainbowMatrixActivity extends AppCompatActivity {
 
     public Button displayTile;
+    public Button b1, b2, b3, b4;
     /*
         COLOR CODES USED
 
@@ -47,6 +48,7 @@ public class RainbowMatrixActivity extends AppCompatActivity {
     private long finishTime;
     private long timeTaken;
     private long colorFlashTime;
+    private List<Button> buttonsList;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -57,6 +59,11 @@ public class RainbowMatrixActivity extends AppCompatActivity {
 
         displayTile = (Button) findViewById(R.id.displayTile);
         displayTile.setEnabled(false);
+
+        b1 = (Button) findViewById(R.id.tiles_12_btn);
+        b2 = (Button) findViewById(R.id.tiles_21_btn);
+        b3 = (Button) findViewById(R.id.tiles_23_btn);
+        b4 = (Button) findViewById(R.id.tiles_32_btn);
 
         setDifficultyParameters();
 
@@ -73,6 +80,9 @@ public class RainbowMatrixActivity extends AppCompatActivity {
 
     //method to be called on a button click passing the color reference number i.e. 1,2,3,4/1,2,3,4,5/1,2,3,4,5,6
     public void colorClickedCheck(int i) {
+        Log.i("USERINFO", "colorClickedCheck: value of userListCounter: " + userListCounter);
+        Log.i("USERINFO", "colorClickedCheck: value of i passed by button: " + i);
+
 
         if (colorSequence.get(userListCounter) == i) {
 
@@ -119,6 +129,7 @@ public class RainbowMatrixActivity extends AppCompatActivity {
                 //============GAMEOVER HERE============================
                 //sending score via intent to the gamevoer screen to be displayed
                 Intent gameOver = new Intent(this, GameOverActivity.class);
+                Log.i("USERINPUT", "final score: " + score);
                 gameOver.putExtra("score", score);
                 startActivity(gameOver);
                 finish();
@@ -228,7 +239,7 @@ public class RainbowMatrixActivity extends AppCompatActivity {
     class Counter extends CountDownTimer {
 
         //this variable is created to loop through list colorSequence
-        public int i;
+        public int k;
 
 
         /**
@@ -241,8 +252,13 @@ public class RainbowMatrixActivity extends AppCompatActivity {
 
         public Counter(long millisInFuture, long countDownInterval) {
             super(millisInFuture, countDownInterval);
-            i = 0;
-            Log.i("USERINPUT", "int i value:  " + i);
+            k = 0;
+            b1.setEnabled(false);
+            b2.setEnabled(false);
+            b3.setEnabled(false);
+            b4.setEnabled(false);
+
+            Log.i("USERINPUT", "int k value:  " + k);
             /*
 
 
@@ -254,36 +270,36 @@ public class RainbowMatrixActivity extends AppCompatActivity {
 
         @Override
         public void onTick(long millisUntilFinished) {
-            Log.i("USERINPUT", "PER display i vallue BEFORE:  " + i);
-            switch (colorSequence.get(i)) {
+            Log.i("USERINPUT", "PER display k value BEFORE:  " + k);
+            switch (colorSequence.get(k)) {
                 //1 stands for color red
                 case 1:
 
                     displayTile.setBackgroundResource(R.color.rainbow_red);
-                    i++;
+                    k++;
                     break;
                 //2 stands for green
                 case 2:
 
                     displayTile.setBackgroundResource(R.color.rainbow_green);
-                    i++;
+                    k++;
                     break;
                 //3 stands for blue
                 case 3:
                     displayTile.setBackgroundResource(R.color.rainbow_blue);
-                    i++;
+                    k++;
                     break;
                 //4 stands for yellow
                 case 4:
 
                     displayTile.setBackgroundResource(R.color.rainbow_yellow);
-                    i++;
+                    k++;
                     break;
 
                 default:
                     break;
             }
-            Log.i("USERINPUT", "per display i value AFTER:  " + i);
+            Log.i("USERINPUT", "per display k value AFTER:  " + k);
 
         }
 
@@ -297,6 +313,11 @@ public class RainbowMatrixActivity extends AppCompatActivity {
 
             //note the current time of the system and set the startTime used later to add up in time left after removing this from finish time
             startTime = System.currentTimeMillis();
+            b1.setEnabled(true);
+            b2.setEnabled(true);
+            b3.setEnabled(true);
+            b4.setEnabled(true);
+
         }
     }
 }
