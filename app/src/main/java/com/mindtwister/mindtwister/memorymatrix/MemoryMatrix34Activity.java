@@ -39,7 +39,9 @@ public class MemoryMatrix34Activity extends AppCompatActivity {
         /**************************************************************************************************/
         session = new SessionManager(this);
 
-        setTIMETOFLASH();
+        trialsLeft=getIntent().getIntExtra("currentTrialsLeft",0);
+
+        setDifficultyLevelTIMETOFLASH();
 
         //making object of our utility class to use its methods
         UtilityMethodsForMemoryMatrix utilityMethodsForMemoryMatrix = new UtilityMethodsForMemoryMatrix();
@@ -136,6 +138,7 @@ public class MemoryMatrix34Activity extends AppCompatActivity {
              */
             //sending user to previous level since this is first activity so we re-instantiate itself
             Intent previousLevel = new Intent(this, MemoryMatrix33Activity.class);
+            previousLevel.putExtra("currentTrialsLeft",trialsLeft);
             startActivity(previousLevel);
             finish();
         }
@@ -169,7 +172,7 @@ public class MemoryMatrix34Activity extends AppCompatActivity {
     }
 
     //call this function to set time flash acc. to difficulty
-    private void setTIMETOFLASH() {
+    private void setDifficultyLevelTIMETOFLASH() {
         switch (session.getDifficultyLevel()) {
             case SessionManager.EASY: {
                 TIMETOFLASH = 6000;
@@ -186,6 +189,7 @@ public class MemoryMatrix34Activity extends AppCompatActivity {
                 TIMETOFLASH = 4000;
         }
     }
+
 
     public boolean compareNewAndOldGridStates() {
         boolean status = true;

@@ -45,12 +45,17 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
 
         //set trials left 15 and score 0 if its a new game i.e. trials = -1 which is value when no game is going on
         if (session.getTrialsLeft() == -1) {
-            trialsLeft = 15;
+            setDifficultyParametersTrials();
             session.setTrialsLeft(trialsLeft);
             session.setScore(0);
         }
 
-        setTIMETOFLASH();
+        else
+        {
+            trialsLeft=getIntent().getIntExtra("currentTrialsLeft",0);
+        }
+
+        setDifficultyLevelTIMETOFLASH();
 //        difficultyText = (TextView)findViewById(R.id.difficultyText);
 //        trialsText = (TextView)findViewById(R.id.trialsText);
 //        difficultyText.setText(session.getDifficultyLevel());
@@ -143,6 +148,7 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
 
             //sending user to previous level since this is first activity so we re-instantiate itself
             Intent previousLevel = new Intent(this, MemoryMatrix33Activity.class);
+            previousLevel.putExtra("currentTrialsLeft",trialsLeft);
             startActivity(previousLevel);
             finish();
         }
@@ -177,7 +183,7 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
     }
 
     //call this function to set time flash acc. to difficulty
-    private void setTIMETOFLASH() {
+    private void setDifficultyLevelTIMETOFLASH() {
         switch (session.getDifficultyLevel()) {
             case SessionManager.EASY: {
                 TIMETOFLASH = 6000;
@@ -192,6 +198,25 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
                 break;
             default:
                 TIMETOFLASH = 4000;
+        }
+    }
+
+    //call this function to set difficulty trials left
+    private void setDifficultyParametersTrials() {
+        switch (session.getDifficultyLevel()) {
+            case SessionManager.EASY: {
+                trialsLeft=15;
+                break;
+            }
+            case SessionManager.MEDIUM: {
+                trialsLeft=13;
+                break;
+            }
+            case SessionManager.HARD:
+                trialsLeft=10;
+                break;
+            default:
+                trialsLeft=13;
         }
     }
 
