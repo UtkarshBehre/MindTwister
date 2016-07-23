@@ -56,8 +56,8 @@ public class LoginActivity extends AppCompatActivity {
             etPassword.setError("Password must be greater than 6!");
         } else {
 
-            //retrieve userinfo object from database
-            UserInfo rc = db.selectuser(username, password);
+            //retrieve UserInfo object from database
+            UserInfo rc = db.selectUser(username, password);
             if (rc == null) {
 
                 //invalid user toast

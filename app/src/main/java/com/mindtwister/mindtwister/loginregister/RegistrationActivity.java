@@ -84,7 +84,7 @@ public class RegistrationActivity extends AppCompatActivity {
             rc.setUser_email(email);
             rc.setUser_age(age);
 
-            String status = db.addRegisterClass(rc);
+            String status = db.addUserInfo(rc);
             if (status.equals("0")) {
                 Toast.makeText(getApplicationContext(), "email already exists", Toast.LENGTH_LONG).show();
             } else if (status.equals("notunique")) {

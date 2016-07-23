@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.mindtwister.mindtwister.GameOverActivity;
 import com.mindtwister.mindtwister.R;
-import com.mindtwister.mindtwister.managers.RainbowMatrixScore;
+import com.mindtwister.mindtwister.managers.RainbowMatrixScores;
 import com.mindtwister.mindtwister.managers.SessionManager;
 
 import java.util.ArrayList;
@@ -119,7 +119,7 @@ public class RainbowMatrixActivity extends AppCompatActivity {
                 //saving user data in the pojo class to save his/her score in database
 
                 //beans class to store data
-                RainbowMatrixScore rms = new RainbowMatrixScore();
+                RainbowMatrixScores rms = new RainbowMatrixScores();
 
                 //retrieving general user info from session
                 HashMap<String, String> userInfo = session.getUserDetails();
@@ -175,7 +175,7 @@ public class RainbowMatrixActivity extends AppCompatActivity {
 
     //gives random color out of given list of color codes
     public int getRandomColor(int noOfColors) {
-        List<Integer> list = new ArrayList<Integer>();
+        List<Integer> list = new ArrayList<>();
         for (int i = 0; i <= noOfColors; i++) {
             list.add(i);
         }

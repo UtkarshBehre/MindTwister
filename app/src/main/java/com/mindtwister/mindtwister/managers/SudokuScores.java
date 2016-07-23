@@ -3,7 +3,7 @@ package com.mindtwister.mindtwister.managers;
 /**
  * Created by Utkarsh on 23-07-2016.
  */
-public class MemoryMatrixScore {
+public class SudokuScores {
     private int score;
     private String user_nickname;
     private String user_email;

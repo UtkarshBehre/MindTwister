@@ -11,9 +11,10 @@ package com.mindtwister.mindtwister.managers;
  */
 
 
-public class RainbowMatrixScore {
+public class RainbowMatrixScores {
     private int score;
     private String user_nickname;
+    private String game_name;
     private String user_email;
     private String difficultylevel;
 
@@ -50,4 +51,11 @@ public class RainbowMatrixScore {
     }
 
 
+    public String getGame_name() {
+        return game_name;
+    }
+
+    public void setGame_name(String game_name) {
+        this.game_name = game_name;
+    }
 }
