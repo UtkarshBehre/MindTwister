@@ -189,28 +189,41 @@ public class RainbowMatrixActivity extends AppCompatActivity {
     public void setDifficultyParameters() {
         switch (session.getDifficultyLevel()) {
             case SessionManager.EASY:
-                noOfColorsUsed = 4;
-                colorFlashTime = 2000;
-                trials = 5;
-                difficultyMultiplier = 1;
+                noOfColorsUsed = RainbowMatrixGameDifficultyParameters.NOOFCOLORSUSEDEASY;
+                colorFlashTime = RainbowMatrixGameDifficultyParameters.COLORFLASHTIMEEASY;
+                trials = RainbowMatrixGameDifficultyParameters.TRIALSEASY;
+                difficultyMultiplier = RainbowMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIEREASY;
                 break;
             case SessionManager.MEDIUM:
-                noOfColorsUsed = 4;
-                trials = 3;
-                colorFlashTime = 1500;
-                difficultyMultiplier = 2;
+                noOfColorsUsed = RainbowMatrixGameDifficultyParameters.NOOFCOLORSUSEDMEDIUM;
+                colorFlashTime = RainbowMatrixGameDifficultyParameters.COLORFLASHTIMEMEDIUM;
+                trials = RainbowMatrixGameDifficultyParameters.TRIALSMEDIUM;
+                difficultyMultiplier = RainbowMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIERMEDIUM;
                 break;
             case SessionManager.HARD:
-                noOfColorsUsed = 4;
-                trials = 1;
-                colorFlashTime = 1000;
-                difficultyMultiplier = 3;
+                noOfColorsUsed = RainbowMatrixGameDifficultyParameters.NOOFCOLORSUSEDHARD;
+                colorFlashTime = RainbowMatrixGameDifficultyParameters.COLORFLASHTIMEHARD;
+                trials = RainbowMatrixGameDifficultyParameters.TRIALSHARD;
+                difficultyMultiplier = RainbowMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIERHARD;
+                break;
+            case SessionManager.EXTREME:
+                noOfColorsUsed = RainbowMatrixGameDifficultyParameters.NOOFCOLORSUSEDEXTREME;
+                colorFlashTime = RainbowMatrixGameDifficultyParameters.COLORFLASHTIMEEXTREME;
+                trials = RainbowMatrixGameDifficultyParameters.TRIALSEXTREME;
+                difficultyMultiplier = RainbowMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIEREXTREME;
+                break;
+            case SessionManager.IMBALANCED:
+                noOfColorsUsed = RainbowMatrixGameDifficultyParameters.NOOFCOLORSUSEDIMBALANCED;
+                colorFlashTime = RainbowMatrixGameDifficultyParameters.COLORFLASHTIMEIMBALANCED;
+                trials = RainbowMatrixGameDifficultyParameters.TRIALSIMBALANCED;
+                difficultyMultiplier = RainbowMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIERIMBALANCED;
                 break;
             default:
                 //this should never run
-                noOfColorsUsed = 4;
-                colorFlashTime = 1500;
-                difficultyMultiplier = 2;
+                noOfColorsUsed = RainbowMatrixGameDifficultyParameters.NOOFCOLORSUSEDMEDIUM;
+                colorFlashTime = RainbowMatrixGameDifficultyParameters.COLORFLASHTIMEMEDIUM;
+                trials = RainbowMatrixGameDifficultyParameters.TRIALSMEDIUM;
+                difficultyMultiplier = RainbowMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIERMEDIUM;
                 break;
         }
     }
