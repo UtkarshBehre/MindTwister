@@ -28,6 +28,7 @@
                 android:id="@+id/difficultyText"
                 style="@style/HeaderText"
                 android:layout_marginRight="20dp"
+                android:text=""
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/whiteColor" />
 
@@ -42,6 +43,7 @@
                 android:id="@+id/matrixText"
                 style="@style/HeaderText"
                 android:layout_marginRight="30dp"
+                android:text=""
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/whiteColor" />
 
@@ -55,6 +57,7 @@
             <TextView
                 android:id="@+id/trialsText"
                 style="@style/HeaderText"
+                android:text=""
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/whiteColor" />
 

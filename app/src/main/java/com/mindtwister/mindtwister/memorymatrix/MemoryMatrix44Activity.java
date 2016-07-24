@@ -153,7 +153,6 @@ public class MemoryMatrix44Activity extends AppCompatActivity {
             if (trialsLeft == 0) {
 
                 score *= difficultyMultiplier;
-                score = score * trialsLeft / TOTALTRIALS;
 
                 //saving user data in the pojo class to save his/her score in database
                 //beans class to store data

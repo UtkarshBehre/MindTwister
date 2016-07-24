@@ -20,7 +20,6 @@ public class InstructionsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_instructions);
     }
 
-
     public void mmInstructionsOnClick(View view) {
         Intent i = new Intent(this, Memorymatrix_instructionActivity.class);
         startActivity(i);
