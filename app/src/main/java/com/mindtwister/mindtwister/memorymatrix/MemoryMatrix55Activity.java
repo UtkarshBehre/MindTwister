@@ -223,7 +223,7 @@ public class MemoryMatrix55Activity extends AppCompatActivity {
             Log.i(USERTIME, "Total time taken: " + timeTaken);
 
             //adding up user's score
-            score += (10000000 * CURRENTLEVEL) / timeTaken;
+            score += (100000 * CURRENTLEVEL) / timeTaken;
             Log.i(USERTIME, "Score at 3x3: " + score);
 
             /*

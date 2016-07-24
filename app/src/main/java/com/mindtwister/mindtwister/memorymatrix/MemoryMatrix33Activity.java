@@ -60,16 +60,13 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
         score = getIntent().getIntExtra("score", 0);
 //        setDifficultyParametersTrials();
         trialsLeft = getIntent().getIntExtra("currentTrialsLeft", -5);
-        trialsText.setText(String.valueOf(trialsLeft));
 
         if (trialsLeft == -5) {
             trialsLeft = TOTALTRIALS;
-            trialsText.setText(String.valueOf(trialsLeft));
-
         }
         Log.i(TAG, "trialsLeft: " + trialsLeft);
 
-        trialsText.setText(String.valueOf("ajaaoooo"));
+        trialsText.setText(String.valueOf(trialsLeft));
 //
 //        if (trialsLeft == -5) {
 //            Log.i(TAG, "inside if checker trialsLeft: "+trialsLeft);
@@ -210,7 +207,7 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
             Log.i(USERTIME, "Total time taken: " + timeTaken);
 
             //adding up user's score
-            score += 10000000 * CURRENTLEVEL / timeTaken;
+            score += 100000 * CURRENTLEVEL / timeTaken;
             Log.i(USERTIME, "Score at 3x3: " + score);
 
             /*
