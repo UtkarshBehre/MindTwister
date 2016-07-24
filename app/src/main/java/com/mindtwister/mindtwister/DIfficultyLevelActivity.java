@@ -76,4 +76,42 @@ public class DIfficultyLevelActivity extends AppCompatActivity {
 
         }
     }
+
+    public void mmExtremeOnClick(View view) {
+        Intent intent;
+        switch (getIntent().getIntExtra("gameSelector", 0)) {
+
+            case 1:
+                session.setDifficultyLevel(SessionManager.EXTREME);
+                intent = new Intent(this, MemoryMatrix33Activity.class);
+                startActivity(intent);
+                break;
+            case 2:
+                session.setDifficultyLevel(SessionManager.EXTREME);
+                intent = new Intent(this, RainbowMatrixActivity.class);
+                startActivity(intent);
+                break;
+            default:
+
+        }
+    }
+
+    public void mmImbalancedOnClick(View view) {
+        Intent intent;
+        switch (getIntent().getIntExtra("gameSelector", 0)) {
+
+            case 1:
+                session.setDifficultyLevel(SessionManager.IMBALANCED);
+                intent = new Intent(this, MemoryMatrix33Activity.class);
+                startActivity(intent);
+                break;
+            case 2:
+                session.setDifficultyLevel(SessionManager.IMBALANCED);
+                intent = new Intent(this, RainbowMatrixActivity.class);
+                startActivity(intent);
+                break;
+            default:
+
+        }
+    }
 }

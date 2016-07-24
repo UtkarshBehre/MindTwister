@@ -34,7 +34,7 @@ public class MemoryMatrix55Activity extends AppCompatActivity {
     SessionManager session;
     DBHandler db;
     private int TOTALTRIALS;
-    private int difficultyMultiplier;
+    private double difficultyMultiplier;
     private long TIMETOFLASH;
     private long startTime;
     private long finishTime;
@@ -262,10 +262,25 @@ public class MemoryMatrix55Activity extends AppCompatActivity {
                 TIMETOFLASH = MemoryMatrixGameDifficultyParameters.TIMETOFLASHHARD;
                 difficultyMultiplier = MemoryMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIERHARD;
                 break;
+            case SessionManager.EXTREME: {
+                difficultyText.setText(MemoryMatrixGameDifficultyParameters.EXTREMEGAME);
+                TOTALTRIALS = MemoryMatrixGameDifficultyParameters.TOTALTRIALSEXTREME;
+                TIMETOFLASH = MemoryMatrixGameDifficultyParameters.TIMETOFLASHEXTREME;
+                difficultyMultiplier = MemoryMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIEREXTREME;
+                break;
+            }
+            case SessionManager.IMBALANCED: {
+                difficultyText.setText(MemoryMatrixGameDifficultyParameters.IMBALANCEDGAME);
+                TOTALTRIALS = MemoryMatrixGameDifficultyParameters.TOTALTRIALSIMBALANCED;
+                TIMETOFLASH = MemoryMatrixGameDifficultyParameters.TIMETOFLASHIMBALANCED;
+                difficultyMultiplier = MemoryMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIERIMBALANCED;
+                break;
+            }
             default:
-                TOTALTRIALS = MemoryMatrixGameDifficultyParameters.TOTALTRIALSMEDIUM;
-                TIMETOFLASH = MemoryMatrixGameDifficultyParameters.TIMETOFLASHMEDIUM;
-                difficultyMultiplier = MemoryMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIERMEDIUM;
+                TOTALTRIALS = MemoryMatrixGameDifficultyParameters.TOTALTRIALSHARD;
+                TIMETOFLASH = MemoryMatrixGameDifficultyParameters.TIMETOFLASHHARD;
+                difficultyMultiplier = MemoryMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIERHARD;
+                break;
         }
 
     }

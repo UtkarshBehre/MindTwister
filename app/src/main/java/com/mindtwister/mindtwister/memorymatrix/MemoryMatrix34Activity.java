@@ -39,7 +39,7 @@ public class MemoryMatrix34Activity extends AppCompatActivity {
     private int trialsLeft;
     private int score;
     private int TOTALTRIALS;
-    private int difficultyMultiplier;
+    private double difficultyMultiplier;
     private String TAG = "VARIABLES CHECK";
 
     @Override
@@ -235,10 +235,25 @@ public class MemoryMatrix34Activity extends AppCompatActivity {
                 TIMETOFLASH = MemoryMatrixGameDifficultyParameters.TIMETOFLASHHARD;
                 difficultyMultiplier = MemoryMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIERHARD;
                 break;
+            case SessionManager.EXTREME: {
+                difficultyText.setText(MemoryMatrixGameDifficultyParameters.EXTREMEGAME);
+                TOTALTRIALS = MemoryMatrixGameDifficultyParameters.TOTALTRIALSEXTREME;
+                TIMETOFLASH = MemoryMatrixGameDifficultyParameters.TIMETOFLASHEXTREME;
+                difficultyMultiplier = MemoryMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIEREXTREME;
+                break;
+            }
+            case SessionManager.IMBALANCED: {
+                difficultyText.setText(MemoryMatrixGameDifficultyParameters.IMBALANCEDGAME);
+                TOTALTRIALS = MemoryMatrixGameDifficultyParameters.TOTALTRIALSIMBALANCED;
+                TIMETOFLASH = MemoryMatrixGameDifficultyParameters.TIMETOFLASHIMBALANCED;
+                difficultyMultiplier = MemoryMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIERIMBALANCED;
+                break;
+            }
             default:
-                TOTALTRIALS = MemoryMatrixGameDifficultyParameters.TOTALTRIALSMEDIUM;
-                TIMETOFLASH = MemoryMatrixGameDifficultyParameters.TIMETOFLASHMEDIUM;
-                difficultyMultiplier = MemoryMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIERMEDIUM;
+                TOTALTRIALS = MemoryMatrixGameDifficultyParameters.TOTALTRIALSHARD;
+                TIMETOFLASH = MemoryMatrixGameDifficultyParameters.TIMETOFLASHHARD;
+                difficultyMultiplier = MemoryMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIERHARD;
+                break;
         }
 
     }

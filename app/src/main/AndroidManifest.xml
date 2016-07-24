@@ -104,7 +104,9 @@
             android:name=".memorymatrix.MemoryMatrix66Activity"
             android:label="@string/memory_matrix" />
         <activity android:name=".DIfficultyLevelActivity" />
-        <activity android:name=".GameOverActivity"></activity>
+        <activity
+            android:name=".GameOverActivity"
+            android:label="Select the difficulty level"></activity>
     </application>
 
 </manifest>
