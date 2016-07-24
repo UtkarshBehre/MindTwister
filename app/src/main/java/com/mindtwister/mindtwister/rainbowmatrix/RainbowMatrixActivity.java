@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.mindtwister.mindtwister.GameOverActivity;
 import com.mindtwister.mindtwister.R;
+import com.mindtwister.mindtwister.managers.DBHandler;
 import com.mindtwister.mindtwister.managers.RainbowMatrixScores;
 import com.mindtwister.mindtwister.managers.SessionManager;
 
@@ -24,6 +25,7 @@ import java.util.List;
  * Created by Utkarsh on 17-07-2016.
  */
 public class RainbowMatrixActivity extends AppCompatActivity {
+
     public Button displayTile;
     public Button b1, b2, b3, b4;
     TextView trialsText;
@@ -38,6 +40,7 @@ public class RainbowMatrixActivity extends AppCompatActivity {
 
 
      */
+    DBHandler db;
     SessionManager session;
     private List<Integer> colorSequence;
     private int score;
@@ -56,6 +59,7 @@ public class RainbowMatrixActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rainbow_matrix_normal);
+        db = new DBHandler(this);
         session = new SessionManager(this);
         userListCounter = 0;
         displayTile = (Button) findViewById(R.id.displayTile);
@@ -129,13 +133,10 @@ public class RainbowMatrixActivity extends AppCompatActivity {
                 rms.setUser_email(SessionManager.KEY_EMAIL);
                 rms.setScore(session.getScore());
                 rms.setDifficultylevel(session.getDifficultyLevel());
+                rms.setGame_name(SessionManager.MEMORYMATRIX);
 
-            /*
+                db.addRainbowMatrixGameScore(rms);
 
-                //save score to database
-                DBHandler.setRainbowMatrixScore(rms);
-
-             */
 
                 //============GAMEOVER HERE============================
                 //sending score via intent to the gamevoer screen to be displayed

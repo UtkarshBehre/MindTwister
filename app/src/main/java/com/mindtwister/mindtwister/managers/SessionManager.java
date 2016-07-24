@@ -33,6 +33,10 @@ public class SessionManager {
     // trials left
     public static final String KEY_TRIALSLEFT = "trialsLeft";
 
+    public static final String MEMORYMATRIX = "Memory Matrix";
+    public static final String RAINBOWMATRIX = "Rainbow Matrix";
+    public static final String SUDOKU = "Sudoku";
+
     // Shared preference file name
     private static final String PREF_NAME = "AndroidHivePref";
     // All Shared Preferences Keys

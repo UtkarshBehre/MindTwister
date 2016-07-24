@@ -11,7 +11,10 @@ import android.widget.TextView;
 
 import com.mindtwister.mindtwister.GameOverActivity;
 import com.mindtwister.mindtwister.R;
+import com.mindtwister.mindtwister.managers.DBHandler;
+import com.mindtwister.mindtwister.managers.MemoryMatrixScores;
 import com.mindtwister.mindtwister.managers.SessionManager;
+import com.mindtwister.mindtwister.memorymatrix.utility.MemoryMatrixGameDifficultyParameters;
 import com.mindtwister.mindtwister.memorymatrix.utility.UtilityMethodsForMemoryMatrix;
 
 import java.util.ArrayList;
@@ -22,28 +25,42 @@ public class MemoryMatrix66Activity extends AppCompatActivity {
     private final int TOTALTILES = 36;
     private final int TILESTOFLASH = 9;
     private final int CURRENTLEVEL = 7;
+    public TextView difficultyText;
+    public TextView trialsText;
+    public TextView matrixText;
     public HashMap<Integer, Boolean> gridSet;
     public HashMap<Integer, Boolean> checkerGridSet;
     public ArrayList<Button> buttonsList;
     SessionManager session;
+    DBHandler db;
+    private int TOTALTRIALS;
+    private int difficultyMultiplier;
     private long TIMETOFLASH;
     private long startTime;
     private long finishTime;
     private int trialsLeft;
     private int score;
+    private String TAG = "VARIABLES CHECK";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory_matrix_66);
-
+        difficultyText = (TextView) findViewById(R.id.difficultyText);
+        trialsText = (TextView) findViewById(R.id.trialsText);
+        matrixText = (TextView) findViewById(R.id.matrixText);
+        matrixText.setText("6x6");
         /**********************************Repeated code here**************************************************/
         session = new SessionManager(this);
+        db = new DBHandler(this);
 
-        getIntent().putExtra("currentTrialsLeft",0);
+        trialsLeft = getIntent().getIntExtra("currentTrialsLeft", 0);
+        score = getIntent().getIntExtra("score", 0);
 
         setDifficultyLevelTIMETOFLASH();
+        trialsText.setText(String.valueOf(trialsLeft));
 
+        Log.i(TAG, "trialsLeft: " + trialsLeft);
         //making object of our utility class to use its methods
         UtilityMethodsForMemoryMatrix utilityMethodsForMemoryMatrix = new UtilityMethodsForMemoryMatrix();
 
@@ -175,10 +192,24 @@ public class MemoryMatrix66Activity extends AppCompatActivity {
             session.setTrialsLeft(trialsLeft);
             if (trialsLeft == 0) {
 
-                /*
-                to do
-                store score in database
-                */
+                score *= difficultyMultiplier;
+                score = score * trialsLeft / TOTALTRIALS;
+
+                //saving user data in the pojo class to save his/her score in database
+                //beans class to store data
+                MemoryMatrixScores mms = new MemoryMatrixScores();
+
+                //retrieving general user info from session
+                HashMap<String, String> userInfo = session.getUserDetails();
+
+                //setting up the beans class
+                mms.setUser_nickname(userInfo.get(SessionManager.KEY_NICKNAME));
+                mms.setUser_email(SessionManager.KEY_EMAIL);
+                mms.setScore(session.getScore());
+                mms.setDifficulty_level(session.getDifficultyLevel());
+                mms.setGame_name(SessionManager.MEMORYMATRIX);
+
+                db.addMemoryMatrixGameScore(mms);
 
                 //============GAMEOVER HERE============================
                 //sending score via intent to the gamevoer screen to be displayed
@@ -187,19 +218,21 @@ public class MemoryMatrix66Activity extends AppCompatActivity {
                 gameOver.putExtra("score", score);
                 startActivity(gameOver);
                 finish();
-            }
 
+
+            } else {
             /*
                                 CHANGEME
                 !!!!!!!!!!!!!!!!INTENT changes for every new activity!!!!!!!!!!!!!!
              */
-            //sending user to previous level since this is first activity so we re-instantiate itself
-            Intent previousLevel = new Intent(this, MemoryMatrix56Activity.class);
-            previousLevel.putExtra("currentTrialsLeft",trialsLeft);
-            startActivity(previousLevel);
-            finish();
+                //sending user to previous level since this is first activity so we re-instantiate itself
+                Intent previousLevel = new Intent(this, MemoryMatrix56Activity.class);
+                previousLevel.putExtra("currentTrialsLeft", trialsLeft);
+                previousLevel.putExtra("score", score);
+                startActivity(previousLevel);
+                finish();
+            }
         }
-
     }
 
     public void checkAllTilesCorrectOrNot() {
@@ -214,7 +247,7 @@ public class MemoryMatrix66Activity extends AppCompatActivity {
             Log.i(USERTIME, "Total time taken: " + timeTaken);
 
             //adding up user's score
-            score += (1000000 * CURRENTLEVEL) / timeTaken;
+            score += (10000000 * CURRENTLEVEL) / timeTaken;
             Log.i(USERTIME, "Score at 3x3: " + score);
 
             /*
@@ -224,6 +257,8 @@ public class MemoryMatrix66Activity extends AppCompatActivity {
              */
             //sending user to next level
             Intent nextLevel = new Intent(this, MemoryMatrix66Activity.class);
+            nextLevel.putExtra("score", score);
+            nextLevel.putExtra("currentTrialsLeft", trialsLeft);
             startActivity(nextLevel);
             finish();
         }
@@ -233,19 +268,31 @@ public class MemoryMatrix66Activity extends AppCompatActivity {
     private void setDifficultyLevelTIMETOFLASH() {
         switch (session.getDifficultyLevel()) {
             case SessionManager.EASY: {
-                TIMETOFLASH = 6000;
+                difficultyText.setText(MemoryMatrixGameDifficultyParameters.EASYGAME);
+                TOTALTRIALS = MemoryMatrixGameDifficultyParameters.TOTALTRIALSEASY;
+                TIMETOFLASH = MemoryMatrixGameDifficultyParameters.TIMETOFLASHEASY;
+                difficultyMultiplier = MemoryMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIEREASY;
                 break;
             }
             case SessionManager.MEDIUM: {
-                TIMETOFLASH = 4000;
+                difficultyText.setText(MemoryMatrixGameDifficultyParameters.MEDIUMGAME);
+                TOTALTRIALS = MemoryMatrixGameDifficultyParameters.TOTALTRIALSMEDIUM;
+                TIMETOFLASH = MemoryMatrixGameDifficultyParameters.TIMETOFLASHMEDIUM;
+                difficultyMultiplier = MemoryMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIERMEDIUM;
                 break;
             }
             case SessionManager.HARD:
-                TIMETOFLASH = 2000;
+                difficultyText.setText(MemoryMatrixGameDifficultyParameters.HARDGAME);
+                TOTALTRIALS = MemoryMatrixGameDifficultyParameters.TOTALTRIALSHARD;
+                TIMETOFLASH = MemoryMatrixGameDifficultyParameters.TIMETOFLASHHARD;
+                difficultyMultiplier = MemoryMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIERHARD;
                 break;
             default:
-                TIMETOFLASH = 4000;
+                TOTALTRIALS = MemoryMatrixGameDifficultyParameters.TOTALTRIALSMEDIUM;
+                TIMETOFLASH = MemoryMatrixGameDifficultyParameters.TIMETOFLASHMEDIUM;
+                difficultyMultiplier = MemoryMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIERMEDIUM;
         }
+
     }
 
     public boolean compareNewAndOldGridStates() {

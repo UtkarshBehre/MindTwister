@@ -25,27 +25,23 @@
                 android:textColor="@color/appAccent400" />
 
             <TextView
-                android:id="@+id/level_text1"
+                android:id="@+id/difficultyText"
                 style="@style/HeaderText"
                 android:layout_marginRight="20dp"
-                android:text="@string/easy"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/whiteColor" />
 
             <TextView
                 android:id="@+id/text_view"
                 style="@style/HeaderText"
-                android:layout_weight="1"
                 android:text="@string/tiles"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/appAccent400" />
 
             <TextView
-                android:id="@+id/view_text"
+                android:id="@+id/matrixText"
                 style="@style/HeaderText"
                 android:layout_marginRight="30dp"
-                android:layout_weight="1"
-                android:text="4"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/whiteColor" />
 
@@ -57,9 +53,8 @@
                 android:textColor="@color/appAccent400" />
 
             <TextView
-                android:id="@+id/Trials_text"
+                android:id="@+id/trialsText"
                 style="@style/HeaderText"
-                android:text="4"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/whiteColor" />
 
