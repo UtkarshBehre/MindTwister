@@ -14,7 +14,7 @@ public class DIfficultyLevelActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_memorymatrix__difficultylevel);
+        setContentView(R.layout.activity_difficulty_level_selector);
         session = new SessionManager(this);
     }
 

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/credits_backgrounds"
+    android:orientation="vertical"
+    tools:context=".DIfficultyLevelActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="mmEasyOnClick"
+            android:orientation="vertical"
+                android:paddingBottom="22dp"
+                android:paddingTop="22dp">
+
+            <TextView
+                android:id="@+id/textView12"
+                style="@style/creditsStyle.creditsRoles"
+                android:text="Difficulty Level - EASY"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#45a708"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                style="@style/creditsStyle.creditsNames"
+                android:text="Recommended mode for people \nwith Mild Cognitive Impairment"
+                android:textColor="#d4d0d0"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="mmMediumOnClick"
+            android:orientation="vertical"
+            android:paddingBottom="22dp"
+            android:paddingTop="22dp">
+
+            <TextView
+                android:id="@+id/textView13"
+                style="@style/creditsStyle.creditsRoles"
+                android:text="Difficulty Level - MEDIUM"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#e1f14c"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/textView14"
+                style="@style/creditsStyle.creditsNames"
+                android:text="This is chill mode\nJust relax and enjoy!"
+                android:textColor="#d4d0d0"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="mmHardOnClick"
+            android:orientation="vertical"
+            android:paddingBottom="22dp"
+            android:paddingTop="22dp">
+
+            <TextView
+                android:id="@+id/textView15"
+                style="@style/creditsStyle.creditsRoles"
+                android:text="Difficulty Level - HARD"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#f4ac1b"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/textView16"
+                style="@style/creditsStyle.creditsNames"
+                android:text="Time to step up\nyour game"
+                android:textColor="#d4d0d0" />
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="mmHardOnClick"
+                android:orientation="vertical"
+                android:paddingBottom="22dp"
+                android:paddingTop="22dp">
+
+                <TextView
+                    android:id="@+id/textView17"
+                    style="@style/creditsStyle.creditsRoles"
+                    android:text="Difficulty Level - EXTREME"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#e65b1a"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    style="@style/creditsStyle.creditsNames"
+                    android:text="Extremely challenging made\nfor extreme gamers"
+                    android:textColor="#d4d0d0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="mmHardOnClick"
+                android:orientation="vertical"
+                android:paddingBottom="22dp"
+                android:paddingTop="22dp">
+
+                <TextView
+                    android:id="@+id/textView19"
+                    style="@style/creditsStyle.creditsRoles"
+                    android:text="Difficulty Level - IMBALANCED"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#fa0901"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/textView20"
+                    style="@style/creditsStyle.creditsNames"
+                    android:text="Too fast too furious mode\nThe inhuman challenge"
+                    android:textColor="#d4d0d0" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
