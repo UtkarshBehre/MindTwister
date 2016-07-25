@@ -45,7 +45,7 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
     private long startTime;
     private long finishTime;
     private int trialsLeft;
-    private int difficultyMultiplier;
+    private double difficultyMultiplier;
     private int score;
     private String TAG = "VARIABLES CHECK";
 //    TextView difficultyText;
@@ -66,16 +66,13 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
         score = getIntent().getIntExtra("score", 0);
 //        setDifficultyParametersTrials();
         trialsLeft = getIntent().getIntExtra("currentTrialsLeft", -5);
-        trialsText.setText(String.valueOf(trialsLeft));
 
         if (trialsLeft == -5) {
             trialsLeft = TOTALTRIALS;
-            trialsText.setText(String.valueOf(trialsLeft));
-
         }
         Log.i(TAG, "trialsLeft: " + trialsLeft);
 
-        trialsText.setText(String.valueOf("ajaaoooo"));
+        trialsText.setText(String.valueOf(trialsLeft));
 //
 //        if (trialsLeft == -5) {
 //            Log.i(TAG, "inside if checker trialsLeft: "+trialsLeft);
@@ -223,7 +220,7 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
             Log.i(USERTIME, "Total time taken: " + timeTaken);
 
             //adding up user's score
-            score += 10000000 * CURRENTLEVEL / timeTaken;
+            score += 100000 * CURRENTLEVEL / timeTaken;
             Log.i(USERTIME, "Score at 3x3: " + score);
 
             /*
@@ -257,16 +254,31 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
                 difficultyMultiplier = MemoryMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIERMEDIUM;
                 break;
             }
-            case SessionManager.HARD:
+            case SessionManager.HARD: {
                 difficultyText.setText(MemoryMatrixGameDifficultyParameters.HARDGAME);
                 TOTALTRIALS = MemoryMatrixGameDifficultyParameters.TOTALTRIALSHARD;
                 TIMETOFLASH = MemoryMatrixGameDifficultyParameters.TIMETOFLASHHARD;
                 difficultyMultiplier = MemoryMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIERHARD;
                 break;
+            }
+            case SessionManager.EXTREME: {
+                difficultyText.setText(MemoryMatrixGameDifficultyParameters.EXTREMEGAME);
+                TOTALTRIALS = MemoryMatrixGameDifficultyParameters.TOTALTRIALSEXTREME;
+                TIMETOFLASH = MemoryMatrixGameDifficultyParameters.TIMETOFLASHEXTREME;
+                difficultyMultiplier = MemoryMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIEREXTREME;
+                break;
+            }
+            case SessionManager.IMBALANCED: {
+                difficultyText.setText(MemoryMatrixGameDifficultyParameters.IMBALANCEDGAME);
+                TOTALTRIALS = MemoryMatrixGameDifficultyParameters.TOTALTRIALSIMBALANCED;
+                TIMETOFLASH = MemoryMatrixGameDifficultyParameters.TIMETOFLASHIMBALANCED;
+                difficultyMultiplier = MemoryMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIERIMBALANCED;
+                break;
+            }
             default:
-                TOTALTRIALS = MemoryMatrixGameDifficultyParameters.TOTALTRIALSMEDIUM;
-                TIMETOFLASH = MemoryMatrixGameDifficultyParameters.TIMETOFLASHMEDIUM;
-                difficultyMultiplier = MemoryMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIERMEDIUM;
+                TOTALTRIALS = MemoryMatrixGameDifficultyParameters.TOTALTRIALSHARD;
+                TIMETOFLASH = MemoryMatrixGameDifficultyParameters.TIMETOFLASHHARD;
+                difficultyMultiplier = MemoryMatrixGameDifficultyParameters.DIFFICULTYMULTIPLIERHARD;
         }
 
     }

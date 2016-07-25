@@ -6,293 +6,380 @@
     android:background="@mipmap/credits_backgrounds"
     tools:context=".generallayouts.CreditsActivity">
 
+
+    <TextView
+        android:id="@+id/creditsView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
+        android:text="@string/credits_text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/whiteColor"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/creditsView">
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="40dp"
-                    android:layout_marginTop="40dp"
-                    android:gravity="center_horizontal"
-                    android:text="@string/credits_text"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/whiteColor"
-                    android:textSize="50sp"
-                    android:textStyle="bold" />
+            <TextView
+                style="@style/creditsStyle.creditsRoles"
+                android:text="Project Lead" />
 
-            <RelativeLayout
+            <TextView
+                style="@style/creditsStyle.creditsNames"
+                android:layout_marginBottom="25dp"
+                android:text="Utkarsh Behre" />
 
-                android:layout_width="match_parent"
-                android:layout_height="70dp">
+            <TextView
+                style="@style/creditsStyle.creditsRoles"
+                android:text="Lead Game Programmer" />
 
-                <TextView
-                    android:id="@+id/textView1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Project Lead"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/whiteColor"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
+            <TextView
+                style="@style/creditsStyle.creditsNames"
+                android:layout_marginBottom="25dp"
+                android:text="Utkarsh Behre" />
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignTop="@+id/textView1"
-                    android:layout_margin="5dp"
-                    android:gravity="right"
-                    android:text="@string/utkarsh"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/whiteColor"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
+            <TextView
+                style="@style/creditsStyle.creditsRoles"
+                android:text="Graphical User Interface designers" />
 
+            <TextView
+                style="@style/creditsStyle.creditsNames"
+                android:text="Kanchan Mangalgire" />
 
-            </RelativeLayout>
+            <TextView
+                style="@style/creditsStyle.creditsNames"
+                android:text="Gunjan Chauhan" />
 
+            <TextView
+                style="@style/creditsStyle.creditsNames"
+                android:layout_marginBottom="25dp"
+                android:text="Himanshu Gautam" />
 
-            <RelativeLayout
+            <TextView
+                style="@style/creditsStyle.creditsRoles"
+                android:text="Game Logic and Programming" />
 
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_gravity="left">
+            <TextView
+                style="@style/creditsStyle.creditsNames"
+                android:text="Utkarsh Behre" />
 
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:gravity="center_horizontal"
-                    android:text="@string/business_logic"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/whiteColor"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
+            <TextView
+                style="@style/creditsStyle.creditsNames"
+                android:text="Anupriya Jain" />
 
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBottom="@+id/textView3"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="5dp"
-                    android:gravity="right"
-                    android:text="@string/somya"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/whiteColor"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
+            <TextView
+                style="@style/creditsStyle.creditsNames"
+                android:text="Somya Mittal" />
 
+            <TextView
+                style="@style/creditsStyle.creditsNames"
+                android:layout_marginBottom="25dp"
+                android:text="Jyothi Bhat" />
 
-            </RelativeLayout>
+            <TextView
+                style="@style/creditsStyle.creditsRoles"
+                android:text="Logo designer" />
 
-            <RelativeLayout
+            <TextView
+                style="@style/creditsStyle.creditsNames"
+                android:layout_marginBottom="25dp"
+                android:text="Utkarsh Behre" />
 
-                android:layout_width="match_parent"
-                android:layout_height="70dp">
+            <TextView
+                style="@style/creditsStyle.creditsRoles"
+                android:text="Database Management" />
 
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:gravity="center_horizontal"
-                    android:text="@string/database_designer"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/whiteColor"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
+            <TextView
+                style="@style/creditsStyle.creditsNames"
+                android:layout_marginBottom="25dp"
+                android:text="Jyothi Bhat" />
 
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBottom="@+id/textView5"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentStart="false"
-                    android:layout_alignTop="@+id/textView5"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="5dp"
-                    android:gravity="right"
-                    android:text="@string/jyoti"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/whiteColor"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
+            <TextView
+                style="@style/creditsStyle.creditsRoles"
+                android:text="Music and Sound fx" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp">
-
-                <TextView
-                    android:id="@+id/textView7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:gravity="center_horizontal"
-                    android:text="@string/ui_memory_matrix"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/whiteColor"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="5dp"
-                    android:gravity="right"
-                    android:text="@string/kanchan"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/whiteColor"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
+            <TextView
+                style="@style/creditsStyle.creditsNames"
+                android:text="Utkarsh Behre" />
 
 
-            </RelativeLayout>
+            <!--
+                        <RelativeLayout
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp">
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp">
 
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:gravity="center_horizontal"
-                    android:text="@string/ui_rainbow_matrix"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/whiteColor"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/textView1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Project Lead"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@color/whiteColor"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/textVie10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="5dp"
-                    android:gravity="right"
-                    android:text="@string/anupriya"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/whiteColor"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp">
-
-                <TextView
-                    android:id="@+id/textView11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:gravity="center_horizontal"
-                    android:text="@string/ui_designer"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/whiteColor"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textVie12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="5dp"
-                    android:gravity="right"
-                    android:text="@string/gunjan"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/whiteColor"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/textView2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignTop="@+id/textView1"
+                                android:layout_margin="5dp"
+                                android:gravity="right"
+                                android:text="@string/utkarsh"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@color/whiteColor"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
 
 
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp">
-
-                <TextView
-                    android:id="@+id/textView13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:gravity="center_horizontal"
-                    android:text="@string/ui_designer"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/whiteColor"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textVie14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="5dp"
-                    android:gravity="right"
-                    android:text="@string/himanshu"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/whiteColor"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
+                        </RelativeLayout>
 
 
-            </RelativeLayout>
+                        <RelativeLayout
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp">
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:layout_gravity="left">
 
-                <TextView
-                    android:id="@+id/textView15"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:gravity="center_horizontal"
-                    android:text="@string/sound_effects"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/whiteColor"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:gravity="center_horizontal"
+                                android:text="@string/business_logic"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@color/whiteColor"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/textVie16"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="5dp"
-                    android:gravity="right"
-                    android:text="@string/utkarsh"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/whiteColor"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/textView4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignBottom="@+id/textView3"
+                                android:layout_alignParentEnd="true"
+                                android:layout_margin="5dp"
+                                android:gravity="right"
+                                android:text="@string/somya"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@color/whiteColor"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
 
 
-            </RelativeLayout>
+                        </RelativeLayout>
 
+                        <RelativeLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp">
+
+                            <TextView
+                                android:id="@+id/textView5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:gravity="center_horizontal"
+                                android:text="@string/database_designer"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@color/whiteColor"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textView6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignBottom="@+id/textView5"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentStart="false"
+                                android:layout_alignTop="@+id/textView5"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginTop="5dp"
+                                android:gravity="right"
+                                android:text="@string/jyoti"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@color/whiteColor"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp">
+
+                            <TextView
+                                android:id="@+id/textView7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:gravity="center_horizontal"
+                                android:text="@string/ui_memory_matrix"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@color/whiteColor"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textView8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_margin="5dp"
+                                android:gravity="right"
+                                android:text="@string/kanchan"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@color/whiteColor"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp">
+
+                            <TextView
+                                android:id="@+id/textView9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:gravity="center_horizontal"
+                                android:text="@string/ui_rainbow_matrix"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@color/whiteColor"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textVie10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_margin="5dp"
+                                android:gravity="right"
+                                android:text="@string/anupriya"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@color/whiteColor"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp">
+
+                            <TextView
+                                android:id="@+id/textView11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:gravity="center_horizontal"
+                                android:text="@string/ui_designer"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@color/whiteColor"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textVie12"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_margin="5dp"
+                                android:gravity="right"
+                                android:text="@string/gunjan"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@color/whiteColor"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp">
+
+                            <TextView
+                                android:id="@+id/textView13"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:gravity="center_horizontal"
+                                android:text="@string/ui_designer"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@color/whiteColor"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textVie14"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_margin="5dp"
+                                android:gravity="right"
+                                android:text="@string/himanshu"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@color/whiteColor"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp">
+
+                            <TextView
+                                android:id="@+id/textView15"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:gravity="center_horizontal"
+                                android:text="@string/sound_effects"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@color/whiteColor"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textVie16"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_margin="5dp"
+                                android:gravity="right"
+                                android:text="@string/utkarsh"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@color/whiteColor"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+            -->
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

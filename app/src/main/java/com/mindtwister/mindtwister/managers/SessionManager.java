@@ -26,9 +26,13 @@ public class SessionManager {
 
     // User age
     public static final String KEY_AGE = "age";
-    public static final String EASY = "easy";
-    public static final String MEDIUM = "medium";
-    public static final String HARD = "hard";
+
+    //difficulty levels
+    public static final String EASY = "EASY";
+    public static final String MEDIUM = "MEDIUM";
+    public static final String HARD = "HARD";
+    public static final String EXTREME = "EXTREME";
+    public static final String IMBALANCED = "IMBALANCED";
 
     // trials left
     public static final String KEY_TRIALSLEFT = "trialsLeft";

@@ -26,7 +26,8 @@
             android:label="@string/registration_activity" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" />
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".generallayouts.AboutActivity"
             android:label="@string/about_activity" />
@@ -53,13 +54,16 @@
             android:label="@string/credits_text" />
         <activity
             android:name=".generallayouts.ProfileActivity"
-            android:label="@string/profile" />
+            android:label="@string/profile"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".memorymatrix.Memorymatrix_instructionActivity"
-            android:label="@string/memory_matrix" />
+            android:label="@string/memory_matrix"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".rainbowmatrix.Rainbowmatrix_instruction_Activity"
-            android:label="@string/rainbow_matrix" />
+            android:label="@string/rainbow_matrix"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".sudoku.Sudoku_instructionActivity"
             android:label="@string/sudoku" />
@@ -79,7 +83,8 @@
         <!-- </activity> -->
         <activity
             android:name=".memorymatrix.MemoryMatrix33Activity"
-            android:label="@string/memory_matrix" />
+            android:label="@string/memory_matrix"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".memorymatrix.MemoryMatrix34Activity"
             android:label="@string/memory_matrix" />
@@ -99,7 +104,9 @@
             android:name=".memorymatrix.MemoryMatrix66Activity"
             android:label="@string/memory_matrix" />
         <activity android:name=".DIfficultyLevelActivity" />
-        <activity android:name=".GameOverActivity"></activity>
+        <activity
+            android:name=".GameOverActivity"
+            android:label="Select the difficulty level"></activity>
     </application>
 
 </manifest>
