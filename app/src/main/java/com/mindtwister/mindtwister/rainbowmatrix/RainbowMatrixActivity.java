@@ -34,6 +34,8 @@ public class RainbowMatrixActivity extends AppCompatActivity {
 
     public Button displayTile;
     public Button b1, b2, b3, b4;
+    TextView difficultyText;
+    TextView colorsText;
     TextView trialsText;
     /*
         COLOR CODES USED
@@ -66,6 +68,9 @@ public class RainbowMatrixActivity extends AppCompatActivity {
         setContentView(R.layout.activity_rainbow_matrix_normal);
         db = new DBHandler(this);
         session = new SessionManager(this);
+        difficultyText = (TextView) findViewById(R.id.difficultyText);
+        colorsText = (TextView) findViewById(R.id.colorsText);
+        difficultyText.setText(session.getDifficultyLevel().toString());
         userListCounter = 0;
         displayTile = (Button) findViewById(R.id.displayTile);
         displayTile.setEnabled(false);
@@ -77,8 +82,8 @@ public class RainbowMatrixActivity extends AppCompatActivity {
         b4 = (Button) findViewById(R.id.tiles_32_btn);
 
         setDifficultyParameters();
-
-        trialsText = (TextView) findViewById(R.id.trials_text);
+        colorsText.setText(String.valueOf(noOfColorsUsed));
+        trialsText = (TextView) findViewById(R.id.trialsText);
         trialsText.setText(String.valueOf(trials));
         totalTime = 0;//initiating both to zero when the application is started
         score = 0;
@@ -120,7 +125,7 @@ public class RainbowMatrixActivity extends AppCompatActivity {
                 flashListColors();
             } else {
                 trials = 0;
-                trialsText = (TextView) findViewById(R.id.trials_text);
+                trialsText = (TextView) findViewById(R.id.trialsText);
                 //calculating final score
                 finishTime = System.currentTimeMillis();
                 timeTaken = finishTime - startTime;
