@@ -6,13 +6,14 @@ import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.mindtwister.mindtwister.GameOverActivity;
-import com.mindtwister.mindtwister.InstructionsActivity;
 import com.mindtwister.mindtwister.R;
 import com.mindtwister.mindtwister.SettingsActivity;
 import com.mindtwister.mindtwister.generallayouts.ProfileActivity;
@@ -85,6 +86,13 @@ public class RainbowMatrixActivity extends AppCompatActivity {
         flashListColors();
     }
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.rainbow_matrix_menu, menu);
+        return true;
+    }
 
     //method to be called on a button click passing the color reference number i.e. 1,2,3,4/1,2,3,4,5/1,2,3,4,5,6
     public void colorClickedCheck(int i) {
@@ -270,6 +278,26 @@ public class RainbowMatrixActivity extends AppCompatActivity {
         colorClickedCheck(4);
     }
 
+    public void signout(MenuItem item) {
+        finish();
+        session.logoutUser();
+    }
+
+    public void profile(MenuItem item) {
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
+    public void music(MenuItem item) {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
+    public void instructions(MenuItem item){
+        Intent intent = new Intent(this, Rainbowmatrix_instruction_Activity.class);
+        startActivity(intent);
+    }
+
     //this counter class is used to flash the color sequence on our main tile
     class Counter extends CountDownTimer {
 
@@ -354,25 +382,5 @@ public class RainbowMatrixActivity extends AppCompatActivity {
             b4.setEnabled(true);
 
         }
-    }
-    public void signout(MenuItem item) {
-        finish();
-        session.logoutUser();
-    }
-
-    public void profile(MenuItem item) {
-        Intent intent = new Intent(this, ProfileActivity.class);
-        startActivity(intent);
-    }
-
-
-    public void music(MenuItem item) {
-        Intent intent = new Intent(this, SettingsActivity.class);
-        startActivity(intent);
-    }
-
-    public void instructions(MenuItem item){
-        Intent intent = new Intent(this, Rainbowmatrix_instruction_Activity.class);
-        startActivity(intent);
     }
 }

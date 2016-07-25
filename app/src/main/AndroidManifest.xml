@@ -39,7 +39,7 @@
             android:label="@string/instructions_activity" />
         <activity
             android:name=".PlayMenuActivity"
-            android:label="@string/main_menu" />
+            android:label="@string/choose_game" />
         <activity
             android:name=".rainbowmatrix.RainbowMatrixActivity"
             android:label="Rainbow Matrix" />
@@ -67,20 +67,6 @@
         <activity
             android:name=".sudoku.Sudoku_instructionActivity"
             android:label="@string/sudoku" />
-        <!-- default code -->
-        <!-- android:allowBackup="true" -->
-        <!-- android:icon="@mipmap/ic_launcher" -->
-        <!-- android:label="@string/app_name" -->
-        <!-- android:supportsRtl="true" -->
-        <!-- android:theme="@style/AppTheme"> -->
-        <!-- <activity android:name=".MainActivity"> -->
-        <!-- <intent-filter> -->
-        <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-        <!-- </intent-filter> -->
-        <!-- </activity> -->
         <activity
             android:name=".memorymatrix.MemoryMatrix33Activity"
             android:label="@string/memory_matrix"
@@ -103,10 +89,12 @@
         <activity
             android:name=".memorymatrix.MemoryMatrix66Activity"
             android:label="@string/memory_matrix" />
-        <activity android:name=".DIfficultyLevelActivity" />
+        <activity
+            android:name=".DIfficultyLevelActivity"
+            android:label="@string/select_difficulty" />
         <activity
             android:name=".GameOverActivity"
-            android:label="Select the difficulty level"></activity>
+            android:label="@string/game_over" />
     </application>
 
 </manifest>
