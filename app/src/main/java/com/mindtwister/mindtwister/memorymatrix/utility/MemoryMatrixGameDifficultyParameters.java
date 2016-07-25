@@ -27,5 +27,4 @@ public class MemoryMatrixGameDifficultyParameters {
     public final static double DIFFICULTYMULTIPLIERHARD = 2;
     public final static double DIFFICULTYMULTIPLIEREXTREME = 3;
     public final static double DIFFICULTYMULTIPLIERIMBALANCED = 4;
-
 }

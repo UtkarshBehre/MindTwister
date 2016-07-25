@@ -1,6 +1,7 @@
 package com.mindtwister.mindtwister.memorymatrix;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +14,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.mindtwister.mindtwister.GameOverActivity;
-import com.mindtwister.mindtwister.InstructionsActivity;
 import com.mindtwister.mindtwister.R;
 import com.mindtwister.mindtwister.SettingsActivity;
 import com.mindtwister.mindtwister.generallayouts.ProfileActivity;
@@ -60,6 +60,9 @@ public class MemoryMatrix34Activity extends AppCompatActivity {
         /**************************************************************************************************/
         session = new SessionManager(this);
         db = new DBHandler(this);
+
+        MediaPlayer mp = MediaPlayer.create(this, R.raw.level_complete_sound_fx);
+        mp.start();
 
         trialsLeft=getIntent().getIntExtra("currentTrialsLeft",0);
         score = getIntent().getIntExtra("score", 0);
@@ -331,6 +334,26 @@ public class MemoryMatrix34Activity extends AppCompatActivity {
         checkTileCorrect(11, buttonsList.get(11));
     }
 
+    public void signout(MenuItem item) {
+        finish();
+        session.logoutUser();
+    }
+
+    public void profile(MenuItem item) {
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
+    public void music(MenuItem item) {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
+    public void instructions(MenuItem item){
+        Intent intent = new Intent(this, Memorymatrix_instructionActivity.class);
+        startActivity(intent);
+    }
+
     //CounterDownTimer class to flash tiles
     public class Counter extends CountDownTimer {
         HashMap<Integer, Boolean> gridSet;
@@ -404,25 +427,5 @@ public class MemoryMatrix34Activity extends AppCompatActivity {
             Log.i(USERTIME, "Start time: " + startTime);
         }
 
-    }
-    public void signout(MenuItem item) {
-        finish();
-        session.logoutUser();
-    }
-
-    public void profile(MenuItem item) {
-        Intent intent = new Intent(this, ProfileActivity.class);
-        startActivity(intent);
-    }
-
-
-    public void music(MenuItem item) {
-        Intent intent = new Intent(this, SettingsActivity.class);
-        startActivity(intent);
-    }
-
-    public void instructions(MenuItem item){
-        Intent intent = new Intent(this, Memorymatrix_instructionActivity.class);
-        startActivity(intent);
     }
 }

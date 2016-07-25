@@ -1,6 +1,7 @@
 package com.mindtwister.mindtwister.rainbowmatrix;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
@@ -45,6 +46,7 @@ public class RainbowMatrixActivity extends AppCompatActivity {
     */
     DBHandler db;
     SessionManager session;
+    MediaPlayer lvlfx;
     private List<Integer> colorSequence;
     private int score;
     private int userListCounter;
@@ -166,6 +168,8 @@ public class RainbowMatrixActivity extends AppCompatActivity {
             finishTime = System.currentTimeMillis();
             timeTaken += finishTime - startTime;
             totalTime += timeTaken;
+            lvlfx = MediaPlayer.create(this, R.raw.level_complete_sound_fx);
+            lvlfx.start();
             Log.i("USERINPUTTIME", "time taken per sequence" + timeTaken);
             score += (colorSequence.size() * 100000) / timeTaken;
             Log.i("SCORECHECK", "Score after completion of one round : " + score);
