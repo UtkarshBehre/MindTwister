@@ -5,12 +5,18 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.mindtwister.mindtwister.GameOverActivity;
+import com.mindtwister.mindtwister.InstructionsActivity;
 import com.mindtwister.mindtwister.R;
+import com.mindtwister.mindtwister.SettingsActivity;
+import com.mindtwister.mindtwister.generallayouts.ProfileActivity;
 import com.mindtwister.mindtwister.managers.DBHandler;
 import com.mindtwister.mindtwister.managers.MemoryMatrixScores;
 import com.mindtwister.mindtwister.managers.SessionManager;
@@ -117,6 +123,13 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
 
         //flashing the tiles for time depending on difficulty
         flashTheTiles(gridSet, buttonsList, TIMETOFLASH);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.memory_matrix33_menu, menu);
+        return true;
     }
 
     //this method is used to flash the tiles and is called in onCreate
@@ -390,5 +403,25 @@ public class MemoryMatrix33Activity extends AppCompatActivity {
             Log.i(USERTIME, "Start time: " + startTime);
         }
 
+    }
+    public void signout(MenuItem item) {
+        finish();
+        session.logoutUser();
+    }
+
+    public void profile(MenuItem item) {
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
+
+    public void music(MenuItem item) {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
+    public void instructions(MenuItem item){
+        Intent intent = new Intent(this, Memorymatrix_instructionActivity.class);
+        startActivity(intent);
     }
 }

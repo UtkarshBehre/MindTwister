@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item
         android:id="@+id/profileMenu"
         android:onClick="profile"
         android:title="@string/profile" />
+
+    <item
+        android:id="@+id/instructionsMenu"
+        android:onClick="instructions"
+        android:title="@string/instructions" />
+
     <item
         android:id="@+id/musicMenu"
         android:onClick="music"
@@ -13,4 +20,5 @@
         android:id="@+id/sinoutMenu"
         android:onClick="signout"
         android:title="@string/signout" />
+
 </menu>

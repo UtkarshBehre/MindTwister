@@ -6,12 +6,16 @@ import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.mindtwister.mindtwister.GameOverActivity;
+import com.mindtwister.mindtwister.InstructionsActivity;
 import com.mindtwister.mindtwister.R;
+import com.mindtwister.mindtwister.SettingsActivity;
+import com.mindtwister.mindtwister.generallayouts.ProfileActivity;
 import com.mindtwister.mindtwister.managers.DBHandler;
 import com.mindtwister.mindtwister.managers.RainbowMatrixScores;
 import com.mindtwister.mindtwister.managers.SessionManager;
@@ -37,9 +41,7 @@ public class RainbowMatrixActivity extends AppCompatActivity {
         3    -      BLUE
         4    -      YELLOW
 
-
-
-     */
+    */
     DBHandler db;
     SessionManager session;
     private List<Integer> colorSequence;
@@ -352,5 +354,25 @@ public class RainbowMatrixActivity extends AppCompatActivity {
             b4.setEnabled(true);
 
         }
+    }
+    public void signout(MenuItem item) {
+        finish();
+        session.logoutUser();
+    }
+
+    public void profile(MenuItem item) {
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
+
+    public void music(MenuItem item) {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
+    public void instructions(MenuItem item){
+        Intent intent = new Intent(this, Rainbowmatrix_instruction_Activity.class);
+        startActivity(intent);
     }
 }

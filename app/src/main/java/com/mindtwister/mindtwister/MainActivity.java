@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.mindtwister.mindtwister.generallayouts.AboutActivity;
+import com.mindtwister.mindtwister.generallayouts.ProfileActivity;
 import com.mindtwister.mindtwister.managers.SessionManager;
 
 import java.util.HashMap;
@@ -110,4 +111,21 @@ public class MainActivity extends AppCompatActivity {
         finish();
         session.logoutUser();
     }
+
+    public void profile(MenuItem item) {
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
+
+    public void music(MenuItem item) {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
+    public void instructions(MenuItem item){
+        Intent intent = new Intent(this, InstructionsActivity.class);
+        startActivity(intent);
+    }
+
 }
