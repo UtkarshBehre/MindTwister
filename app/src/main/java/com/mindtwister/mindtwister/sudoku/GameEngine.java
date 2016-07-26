@@ -24,7 +24,7 @@ public class GameEngine {
 
     public void createGrid(Context context) {
         int[][] Sudoku = SudokuGenerator.getInstance().generatorGrid();
-        Sudoku = SudokuGenerator.getInstance().removeElement(Sudoku);
+        Sudoku = SudokuGenerator.getInstance().removeElement(Sudoku, context);
         grid = new GameGrid(context);
         grid.setGrid(Sudoku);
     }

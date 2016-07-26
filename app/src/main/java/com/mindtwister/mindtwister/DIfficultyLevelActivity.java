@@ -70,7 +70,7 @@ public class DIfficultyLevelActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case 3:
-                session.setDifficultyLevel(SessionManager.EASY);
+                session.setDifficultyLevel(SessionManager.MEDIUM);
                 intent = new Intent(this, SudokuActivity.class);
                 startActivity(intent);
                 break;
@@ -94,7 +94,7 @@ public class DIfficultyLevelActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case 3:
-                session.setDifficultyLevel(SessionManager.EASY);
+                session.setDifficultyLevel(SessionManager.HARD);
                 intent = new Intent(this, SudokuActivity.class);
                 startActivity(intent);
                 break;
@@ -118,7 +118,7 @@ public class DIfficultyLevelActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case 3:
-                session.setDifficultyLevel(SessionManager.EASY);
+                session.setDifficultyLevel(SessionManager.EXTREME);
                 intent = new Intent(this, SudokuActivity.class);
                 startActivity(intent);
                 break;
@@ -142,7 +142,7 @@ public class DIfficultyLevelActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case 3:
-                session.setDifficultyLevel(SessionManager.EASY);
+                session.setDifficultyLevel(SessionManager.IMBALANCED);
                 intent = new Intent(this, SudokuActivity.class);
                 startActivity(intent);
                 break;

@@ -1,5 +1,10 @@
 package com.mindtwister.mindtwister.sudoku;
 
+import android.content.Context;
+
+import com.mindtwister.mindtwister.managers.SessionManager;
+import com.mindtwister.mindtwister.sudoku.sudokugrid.GameGrid;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -7,7 +12,6 @@ import java.util.Random;
  * Created by SomyaMittal on 7/17/2016.
  */
 public class SudokuGenerator {
-    public static int numbersToRemove = 0;
     private static SudokuGenerator ourInstance = new SudokuGenerator();
     private ArrayList<ArrayList<Integer>> Availabe = new ArrayList<ArrayList<Integer>>();
     private Random rand = new Random();
@@ -51,8 +55,41 @@ public class SudokuGenerator {
         return Sudoku;
     }
 
-    public int[][] removeElement(int[][] Sudoku) {
+    public int[][] removeElement(int[][] Sudoku, Context context) {
         int i = 0;
+        int numbersToRemove = 0;
+
+        SessionManager session = new SessionManager(context);
+        switch (session.getDifficultyLevel()) {
+            case SessionManager.EASY:
+
+                numbersToRemove = SudokuDifficultyParameters.REMOVENUMBERSEASY;
+                GameGrid.sudokuDifficultyMultiplier = SudokuDifficultyParameters.DIFFICULTYMULTIPLIEREASY;
+
+                break;
+            case SessionManager.MEDIUM:
+
+                numbersToRemove = SudokuDifficultyParameters.REMOVENUMBERSMEDIUM;
+                GameGrid.sudokuDifficultyMultiplier = SudokuDifficultyParameters.DIFFICULTYMULTIPLIERMEDIUM;
+
+                break;
+            case SessionManager.HARD:
+                numbersToRemove = SudokuDifficultyParameters.REMOVENUMBERSHARD;
+                GameGrid.sudokuDifficultyMultiplier = SudokuDifficultyParameters.DIFFICULTYMULTIPLIERHARD;
+                break;
+            case SessionManager.EXTREME:
+
+                numbersToRemove = SudokuDifficultyParameters.REMOVENUMBERSEREXTREME;
+                GameGrid.sudokuDifficultyMultiplier = SudokuDifficultyParameters.DIFFICULTYMULTIPLIEREXTREME;
+                break;
+            case SessionManager.IMBALANCED:
+
+                numbersToRemove = SudokuDifficultyParameters.REMOVENUMBERSIMBALANCED;
+                GameGrid.sudokuDifficultyMultiplier = SudokuDifficultyParameters.DIFFICULTYMULTIPLIERIMBALANCED;
+                break;
+            default:
+        }
+
         while (i < numbersToRemove) {
             int x = rand.nextInt(9);
             int y = rand.nextInt(9);
