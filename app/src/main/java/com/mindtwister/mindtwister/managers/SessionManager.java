@@ -54,6 +54,9 @@ public class SessionManager {
     // score to store
     private static final String SCORE = "score";
 
+    // start time key
+    private static final String KEY_STARTTIME = "startTime";
+
     //shared preferences declare
     SharedPreferences pref;
 
@@ -107,6 +110,15 @@ public class SessionManager {
     //method to set sound fx
     public void setSoundStatus(boolean b) {
         editor.putBoolean(KEY_SOUNDFX, b);
+        editor.commit();
+    }
+
+    public long getStartTime() {
+        return pref.getLong(KEY_STARTTIME, 1);
+    }
+
+    public void setStartTime(long startTime) {
+        editor.putLong(KEY_STARTTIME, startTime);
         editor.commit();
     }
 

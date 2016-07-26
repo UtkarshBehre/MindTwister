@@ -3,7 +3,6 @@ package com.mindtwister.mindtwister.sudoku;
 import android.content.Context;
 
 import com.mindtwister.mindtwister.managers.SessionManager;
-import com.mindtwister.mindtwister.sudoku.sudokugrid.GameGrid;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -64,28 +63,21 @@ public class SudokuGenerator {
             case SessionManager.EASY:
 
                 numbersToRemove = SudokuDifficultyParameters.REMOVENUMBERSEASY;
-                GameGrid.sudokuDifficultyMultiplier = SudokuDifficultyParameters.DIFFICULTYMULTIPLIEREASY;
-
                 break;
             case SessionManager.MEDIUM:
 
                 numbersToRemove = SudokuDifficultyParameters.REMOVENUMBERSMEDIUM;
-                GameGrid.sudokuDifficultyMultiplier = SudokuDifficultyParameters.DIFFICULTYMULTIPLIERMEDIUM;
-
                 break;
             case SessionManager.HARD:
                 numbersToRemove = SudokuDifficultyParameters.REMOVENUMBERSHARD;
-                GameGrid.sudokuDifficultyMultiplier = SudokuDifficultyParameters.DIFFICULTYMULTIPLIERHARD;
                 break;
             case SessionManager.EXTREME:
 
                 numbersToRemove = SudokuDifficultyParameters.REMOVENUMBERSEREXTREME;
-                GameGrid.sudokuDifficultyMultiplier = SudokuDifficultyParameters.DIFFICULTYMULTIPLIEREXTREME;
                 break;
             case SessionManager.IMBALANCED:
 
                 numbersToRemove = SudokuDifficultyParameters.REMOVENUMBERSIMBALANCED;
-                GameGrid.sudokuDifficultyMultiplier = SudokuDifficultyParameters.DIFFICULTYMULTIPLIERIMBALANCED;
                 break;
             default:
         }
