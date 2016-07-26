@@ -12,6 +12,7 @@ import com.mindtwister.mindtwister.generallayouts.ProfileActivity;
 import com.mindtwister.mindtwister.managers.SessionManager;
 import com.mindtwister.mindtwister.memorymatrix.MemoryMatrix33Activity;
 import com.mindtwister.mindtwister.rainbowmatrix.RainbowMatrixActivity;
+import com.mindtwister.mindtwister.sudoku.SudokuActivity;
 
 public class DIfficultyLevelActivity extends AppCompatActivity {
     SessionManager session;
@@ -42,6 +43,11 @@ public class DIfficultyLevelActivity extends AppCompatActivity {
                 intent = new Intent(this, RainbowMatrixActivity.class);
                 startActivity(intent);
                 break;
+            case 3:
+                session.setDifficultyLevel(SessionManager.EASY);
+                intent = new Intent(this, SudokuActivity.class);
+                startActivity(intent);
+                break;
             default:
 
         }
@@ -63,6 +69,11 @@ public class DIfficultyLevelActivity extends AppCompatActivity {
                 intent = new Intent(this, RainbowMatrixActivity.class);
                 startActivity(intent);
                 break;
+            case 3:
+                session.setDifficultyLevel(SessionManager.EASY);
+                intent = new Intent(this, SudokuActivity.class);
+                startActivity(intent);
+                break;
             default:
 
         }
@@ -80,6 +91,11 @@ public class DIfficultyLevelActivity extends AppCompatActivity {
             case 2:
                 session.setDifficultyLevel(SessionManager.HARD);
                 intent = new Intent(this, RainbowMatrixActivity.class);
+                startActivity(intent);
+                break;
+            case 3:
+                session.setDifficultyLevel(SessionManager.EASY);
+                intent = new Intent(this, SudokuActivity.class);
                 startActivity(intent);
                 break;
             default:
@@ -101,6 +117,11 @@ public class DIfficultyLevelActivity extends AppCompatActivity {
                 intent = new Intent(this, RainbowMatrixActivity.class);
                 startActivity(intent);
                 break;
+            case 3:
+                session.setDifficultyLevel(SessionManager.EASY);
+                intent = new Intent(this, SudokuActivity.class);
+                startActivity(intent);
+                break;
             default:
 
         }
@@ -118,6 +139,11 @@ public class DIfficultyLevelActivity extends AppCompatActivity {
             case 2:
                 session.setDifficultyLevel(SessionManager.IMBALANCED);
                 intent = new Intent(this, RainbowMatrixActivity.class);
+                startActivity(intent);
+                break;
+            case 3:
+                session.setDifficultyLevel(SessionManager.EASY);
+                intent = new Intent(this, SudokuActivity.class);
                 startActivity(intent);
                 break;
             default:

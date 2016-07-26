@@ -90,6 +90,9 @@
             android:name=".memorymatrix.MemoryMatrix66Activity"
             android:label="@string/memory_matrix" />
         <activity
+            android:name=".sudoku.SudokuActivity"
+            android:label="@string/sudoku" />
+        <activity
             android:name=".DIfficultyLevelActivity"
             android:label="@string/select_difficulty" />
         <activity

@@ -42,6 +42,12 @@ public class PlayMenuActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void sudokuPlayOnClick(View view) {
+        Intent i = new Intent(this, DIfficultyLevelActivity.class);
+        i.putExtra("gameSelector", 3);
+        startActivity(i);
+    }
+
     public void signout(MenuItem item) {
         finish();
         session.logoutUser();
