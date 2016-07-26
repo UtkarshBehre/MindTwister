@@ -2,6 +2,7 @@ package com.mindtwister.mindtwister.sudoku;
 
 import android.content.Context;
 
+import com.mindtwister.mindtwister.managers.SessionManager;
 import com.mindtwister.mindtwister.sudoku.sudokugrid.GameGrid;
 
 /**
@@ -23,8 +24,11 @@ public class GameEngine {
     }
 
     public void createGrid(Context context) {
+        SessionManager session = new SessionManager(context);
+        session.setStartTime(System.currentTimeMillis());
+
         int[][] Sudoku = SudokuGenerator.getInstance().generatorGrid();
-        Sudoku = SudokuGenerator.getInstance().removeElement(Sudoku);
+        Sudoku = SudokuGenerator.getInstance().removeElement(Sudoku, context);
         grid = new GameGrid(context);
         grid.setGrid(Sudoku);
     }
