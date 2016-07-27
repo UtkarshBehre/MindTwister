@@ -148,7 +148,7 @@ public class RainbowMatrixActivity extends AppCompatActivity {
                 //setting up the beans class
                 rms.setUser_nickname(userInfo.get(SessionManager.KEY_NICKNAME));
                 rms.setUser_email(SessionManager.KEY_EMAIL);
-                rms.setScore(session.getScore());
+                rms.setScore(score);
                 rms.setDifficultylevel(session.getDifficultyLevel());
                 rms.setGame_name(SessionManager.MEMORYMATRIX);
 
