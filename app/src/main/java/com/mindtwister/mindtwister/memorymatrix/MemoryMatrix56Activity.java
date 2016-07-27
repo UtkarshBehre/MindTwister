@@ -209,7 +209,7 @@ public class MemoryMatrix56Activity extends AppCompatActivity {
                 //setting up the beans class
                 mms.setUser_nickname(userInfo.get(SessionManager.KEY_NICKNAME));
                 mms.setUser_email(SessionManager.KEY_EMAIL);
-                mms.setScore(session.getScore());
+                mms.setScore(score);
                 mms.setDifficulty_level(session.getDifficultyLevel());
                 mms.setGame_name(SessionManager.MEMORYMATRIX);
 

@@ -8,6 +8,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by jyothi on 7/18/2016.
  */
@@ -33,7 +36,10 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String KEY_GAMENAME = "game_name";
     private static final String KEY_DIFFICULTY_LEVEL = "difficulty_level";
     private static final String KEY_SCORE = "user_score";
+    private static final String FINAL_SCORES = "FinalScores";
+    private static final String KEY_FINALSCORE = "user_finalscore";
     public DBHandler(Context context) {
+
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -48,7 +54,7 @@ public class DBHandler extends SQLiteOpenHelper {
         //   }
         db.execSQL(
                 "create table " + TABLE_MEMORYMATRIXSCORES +
-                        "(" + KEY_NICKNAME + " text, " + KEY_GAMENAME + " text, " + KEY_DIFFICULTY_LEVEL + " text," + KEY_SCORE + " integer, " + KEY_EMAIL + " text)"
+                        "(" + KEY_NICKNAME + " text, " + KEY_GAMENAME + " text, " + KEY_DIFFICULTY_LEVEL + " text," + KEY_SCORE + " integer, " + KEY_EMAIL + " text, FOREIGN KEY(" + KEY_EMAIL + ") REFERENCES " + TABLE_USERINFO + "(" + KEY_EMAIL + "))"
         );
 
         db.execSQL(
@@ -60,7 +66,7 @@ public class DBHandler extends SQLiteOpenHelper {
                 "create table " + TABLE_SUDOKUSCORES +
                         "(" + KEY_NICKNAME + " text, " + KEY_GAMENAME + " text, " + KEY_DIFFICULTY_LEVEL + " text," + KEY_SCORE + " integer, " + KEY_EMAIL + " text)"
         );
-
+        db.execSQL("create table " + FINAL_SCORES + "(" + KEY_FINALSCORE + " integer)");
     }
 
     @Override
@@ -71,6 +77,7 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_MEMORYMATRIXSCORES);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_RAINBOWMATRIXSCORES);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_SUDOKUSCORES);
+        db.execSQL("DROP TABLE IF EXISTS " + FINAL_SCORES);
         onCreate(db);
     }
 
@@ -184,4 +191,78 @@ public class DBHandler extends SQLiteOpenHelper {
             Log.i(TAG, "addSudokuGameScore: FAILURE" + checker);
         }
     }
+
+    public List<listClass> viewMemoryMatrixScore() {
+        //String[] args={id};
+        ArrayList<listClass> result = new ArrayList<listClass>();
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String selectQuery = "SELECT * FROM " + TABLE_MEMORYMATRIXSCORES + " ORDER BY " + KEY_SCORE + " DESC";
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        // selectQuery, null
+        try {
+            if (cursor.moveToFirst()) {
+                do {
+                    listClass list = new listClass();
+                    list.setNickname(cursor.getString(0));
+                    list.setGamename(cursor.getString(1));
+                    list.setLevel(cursor.getString(2));
+                    list.setScore(Integer.parseInt(cursor.getString(3)));
+
+                    // Adding category to list
+                    result.add(list);
+                } while (cursor.moveToNext());
+            }
+        } finally {
+            cursor.close();
+        }
+        db.close();
+        return result;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

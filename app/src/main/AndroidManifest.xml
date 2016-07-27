@@ -98,6 +98,9 @@
         <activity
             android:name=".GameOverActivity"
             android:label="@string/game_over" />
+        <activity
+            android:name=".ListViewActivity"
+            android:label="@string/high_score" />
     </application>
 
 </manifest>
