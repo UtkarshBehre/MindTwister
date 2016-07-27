@@ -150,7 +150,7 @@ public class RainbowMatrixActivity extends AppCompatActivity {
                 rms.setUser_email(SessionManager.KEY_EMAIL);
                 rms.setScore(score);
                 rms.setDifficultylevel(session.getDifficultyLevel());
-                rms.setGame_name(SessionManager.MEMORYMATRIX);
+                rms.setGame_name(SessionManager.RAINBOWMATRIX);
 
                 db.addRainbowMatrixGameScore(rms);
 

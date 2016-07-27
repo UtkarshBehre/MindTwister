@@ -101,6 +101,9 @@
         <activity
             android:name=".ListViewActivity"
             android:label="@string/high_score" />
+        <activity
+            android:name=".viewHighScoresSelector"
+            android:label="@string/high_score"></activity>
     </application>
 
 </manifest>

@@ -34,7 +34,7 @@ public class ListViewActivity extends AppCompatActivity {
         list = (ListView) findViewById(R.id.listView2);
         list_head = (ListView) findViewById(R.id.listView1);
 
-        sites_data = db.viewMemoryMatrixScore();
+        sites_data = db.viewMemoryMatrixScore(getIntent().getIntExtra("game", 0));
 
         result_data = new String[sites_data.size()];
         nickname = new String[sites_data.size()];
@@ -66,9 +66,9 @@ public class ListViewActivity extends AppCompatActivity {
         map1 = new HashMap<String, String>();
 
         map1.put("Nickname", "Nickname");
-        map1.put("playlevel", "playlevel");
+        map1.put("playlevel", "difficulty level");
         map1.put("score", "score");
-        map1.put("gamename", "gamename");
+        map1.put("gamename", "game");
         mylist_title.add(map1);
 
         try {

@@ -35,4 +35,9 @@ public class GameOverActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+    public void highScoresOnClick(View view) {
+        Intent intent = new Intent(this, viewHighScoresSelector.class);
+        startActivity(intent);
+    }
 }

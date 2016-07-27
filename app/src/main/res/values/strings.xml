@@ -5,7 +5,7 @@
     <string name="splash_button">Lets Go!</string>
     <string name="play">Play</string>
     <string name="settings">Settings</string>
-    <string name="high_score">View High Scores</string>
+    <string name="high_score">High Scores</string>
     <string name="about">About</string>
     <string name="quit">Quit</string>
     <string name="music">Music</string>
@@ -91,5 +91,6 @@
     <string name="choose_game">Choose a game</string>
     <string name="game_over">Game Over</string>
     <string name="select_difficulty">select the difficulty level</string>
+    <string name="select_game">High Scores</string>
 
 </resources>

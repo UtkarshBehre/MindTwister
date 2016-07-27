@@ -192,12 +192,26 @@ public class DBHandler extends SQLiteOpenHelper {
         }
     }
 
-    public List<listClass> viewMemoryMatrixScore() {
+    public List<listClass> viewMemoryMatrixScore(int game) {
         //String[] args={id};
         ArrayList<listClass> result = new ArrayList<listClass>();
         SQLiteDatabase db = this.getWritableDatabase();
 
-        String selectQuery = "SELECT * FROM " + TABLE_MEMORYMATRIXSCORES + " ORDER BY " + KEY_SCORE + " DESC";
+        String selectQuery;
+        switch (game) {
+            case 1:
+                selectQuery = "SELECT * FROM " + TABLE_MEMORYMATRIXSCORES + " ORDER BY " + KEY_SCORE + " DESC";
+                break;
+            case 2:
+                selectQuery = "SELECT * FROM " + TABLE_RAINBOWMATRIXSCORES + " ORDER BY " + KEY_SCORE + " DESC";
+                break;
+            case 3:
+                selectQuery = "SELECT * FROM " + TABLE_SUDOKUSCORES + " ORDER BY " + KEY_SCORE + " DESC";
+                break;
+            default:
+                selectQuery = "SELECT * FROM " + TABLE_MEMORYMATRIXSCORES + " ORDER BY " + KEY_SCORE + " DESC";
+                break;
+        }
         Cursor cursor = db.rawQuery(selectQuery, null);
         // selectQuery, null
         try {
@@ -219,50 +233,4 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
         return result;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
