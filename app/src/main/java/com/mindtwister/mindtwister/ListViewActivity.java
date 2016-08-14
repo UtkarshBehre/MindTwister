@@ -34,7 +34,7 @@ public class ListViewActivity extends AppCompatActivity {
         list = (ListView) findViewById(R.id.listView2);
         list_head = (ListView) findViewById(R.id.listView1);
 
-        sites_data = db.viewMemoryMatrixScore(getIntent().getIntExtra("game", 0));
+        sites_data = db.viewMemoryMatrixScore(1);
 
         result_data = new String[sites_data.size()];
         nickname = new String[sites_data.size()];

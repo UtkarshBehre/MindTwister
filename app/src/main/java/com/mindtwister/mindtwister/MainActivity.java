@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void viewHighScoresOnClick(View view) {
-        Intent intent = new Intent(this, viewHighScoresSelector.class);
+        Intent intent = new Intent(this, ListViewActivity.class);
         startActivity(intent);
     }
 }

@@ -27,11 +27,11 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
         session = new SessionManager(this);
         musicSwitch = (Switch) findViewById(R.id.musicSwitch);
-        soundFxSwitch = (Switch) findViewById(R.id.soundSwitch);
+//        soundFxSwitch = (Switch) findViewById(R.id.soundSwitch);
         if (session.getMusicStatus())
             musicSwitch.setChecked(true);
-        if (session.getSoundFxStatus())
-            soundFxSwitch.setChecked(true);
+//        if (session.getSoundFxStatus())
+//            soundFxSwitch.setChecked(true);
     }
 
     public void profileOnClick(View view) {

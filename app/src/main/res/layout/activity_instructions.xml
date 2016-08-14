@@ -4,19 +4,13 @@
     android:layout_height="match_parent"
     android:background="@mipmap/play_menu_background">
 
-    <RelativeLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
         <TextView
-            android:id="@+id/textView17"
+            android:id="@+id/howto"
             style="@style/instructions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="70dp"
             android:fontFamily="sans-serif-smallcaps"
             android:gravity="center_horizontal"
             android:padding="20dp"
@@ -24,25 +18,13 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="24sp"
             android:textStyle="bold" />
-    </RelativeLayout>
 
-    <HorizontalScrollView
-        android:id="@+id/horizontalScrollView"
-        android:layout_width="5000dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="100dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <RelativeLayout
-                android:layout_width="250dp"
+    <RelativeLayout
+        android:layout_width="250dp"
                 android:layout_height="200dp"
-                android:layout_marginLeft="15dp"
+        android:layout_below="@id/howto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
                 android:onClick="mmInstructionsOnClick">
 
                 <ImageView
@@ -60,39 +42,4 @@
 
             </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="250dp"
-                android:layout_height="200dp"
-                android:layout_marginLeft="15dp"
-                android:onClick="rmInstructionsOnClick">
-
-                <ImageView
-
-                    android:id="@+id/imageView5"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@mipmap/rainbowbackground320x320" />
-
-                <TextView
-                    android:id="@+id/textView5"
-                    style="@style/instructions.gameText"
-                    android:text="@string/how_to_play_rainbow_matrix_game"
-                    android:textAppearance="?android:attr/textAppearanceLarge" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="250dp"
-                android:layout_height="200dp"
-                android:layout_marginLeft="15dp"
-                android:onClick="sudokuInstructionsOnClick">
-
-                <ImageView
-                    android:id="@+id/imageView6"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@mipmap/sudokuplay320x320" />
-
-            </RelativeLayout>
-        </LinearLayout>
-    </HorizontalScrollView>
 </RelativeLayout>
