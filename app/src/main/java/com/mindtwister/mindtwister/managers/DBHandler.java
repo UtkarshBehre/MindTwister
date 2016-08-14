@@ -23,9 +23,9 @@ public class DBHandler extends SQLiteOpenHelper {
 
     private static final String TABLE_MEMORYMATRIXSCORES = "MemoryMatrixScores";
 
-    private static final String TABLE_RAINBOWMATRIXSCORES = "RainbowMatrixScores";
-
-    private static final String TABLE_SUDOKUSCORES = "SudokuScores";
+    //    private static final String TABLE_RAINBOWMATRIXSCORES = "RainbowMatrixScores";
+//
+//    private static final String TABLE_SUDOKUSCORES = "SudokuScores";
     // Shops Table Columns names
     private static final String KEY_NAME = "user_name";
     private static final String KEY_NICKNAME = "user_nickname";
@@ -57,15 +57,15 @@ public class DBHandler extends SQLiteOpenHelper {
                         "(" + KEY_NICKNAME + " text, " + KEY_GAMENAME + " text, " + KEY_DIFFICULTY_LEVEL + " text," + KEY_SCORE + " integer, " + KEY_EMAIL + " text, FOREIGN KEY(" + KEY_EMAIL + ") REFERENCES " + TABLE_USERINFO + "(" + KEY_EMAIL + "))"
         );
 
-        db.execSQL(
-                "create table " + TABLE_RAINBOWMATRIXSCORES +
-                        "(" + KEY_NICKNAME + " text, " + KEY_GAMENAME + " text, " + KEY_DIFFICULTY_LEVEL + " text," + KEY_SCORE + " integer, " + KEY_EMAIL + " text)"
-        );
-
-        db.execSQL(
-                "create table " + TABLE_SUDOKUSCORES +
-                        "(" + KEY_NICKNAME + " text, " + KEY_GAMENAME + " text, " + KEY_DIFFICULTY_LEVEL + " text," + KEY_SCORE + " integer, " + KEY_EMAIL + " text)"
-        );
+//        db.execSQL(
+//                "create table " + TABLE_RAINBOWMATRIXSCORES +
+//                        "(" + KEY_NICKNAME + " text, " + KEY_GAMENAME + " text, " + KEY_DIFFICULTY_LEVEL + " text," + KEY_SCORE + " integer, " + KEY_EMAIL + " text)"
+//        );
+//
+//        db.execSQL(
+//                "create table " + TABLE_SUDOKUSCORES +
+//                        "(" + KEY_NICKNAME + " text, " + KEY_GAMENAME + " text, " + KEY_DIFFICULTY_LEVEL + " text," + KEY_SCORE + " integer, " + KEY_EMAIL + " text)"
+//        );
         db.execSQL("create table " + FINAL_SCORES + "(" + KEY_FINALSCORE + " integer)");
     }
 
@@ -75,8 +75,8 @@ public class DBHandler extends SQLiteOpenHelper {
         // Creating tables again on patch or game update via playstore
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERINFO);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_MEMORYMATRIXSCORES);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_RAINBOWMATRIXSCORES);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SUDOKUSCORES);
+//        db.execSQL("DROP TABLE IF EXISTS " + TABLE_RAINBOWMATRIXSCORES);
+//        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SUDOKUSCORES);
         db.execSQL("DROP TABLE IF EXISTS " + FINAL_SCORES);
         onCreate(db);
     }
@@ -157,40 +157,40 @@ public class DBHandler extends SQLiteOpenHelper {
         }
     }
 
-    public void addRainbowMatrixGameScore(RainbowMatrixScores rms) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(KEY_NICKNAME, rms.getUser_nickname());
-        values.put(KEY_GAMENAME, rms.getGame_name());
-        values.put(KEY_DIFFICULTY_LEVEL, rms.getDifficultylevel());
-        values.put(KEY_SCORE, rms.getScore());
-        values.put(KEY_EMAIL, rms.getUser_email());
-
-        long checker = db.insertOrThrow(TABLE_RAINBOWMATRIXSCORES, null, values);
-        if (checker >= 0) {
-            Log.i(TAG, "addRainbowMatrixGameScore: SUCCESS" + checker);
-        } else {
-            Log.i(TAG, "addRainbowMatrixGameScore: FAILURE" + checker);
-        }
-    }
-
-
-    public void addSudokuGameScore(SudokuScores sudoku) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(KEY_NICKNAME, sudoku.getUser_nickname());
-        values.put(KEY_GAMENAME, sudoku.getGame_name());
-        values.put(KEY_DIFFICULTY_LEVEL, sudoku.getDifficulty_level());
-        values.put(KEY_SCORE, sudoku.getScore());
-        values.put(KEY_EMAIL, sudoku.getUser_email());
-
-        long checker = db.insertOrThrow(TABLE_SUDOKUSCORES, null, values);
-        if (checker >= 0) {
-            Log.i(TAG, "addSudokuGameScore: SUCCESS" + checker);
-        } else {
-            Log.i(TAG, "addSudokuGameScore: FAILURE" + checker);
-        }
-    }
+//    public void addRainbowMatrixGameScore(RainbowMatrixScores rms) {
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        ContentValues values = new ContentValues();
+//        values.put(KEY_NICKNAME, rms.getUser_nickname());
+//        values.put(KEY_GAMENAME, rms.getGame_name());
+//        values.put(KEY_DIFFICULTY_LEVEL, rms.getDifficultylevel());
+//        values.put(KEY_SCORE, rms.getScore());
+//        values.put(KEY_EMAIL, rms.getUser_email());
+//
+//        long checker = db.insertOrThrow(TABLE_RAINBOWMATRIXSCORES, null, values);
+//        if (checker >= 0) {
+//            Log.i(TAG, "addRainbowMatrixGameScore: SUCCESS" + checker);
+//        } else {
+//            Log.i(TAG, "addRainbowMatrixGameScore: FAILURE" + checker);
+//        }
+//    }
+//
+//
+//    public void addSudokuGameScore(SudokuScores sudoku) {
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        ContentValues values = new ContentValues();
+//        values.put(KEY_NICKNAME, sudoku.getUser_nickname());
+//        values.put(KEY_GAMENAME, sudoku.getGame_name());
+//        values.put(KEY_DIFFICULTY_LEVEL, sudoku.getDifficulty_level());
+//        values.put(KEY_SCORE, sudoku.getScore());
+//        values.put(KEY_EMAIL, sudoku.getUser_email());
+//
+//        long checker = db.insertOrThrow(TABLE_SUDOKUSCORES, null, values);
+//        if (checker >= 0) {
+//            Log.i(TAG, "addSudokuGameScore: SUCCESS" + checker);
+//        } else {
+//            Log.i(TAG, "addSudokuGameScore: FAILURE" + checker);
+//        }
+//    }
 
     public List<listClass> viewMemoryMatrixScore(int game) {
         //String[] args={id};
@@ -202,12 +202,12 @@ public class DBHandler extends SQLiteOpenHelper {
             case 1:
                 selectQuery = "SELECT * FROM " + TABLE_MEMORYMATRIXSCORES + " ORDER BY " + KEY_SCORE + " DESC";
                 break;
-            case 2:
-                selectQuery = "SELECT * FROM " + TABLE_RAINBOWMATRIXSCORES + " ORDER BY " + KEY_SCORE + " DESC";
-                break;
-            case 3:
-                selectQuery = "SELECT * FROM " + TABLE_SUDOKUSCORES + " ORDER BY " + KEY_SCORE + " DESC";
-                break;
+//            case 2:
+//                selectQuery = "SELECT * FROM " + TABLE_RAINBOWMATRIXSCORES + " ORDER BY " + KEY_SCORE + " DESC";
+//                break;
+//            case 3:
+//                selectQuery = "SELECT * FROM " + TABLE_SUDOKUSCORES + " ORDER BY " + KEY_SCORE + " DESC";
+//                break;
             default:
                 selectQuery = "SELECT * FROM " + TABLE_MEMORYMATRIXSCORES + " ORDER BY " + KEY_SCORE + " DESC";
                 break;

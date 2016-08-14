@@ -12,8 +12,8 @@ import android.view.View;
 import com.mindtwister.mindtwister.generallayouts.ProfileActivity;
 import com.mindtwister.mindtwister.managers.SessionManager;
 import com.mindtwister.mindtwister.memorymatrix.Memorymatrix_instructionActivity;
-import com.mindtwister.mindtwister.rainbowmatrix.Rainbowmatrix_instruction_Activity;
-import com.mindtwister.mindtwister.sudoku.Sudoku_instructionActivity;
+//import com.mindtwister.mindtwister.rainbowmatrix.Rainbowmatrix_instruction_Activity;
+//import com.mindtwister.mindtwister.sudoku.Sudoku_instructionActivity;
 
 /**
  * Created by Utkarsh on 07-07-2016.
@@ -39,15 +39,15 @@ public class InstructionsActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void rmInstructionsOnClick(View view) {
-        Intent i = new Intent(this, Rainbowmatrix_instruction_Activity.class);
-        startActivity(i);
-    }
-
-    public void sudokuInstructionsOnClick(View view) {
-        Intent i = new Intent(this, Sudoku_instructionActivity.class);
-        startActivity(i);
-    }
+//    public void rmInstructionsOnClick(View view) {
+//        Intent i = new Intent(this, Rainbowmatrix_instruction_Activity.class);
+//        startActivity(i);
+//    }
+//
+//    public void sudokuInstructionsOnClick(View view) {
+//        Intent i = new Intent(this, Sudoku_instructionActivity.class);
+//        startActivity(i);
+//    }
 
     public void signout(MenuItem item) {
         finish();
