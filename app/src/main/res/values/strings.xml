@@ -49,9 +49,8 @@
     <string name="feedback_label">Feedback</string>
     <string name="submit_label">Submit</string>
     <string name="suggession">Write your helpful suggessions\nand send to mindtwister@gmail.com</string>
-    <string name="privacy_policy_info">Mind Twister does not collect or share  personal information.
-        We do not track or profile you.\n\nMind Twister is free to play. You can contact us
-    at mindtwister@gmail.com about your privacy concern.</string>
+    <string name="privacy_policy_info">Mind Twister is free to play.\n\nMind Twister does not collect or share personal information.
+        We do not track or profile you.\n\n </string>
 
     <string name="how_to_play_memory_matrix_game">How To Play\nMemory Matrix</string>
     <string name="how_to_play_rainbow_matrix_game">How To Play\nRainbow Matrix</string>
