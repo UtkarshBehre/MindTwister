@@ -40,9 +40,9 @@
         <activity
             android:name=".PlayMenuActivity"
             android:label="@string/choose_game" />
-        <activity
-            android:name=".rainbowmatrix.RainbowMatrixActivity"
-            android:label="Rainbow Matrix" />
+        <!--<activity-->
+        <!--android:name=".rainbowmatrix.RainbowMatrixActivity"-->
+        <!--android:label="Rainbow Matrix" />-->
         <activity
             android:name=".generallayouts.PrivacyPolicyActivity"
             android:label="@string/privacy_policy" />
@@ -60,13 +60,13 @@
             android:name=".memorymatrix.Memorymatrix_instructionActivity"
             android:label="@string/memory_matrix"
             android:theme="@style/AppTheme" />
-        <activity
-            android:name=".rainbowmatrix.Rainbowmatrix_instruction_Activity"
-            android:label="@string/rainbow_matrix"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".sudoku.Sudoku_instructionActivity"
-            android:label="@string/sudoku" />
+        <!--<activity-->
+        <!--android:name=".rainbowmatrix.Rainbowmatrix_instruction_Activity"-->
+        <!--android:label="@string/rainbow_matrix"-->
+        <!--android:theme="@style/AppTheme" />-->
+        <!--<activity-->
+        <!--android:name=".sudoku.Sudoku_instructionActivity"-->
+        <!--android:label="@string/sudoku" />-->
         <activity
             android:name=".memorymatrix.MemoryMatrix33Activity"
             android:label="@string/memory_matrix"
@@ -89,9 +89,9 @@
         <activity
             android:name=".memorymatrix.MemoryMatrix66Activity"
             android:label="@string/memory_matrix" />
-        <activity
-            android:name=".sudoku.SudokuActivity"
-            android:label="@string/sudoku" />
+        <!--<activity-->
+        <!--android:name=".sudoku.SudokuActivity"-->
+        <!--android:label="@string/sudoku" />-->
         <activity
             android:name=".DIfficultyLevelActivity"
             android:label="@string/select_difficulty" />
@@ -101,9 +101,6 @@
         <activity
             android:name=".ListViewActivity"
             android:label="@string/high_score" />
-        <activity
-            android:name=".viewHighScoresSelector"
-            android:label="@string/high_score"></activity>
     </application>
 
 </manifest>

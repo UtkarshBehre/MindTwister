@@ -34,23 +34,25 @@ public class PlayMenuActivity extends AppCompatActivity {
         Intent i = new Intent(this, DIfficultyLevelActivity.class);
         i.putExtra("gameSelector", 1);
         startActivity(i);
+        finish();
     }
 
-    public void rmPlayOnClick(View view) {
-        Intent i = new Intent(this, DIfficultyLevelActivity.class);
-        i.putExtra("gameSelector", 2);
-        startActivity(i);
-    }
-
-    public void sudokuPlayOnClick(View view) {
-        Intent i = new Intent(this, DIfficultyLevelActivity.class);
-        i.putExtra("gameSelector", 3);
-        startActivity(i);
-    }
+//    public void rmPlayOnClick(View view) {
+//        Intent i = new Intent(this, DIfficultyLevelActivity.class);
+//        i.putExtra("gameSelector", 2);
+//        startActivity(i);
+//    }
+//
+//    public void sudokuPlayOnClick(View view) {
+//        Intent i = new Intent(this, DIfficultyLevelActivity.class);
+//        i.putExtra("gameSelector", 3);
+//        startActivity(i);
+//    }
 
     public void signout(MenuItem item) {
-        finish();
+
         session.logoutUser();
+        finish();
     }
 
     public void profile(MenuItem item) {

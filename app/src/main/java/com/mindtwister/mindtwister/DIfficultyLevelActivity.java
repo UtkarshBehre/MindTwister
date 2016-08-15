@@ -37,6 +37,7 @@ public class DIfficultyLevelActivity extends AppCompatActivity {
                 session.setDifficultyLevel(SessionManager.EASY);
                 intent = new Intent(this, MemoryMatrix33Activity.class);
                 startActivity(intent);
+                finish();
                 break;
 //            case 2:
 //                session.setDifficultyLevel(SessionManager.EASY);
@@ -63,6 +64,7 @@ public class DIfficultyLevelActivity extends AppCompatActivity {
                 session.setDifficultyLevel(SessionManager.MEDIUM);
                 intent = new Intent(this, MemoryMatrix33Activity.class);
                 startActivity(intent);
+                finish();
                 break;
 //            case 2:
 //                session.setDifficultyLevel(SessionManager.MEDIUM);
@@ -87,6 +89,7 @@ public class DIfficultyLevelActivity extends AppCompatActivity {
                 session.setDifficultyLevel(SessionManager.HARD);
                 intent = new Intent(this, MemoryMatrix33Activity.class);
                 startActivity(intent);
+                finish();
                 break;
 //            case 2:
 //                session.setDifficultyLevel(SessionManager.HARD);
@@ -111,6 +114,7 @@ public class DIfficultyLevelActivity extends AppCompatActivity {
                 session.setDifficultyLevel(SessionManager.EXTREME);
                 intent = new Intent(this, MemoryMatrix33Activity.class);
                 startActivity(intent);
+                finish();
                 break;
 //            case 2:
 //                session.setDifficultyLevel(SessionManager.EXTREME);
@@ -135,6 +139,7 @@ public class DIfficultyLevelActivity extends AppCompatActivity {
                 session.setDifficultyLevel(SessionManager.IMBALANCED);
                 intent = new Intent(this, MemoryMatrix33Activity.class);
                 startActivity(intent);
+                finish();
                 break;
 //            case 2:
 //                session.setDifficultyLevel(SessionManager.IMBALANCED);

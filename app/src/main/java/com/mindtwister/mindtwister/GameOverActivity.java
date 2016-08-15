@@ -32,6 +32,7 @@ public class GameOverActivity extends AppCompatActivity {
 
     public void mainMenuOnClick(View view) {
         Intent intent = new Intent(this, MainActivity.class);
+
         startActivity(intent);
         finish();
     }
@@ -39,5 +40,6 @@ public class GameOverActivity extends AppCompatActivity {
     public void highScoresOnClick(View view) {
         Intent intent = new Intent(this, ListViewActivity.class);
         startActivity(intent);
+        finish();
     }
 }
